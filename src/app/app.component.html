@@ -1,0 +1,24 @@
+<ion-app>
+    
+    <app-loading></app-loading>
+    
+    <ion-menu side="start" menuId="first" contentId="main">
+      <ion-header>
+        <ion-toolbar color="secondary">
+          <ion-title>Menú</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item style="cursor: pointer;" (click)="goToMyWallet()">Mi wallet</ion-item>
+          <ion-item *ngIf="walletService.isAdmin" style="cursor: pointer;" (click)="goToMintCard()">Mintar carta</ion-item>
+          <ion-item style="cursor: pointer;" (click)="goToShowcase()">Escaparate</ion-item>
+          <ion-item style="cursor: pointer;" (click)="goToMyCards()">Mis cartas</ion-item>
+          <ion-item style="cursor: pointer;" color="danger" (click)="logout()">Logout</ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    
+    <ion-router-outlet id="main"></ion-router-outlet>
+ 
+</ion-app>

@@ -1,0 +1,114 @@
+{
+  "contractName": "Dummy",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/administrador/NetBeansProjects/bsm-project-ethereum/contracts/contracts/Dummy.sol\":\"Dummy\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/administrador/NetBeansProjects/bsm-project-ethereum/contracts/contracts/Dummy.sol\":{\"keccak256\":\"0xbdf3b47b72be5cc007de0dfa21331c6369bc08222e5f7c4be642f71d73e9f3ad\",\"urls\":[\"bzz-raw://a0a1dfb9caa2f326c789c0e657c2160e8cb492f7057b66de8278e7006d38797b\",\"dweb:/ipfs/QmYJth95L8LTFyWU5sRVj5yXkjy4mpvZpZzdCtZ7AwWwYo\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a723158207489182dc848c72db2cd8614383c78d4c35035324f97fb8b360633c10d0cefce64736f6c63430005100032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a723158207489182dc848c72db2cd8614383c78d4c35035324f97fb8b360633c10d0cefce64736f6c63430005100032",
+  "sourceMap": "25:24:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:24:2;;;;;;;",
+  "deployedSourceMap": "25:24:2:-;;;;;",
+  "source": "pragma solidity ^0.5;\r\n\r\ncontract Dummy {\r\n \r\n\r\n}",
+  "sourcePath": "/home/administrador/NetBeansProjects/bsm-project-ethereum/contracts/contracts/Dummy.sol",
+  "ast": {
+    "absolutePath": "/home/administrador/NetBeansProjects/bsm-project-ethereum/contracts/contracts/Dummy.sol",
+    "exportedSymbols": {
+      "Dummy": [
+        405
+      ]
+    },
+    "id": 406,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 404,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:21:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 405,
+        "linearizedBaseContracts": [
+          405
+        ],
+        "name": "Dummy",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 406,
+        "src": "25:24:2"
+      }
+    ],
+    "src": "0:49:2"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/home/administrador/NetBeansProjects/bsm-project-ethereum/contracts/contracts/Dummy.sol",
+      "exportedSymbols": {
+        "Dummy": [
+          405
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5"
+          ]
+        },
+        "id": 404,
+        "name": "PragmaDirective",
+        "src": "0:21:2"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            405
+          ],
+          "name": "Dummy",
+          "nodes": [
+            null
+          ],
+          "scope": 406
+        },
+        "id": 405,
+        "name": "ContractDefinition",
+        "src": "25:24:2"
+      }
+    ],
+    "id": 406,
+    "name": "SourceUnit",
+    "src": "0:49:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-05-14T22:07:55.216Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

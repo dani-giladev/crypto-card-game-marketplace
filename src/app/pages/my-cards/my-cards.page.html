@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Mis cartas</ion-title>
+        <ion-title size="small">CCG Marketplace</ion-title>
+
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+      
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div style="padding: 10px;">
+        
+        <app-card *ngFor ="let item of items"
+                  
+            [tokenId]="item.tokenId"
+            [name]="item.name"
+            [description]="item.description"
+            [color]="item.color"
+            [type]="item.type"
+            [mana]="item.mana"
+            [attack]="item.attack"
+            [guard]="item.guard"
+            [price]="item.price"
+            [imgHash]="item.imgHash"
+            [available]="item.available"
+            [onSale]="item.onSale"
+            
+            [isMyCardsPage]="true"
+            (onTransferCardEvent)="onTransferCard($event)"
+            (onPutOnSaleCardEvent)="onPutOnSaleCard($event)"
+            
+        ></app-card>
+
+    </div>
+    
+</ion-content>

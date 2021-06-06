@@ -1,0 +1,36 @@
+
+<form (ngSubmit)="sendLogin()">
+    <ion-list lines="full" class="ion-margin">
+      <ion-list-header lines="full">
+        <ion-label>
+            <b *ngIf="!walletService.encrypted">Introduce tus credenciales</b>
+            <b *ngIf="walletService.encrypted">Introduce tu password</b>
+        </ion-label>
+      </ion-list-header>
+
+      <ion-item *ngIf="!walletService.encrypted">
+        <ion-label position="floating">Semillas</ion-label>
+        <ion-textarea
+            [(ngModel)]="seeds"
+            position="floating"
+            name="seeds"
+            rows="4"
+            placeholder="Seeds"
+        ></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input
+                [(ngModel)]="password"
+                type="password"
+                position="floating"
+                name="password"
+                placeholder="Password"
+            ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button type="submit" color="success" class="ion-margin" style="text-transform:none">Login</ion-button>
+    <ion-button *ngIf="walletService.encrypted" type="button" (click) ="restore()" color="medium" class="ion-margin" style="text-transform:none">Restablecer credenciales</ion-button>
+</form>

@@ -1,0 +1,124 @@
+
+<form (ngSubmit)="mintCard($event)">
+    <ion-list lines="full" class="ion-margin">
+        <ion-list-header lines="full">
+          <ion-label>
+              <b>Introduce las propiedades de la nueva carta</b>
+          </ion-label>
+        </ion-list-header>     
+
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input
+                  [(ngModel)]="name"
+                  position="floating"
+                  name="name"
+                  placeholder="Nombre de la carta" 
+              ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Descripción</ion-label>
+          <ion-textarea
+              [(ngModel)]="description"
+              position="floating"
+              name="description"
+              rows=3
+              placeholder="Descripción"
+          ></ion-textarea>        
+        </ion-item>
+        
+        <ion-item>
+            <ion-label position="floating">Color</ion-label>
+            <ion-select interface="popover"
+              [(ngModel)]="color"
+              position="floating"
+              name="color"
+            >
+                <ion-select-option value="0">Blanco</ion-select-option>
+                <ion-select-option value="1">Azul</ion-select-option>
+                <ion-select-option value="2">Amarillo</ion-select-option>
+                <ion-select-option value="3">Verde</ion-select-option>
+                <ion-select-option value="4">Rojo</ion-select-option>
+                <ion-select-option value="5">Negro</ion-select-option>
+            </ion-select>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label position="floating">Tipo</ion-label>
+            <ion-select interface="popover"
+              [(ngModel)]="type"
+              position="floating"
+              name="type"
+            >
+                <ion-select-option value="0">Criatura</ion-select-option>
+                <ion-select-option value="1">Hechizo</ion-select-option>
+                <ion-select-option value="2">Reliquia</ion-select-option>
+            </ion-select>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label position="floating">Maná</ion-label>
+            <ion-select interface="popover"
+              [(ngModel)]="mana"
+              position="floating"
+              name="mana"
+            >
+                <ion-select-option value="1">1</ion-select-option>
+                <ion-select-option value="2">2</ion-select-option>
+                <ion-select-option value="3">3</ion-select-option>
+                <ion-select-option value="4">4</ion-select-option>
+                <ion-select-option value="5">5</ion-select-option>
+            </ion-select>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label position="floating">Ataque</ion-label>
+            <ion-select interface="popover"
+              [(ngModel)]="attack"
+              position="floating"
+              name="attack"
+            >
+                <ion-select-option value="1">1</ion-select-option>
+                <ion-select-option value="2">2</ion-select-option>
+                <ion-select-option value="3">3</ion-select-option>
+                <ion-select-option value="4">4</ion-select-option>
+                <ion-select-option value="5">5</ion-select-option>
+            </ion-select>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label position="floating">Defensa</ion-label>
+            <ion-select interface="popover"
+              [(ngModel)]="guard"
+              position="floating"
+              name="guard"
+            >
+                <ion-select-option value="1">1</ion-select-option>
+                <ion-select-option value="2">2</ion-select-option>
+                <ion-select-option value="3">3</ion-select-option>
+                <ion-select-option value="4">4</ion-select-option>
+                <ion-select-option value="5">5</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Precio en ethers</ion-label>
+          <ion-input
+              [(ngModel)]="price"
+              position="floating"
+              type="number" 
+              name="price"
+              placeholder="Precio"
+          ></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Selecciona imagen</ion-label>
+            <ion-input type="file" accept="image/*" (change)="handleFileInput($event.target.files)" ></ion-input>
+        </ion-item>   
+        
+    </ion-list>
+
+    <ion-button type="submit" color="success" class="ion-margin" style="text-transform:none">Mintar carta</ion-button>
+</form>

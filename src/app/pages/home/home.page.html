@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Mi Wallet</ion-title>
+        <ion-title size="small">CCG Marketplace</ion-title>
+
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+      
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div style="padding: 10px;">
+        <h3>Mi dirección</h3>
+        <p>{{address}}</p>
+
+        <h3>Mi balance</h3>
+        <p>{{balance}} eth</p>  
+
+        <h3>¿Eres un administrador?</h3>
+        <p>{{walletService.isAdmin? "SI" : "NO"}}</p>
+    </div>
+    
+</ion-content>

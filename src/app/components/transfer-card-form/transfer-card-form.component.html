@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Transferir carta</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal(false)">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> 
+<ion-content fullscreen>
+
+    <ion-list lines="full" class="ion-margin">
+        <ion-list-header lines="full">
+          <ion-label>
+              <b>Introduce una dirección válida</b>
+          </ion-label>
+        </ion-list-header>     
+
+        <ion-item>
+          <ion-input id="transfer-card-address"
+                  position="floating"
+                  placeholder="Dirección del destinatario (Address)" 
+              ></ion-input>
+        </ion-item>
+
+    </ion-list>
+
+    <ion-button (click)="transferCard()" color="success" class="ion-margin" style="text-transform:none">Transferir</ion-button>
+</ion-content>
+    

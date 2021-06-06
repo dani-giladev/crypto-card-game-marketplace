@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Poner carta a la venta</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal(false)">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> 
+<ion-content fullscreen>
+
+    <ion-list lines="full" class="ion-margin">
+        <ion-list-header lines="full">
+          <ion-label>
+              <b>Introduce una precio en ethers</b>
+          </ion-label>
+        </ion-list-header>     
+
+        <ion-item>
+          <ion-input id="put-onsale-card-price"
+                  position="floating"
+                  type="number" 
+                  placeholder="Nuevo precio de la carta" 
+              ></ion-input>
+        </ion-item>
+
+    </ion-list>
+
+    <ion-button (click)="putOnSaleCard()" color="success" class="ion-margin" style="text-transform:none">Poner a la venta</ion-button>
+</ion-content>
+    

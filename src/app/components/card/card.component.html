@@ -1,0 +1,30 @@
+<div class="wrapper-out">
+    <div class="wrapper-in" style="background-color: {{getColor()}}; color: {{getTextColor()}};">
+        <div class="name"><b>{{name}}</b></div>
+        <img class="card-img" src={{getImageSrc()}}/>
+        <div *ngIf="!available && !isMyCardsPage" class="available-info-label">
+            DESACTIVADA
+        </div> 
+        <div class="description">{{description}}</div>      
+        <div *ngIf="onSale" class="price">
+            {{price}} eth
+        </div> 
+        <ion-button *ngIf="walletService.isAdmin && !isMyCardsPage" class="enable-disable-button" color="{{getEnableDisableColor()}}" size="small" (click) ="setAvailable()">
+            {{getEnableDisableText()}}
+        </ion-button>
+        <div *ngIf="onSale && isMyCardsPage" class="onsale-info-label">
+            EN VENTA
+        </div>         
+        <div class="properties">
+            Color: <b>{{getColorName()}}</b><br>
+            Tipo: <b>{{getTypeName()}}</b><br>
+            Maná: <b>{{mana}}</b><br>
+            Ataque: <b>{{attack}}</b><br>
+            Defensa: <b>{{guard}}</b>
+        </div>      
+    </div>
+    <div style="text-align:center; margin-top: 5px;">
+        <ion-button *ngIf="available && !isMyCardsPage" color="secondary" size="small" (click) ="buy()">Comprar</ion-button>
+        <ion-button *ngIf="isMyCardsPage" color="secondary" size="small" (click) ="showActions()" style="text-transform:none">Menú de acciones</ion-button>        
+    </div> 
+</div>
