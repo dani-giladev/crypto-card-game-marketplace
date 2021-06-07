@@ -2491,84 +2491,6 @@ module.exports = config => ({
 
 /***/ }),
 
-/***/ "84bH":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/ipfs-http-client/node_modules/multihashing-async/src/crypto.js ***!
-  \*************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-const { Buffer } = __webpack_require__(/*! buffer */ "tjlA")
-const sha3 = __webpack_require__(/*! js-sha3 */ "zNmP")
-const mur = __webpack_require__(/*! murmurhash3js-revisited */ "QWpB")
-const { factory: sha } = __webpack_require__(/*! ./sha */ "rw1i")
-const { fromNumberTo32BitBuf } = __webpack_require__(/*! ./utils */ "BHeG")
-
-// Note that although this function doesn't do any asynchronous work, we mark
-// the function as async because it must return a Promise to match the API
-// for other functions that do perform asynchronous work (see sha.browser.js)
-// eslint-disable-next-line
-const hash = (algorithm) => async (data) => {
-  switch (algorithm) {
-    case 'sha3-224':
-      return Buffer.from(sha3.sha3_224.arrayBuffer(data))
-    case 'sha3-256':
-      return Buffer.from(sha3.sha3_256.arrayBuffer(data))
-    case 'sha3-384':
-      return Buffer.from(sha3.sha3_384.arrayBuffer(data))
-    case 'sha3-512':
-      return Buffer.from(sha3.sha3_512.arrayBuffer(data))
-    case 'shake-128':
-      return Buffer.from(sha3.shake128.create(128).update(data).arrayBuffer())
-    case 'shake-256':
-      return Buffer.from(sha3.shake256.create(256).update(data).arrayBuffer())
-    case 'keccak-224':
-      return Buffer.from(sha3.keccak224.arrayBuffer(data))
-    case 'keccak-256':
-      return Buffer.from(sha3.keccak256.arrayBuffer(data))
-    case 'keccak-384':
-      return Buffer.from(sha3.keccak384.arrayBuffer(data))
-    case 'keccak-512':
-      return Buffer.from(sha3.keccak512.arrayBuffer(data))
-    case 'murmur3-128':
-      return Buffer.from(mur.x64.hash128(data), 'hex')
-    case 'murmur3-32':
-      return fromNumberTo32BitBuf(mur.x86.hash32(data))
-
-    default:
-      throw new TypeError(`${algorithm} is not a supported algorithm`)
-  }
-}
-
-const identity = data => Buffer.from(data)
-
-module.exports = {
-  identity,
-  sha1: sha('sha1'),
-  sha2256: sha('sha2-256'),
-  sha2512: sha('sha2-512'),
-  dblSha2256: sha('dbl-sha2-256'),
-  sha3224: hash('sha3-224'),
-  sha3256: hash('sha3-256'),
-  sha3384: hash('sha3-384'),
-  sha3512: hash('sha3-512'),
-  shake128: hash('shake-128'),
-  shake256: hash('shake-256'),
-  keccak224: hash('keccak-224'),
-  keccak256: hash('keccak-256'),
-  keccak384: hash('keccak-384'),
-  keccak512: hash('keccak-512'),
-  murmur3128: hash('murmur3-128'),
-  murmur332: hash('murmur3-32'),
-  addBlake: __webpack_require__(/*! ./blake */ "II8N")
-}
-
-
-/***/ }),
-
 /***/ "8OLg":
 /*!***********************************************************!*\
   !*** ./node_modules/ipfs-http-client/src/bootstrap/rm.js ***!
@@ -3197,36 +3119,6 @@ module.exports = config => ({
 
 /***/ }),
 
-/***/ "BHeG":
-/*!************************************************************************************!*\
-  !*** ./node_modules/ipfs-http-client/node_modules/multihashing-async/src/utils.js ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-const { Buffer } = __webpack_require__(/*! buffer */ "tjlA")
-
-const fromNumberTo32BitBuf = (number) => {
-  const bytes = new Array(4)
-
-  for (let i = 0; i < 4; i++) {
-    bytes[i] = number & 0xff
-    number = number >> 8
-  }
-
-  return Buffer.from(bytes)
-}
-
-module.exports = {
-  fromNumberTo32BitBuf
-}
-
-
-/***/ }),
-
 /***/ "BaTB":
 /*!*********************************************************!*\
   !*** ./node_modules/ipfs-http-client/src/name/index.js ***!
@@ -3258,7 +3150,7 @@ module.exports = config => ({
 
 const CID = __webpack_require__(/*! cids */ "iARh")
 const multicodec = __webpack_require__(/*! multicodec */ "OuWa")
-const multihashing = __webpack_require__(/*! multihashing-async */ "MJDW")
+const multihashing = __webpack_require__(/*! multihashing-async */ "d9A7")
 
 exports = module.exports
 
@@ -3629,6 +3521,36 @@ class Client extends HTTP {
 Client.errorHandler = errorHandler
 
 module.exports = Client
+
+
+/***/ }),
+
+/***/ "CrJr":
+/*!****************************************************************************!*\
+  !*** ./node_modules/ipld-raw/node_modules/multihashing-async/src/utils.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+const { Buffer } = __webpack_require__(/*! buffer */ "tjlA")
+
+const fromNumberTo32BitBuf = (number) => {
+  const bytes = new Array(4)
+
+  for (let i = 0; i < 4; i++) {
+    bytes[i] = number & 0xff
+    number = number >> 8
+  }
+
+  return Buffer.from(bytes)
+}
+
+module.exports = {
+  fromNumberTo32BitBuf
+}
 
 
 /***/ }),
@@ -4294,6 +4216,56 @@ function createDagLinkFromB58EncodedHash (link) {
 
 exports = module.exports
 exports.createDagLinkFromB58EncodedHash = createDagLinkFromB58EncodedHash
+
+
+/***/ }),
+
+/***/ "E8hM":
+/*!****************************************************************************!*\
+  !*** ./node_modules/ipld-raw/node_modules/multihashing-async/src/blake.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+const { Buffer } = __webpack_require__(/*! buffer */ "tjlA")
+const blake = __webpack_require__(/*! blakejs */ "yPZT")
+
+const minB = 0xb201
+const minS = 0xb241
+
+const blake2b = {
+  init: blake.blake2bInit,
+  update: blake.blake2bUpdate,
+  digest: blake.blake2bFinal
+}
+
+const blake2s = {
+  init: blake.blake2sInit,
+  update: blake.blake2sUpdate,
+  digest: blake.blake2sFinal
+}
+
+// Note that although this function doesn't do any asynchronous work, we mark
+// the function as async because it must return a Promise to match the API
+// for other functions that do perform asynchronous work (see sha.browser.js)
+// eslint-disable-next-line
+const makeB2Hash = (size, hf) => async (data) => {
+  const ctx = hf.init(size, null)
+  hf.update(ctx, data)
+  return Buffer.from(hf.digest(ctx))
+}
+
+module.exports = (table) => {
+  for (let i = 0; i < 64; i++) {
+    table[minB + i] = makeB2Hash(i + 1, blake2b)
+  }
+  for (let i = 0; i < 32; i++) {
+    table[minS + i] = makeB2Hash(i + 1, blake2s)
+  }
+}
 
 
 /***/ }),
@@ -5380,56 +5352,6 @@ exports.defaultHashAlg = exports.util.defaultHashAlg
 
 /***/ }),
 
-/***/ "II8N":
-/*!************************************************************************************!*\
-  !*** ./node_modules/ipfs-http-client/node_modules/multihashing-async/src/blake.js ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-const { Buffer } = __webpack_require__(/*! buffer */ "tjlA")
-const blake = __webpack_require__(/*! blakejs */ "yPZT")
-
-const minB = 0xb201
-const minS = 0xb241
-
-const blake2b = {
-  init: blake.blake2bInit,
-  update: blake.blake2bUpdate,
-  digest: blake.blake2bFinal
-}
-
-const blake2s = {
-  init: blake.blake2sInit,
-  update: blake.blake2sUpdate,
-  digest: blake.blake2sFinal
-}
-
-// Note that although this function doesn't do any asynchronous work, we mark
-// the function as async because it must return a Promise to match the API
-// for other functions that do perform asynchronous work (see sha.browser.js)
-// eslint-disable-next-line
-const makeB2Hash = (size, hf) => async (data) => {
-  const ctx = hf.init(size, null)
-  hf.update(ctx, data)
-  return Buffer.from(hf.digest(ctx))
-}
-
-module.exports = (table) => {
-  for (let i = 0; i < 64; i++) {
-    table[minB + i] = makeB2Hash(i + 1, blake2b)
-  }
-  for (let i = 0; i < 32; i++) {
-    table[minS + i] = makeB2Hash(i + 1, blake2s)
-  }
-}
-
-
-/***/ }),
-
 /***/ "IrRL":
 /*!*****************************************!*\
   !*** ./node_modules/borc/src/tagged.js ***!
@@ -5516,6 +5438,58 @@ class Tagged {
 }
 
 module.exports = Tagged
+
+
+/***/ }),
+
+/***/ "IrvS":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/ipld-raw/node_modules/multihashing-async/src/sha.browser.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* eslint-disable require-await */
+
+
+const { Buffer } = __webpack_require__(/*! buffer */ "tjlA")
+const multihash = __webpack_require__(/*! multihashes */ "yP9g")
+
+const crypto = self.crypto || self.msCrypto
+
+const digest = async (data, alg) => {
+  if (typeof self === 'undefined' || (!self.crypto && !self.msCrypto)) {
+    throw new Error(
+      'Please use a browser with webcrypto support and ensure the code has been delivered securely via HTTPS/TLS and run within a Secure Context'
+    )
+  }
+  switch (alg) {
+    case 'sha1':
+      return Buffer.from(await crypto.subtle.digest({ name: 'SHA-1' }, data))
+    case 'sha2-256':
+      return Buffer.from(await crypto.subtle.digest({ name: 'SHA-256' }, data))
+    case 'sha2-512':
+      return Buffer.from(await crypto.subtle.digest({ name: 'SHA-512' }, data))
+    case 'dbl-sha2-256': {
+      const d = await crypto.subtle.digest({ name: 'SHA-256' }, data)
+      return Buffer.from(await crypto.subtle.digest({ name: 'SHA-256' }, d))
+    }
+    default:
+      throw new Error(`${alg} is not a supported algorithm`)
+  }
+}
+
+module.exports = {
+  factory: (alg) => async (data) => {
+    return digest(data, alg)
+  },
+  digest,
+  multihashing: async (buf, alg, length) => {
+    const h = await digest(buf, alg, length)
+    return multihash.encode(h, alg, length)
+  }
+}
 
 
 /***/ }),
@@ -7093,132 +7067,6 @@ module.exports = config => ({
   put: __webpack_require__(/*! ./put */ "HLqp")(config),
   stat: __webpack_require__(/*! ./stat */ "NMoP")(config)
 })
-
-
-/***/ }),
-
-/***/ "MJDW":
-/*!************************************************************************************!*\
-  !*** ./node_modules/ipfs-http-client/node_modules/multihashing-async/src/index.js ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-const { Buffer } = __webpack_require__(/*! buffer */ "tjlA")
-const errcode = __webpack_require__(/*! err-code */ "tqrP")
-const multihash = __webpack_require__(/*! multihashes */ "yP9g")
-const crypto = __webpack_require__(/*! ./crypto */ "84bH")
-
-/**
- * Hash the given `buf` using the algorithm specified by `alg`.
- * @param {Buffer} buf - The value to hash.
- * @param {number|string} alg - The algorithm to use eg 'sha1'
- * @param {number} [length] - Optionally trim the result to this length.
- * @returns {Promise<Buffer>}
- */
-async function Multihashing (buf, alg, length) {
-  const digest = await Multihashing.digest(buf, alg, length)
-  return multihash.encode(digest, alg, length)
-}
-
-/**
- * The `buffer` module for easy use in the browser.
- *
- * @type {Buffer}
- */
-Multihashing.Buffer = Buffer // for browser things
-
-/**
- * Expose multihash itself, to avoid silly double requires.
- */
-Multihashing.multihash = multihash
-
-/**
- * @param {Buffer} buf - The value to hash.
- * @param {number|string} alg - The algorithm to use eg 'sha1'
- * @param {number} [length] - Optionally trim the result to this length.
- * @returns {Promise<Buffer>}
- */
-Multihashing.digest = async (buf, alg, length) => {
-  const hash = Multihashing.createHash(alg)
-  const digest = await hash(buf)
-  return length ? digest.slice(0, length) : digest
-}
-
-/**
- * Creates a function that hashes with the given algorithm
- *
- * @param {string|number} alg - The algorithm to use eg 'sha1'
- *
- * @returns {function} - The hash function corresponding to `alg`
- */
-Multihashing.createHash = function (alg) {
-  if (!alg) {
-    throw errcode(new Error('hash algorithm must be specified'), 'ERR_HASH_ALGORITHM_NOT_SPECIFIED')
-  }
-
-  alg = multihash.coerceCode(alg)
-  if (!Multihashing.functions[alg]) {
-    throw errcode(new Error(`multihash function '${alg}' not yet supported`), 'ERR_HASH_ALGORITHM_NOT_SUPPORTED')
-  }
-
-  return Multihashing.functions[alg]
-}
-
-/**
- * Mapping of multihash codes to their hashing functions.
- * @type {Object}
- */
-Multihashing.functions = {
-  // identity
-  0x00: crypto.identity,
-  // sha1
-  0x11: crypto.sha1,
-  // sha2-256
-  0x12: crypto.sha2256,
-  // sha2-512
-  0x13: crypto.sha2512,
-  // sha3-512
-  0x14: crypto.sha3512,
-  // sha3-384
-  0x15: crypto.sha3384,
-  // sha3-256
-  0x16: crypto.sha3256,
-  // sha3-224
-  0x17: crypto.sha3224,
-  // shake-128
-  0x18: crypto.shake128,
-  // shake-256
-  0x19: crypto.shake256,
-  // keccak-224
-  0x1A: crypto.keccak224,
-  // keccak-256
-  0x1B: crypto.keccak256,
-  // keccak-384
-  0x1C: crypto.keccak384,
-  // keccak-512
-  0x1D: crypto.keccak512,
-  // murmur3-128
-  0x22: crypto.murmur3128,
-  // murmur3-32
-  0x23: crypto.murmur332,
-  // dbl-sha2-256
-  0x56: crypto.dblSha2256
-}
-
-// add blake functions
-crypto.addBlake(Multihashing.functions)
-
-Multihashing.validate = async (buf, hash) => {
-  const newHash = await Multihashing(buf, multihash.decode(hash).name)
-
-  return Buffer.compare(hash, newHash) === 0
-}
-
-module.exports = Multihashing
 
 
 /***/ }),
@@ -9415,7 +9263,7 @@ module.exports = config => ({
 "use strict";
 
 const CID = __webpack_require__(/*! cids */ "iARh")
-const multihashing = __webpack_require__(/*! multihashing-async */ "MJDW")
+const multihashing = __webpack_require__(/*! multihashing-async */ "d9A7")
 const multicodec = __webpack_require__(/*! multicodec */ "OuWa")
 
 // binary resolver
@@ -10381,6 +10229,84 @@ module.exports = (options) => {
       return last(all(input, options))
     }
   })(options)
+}
+
+
+/***/ }),
+
+/***/ "WkWz":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/ipld-raw/node_modules/multihashing-async/src/crypto.js ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+const { Buffer } = __webpack_require__(/*! buffer */ "tjlA")
+const sha3 = __webpack_require__(/*! js-sha3 */ "zNmP")
+const mur = __webpack_require__(/*! murmurhash3js-revisited */ "QWpB")
+const { factory: sha } = __webpack_require__(/*! ./sha */ "IrvS")
+const { fromNumberTo32BitBuf } = __webpack_require__(/*! ./utils */ "CrJr")
+
+// Note that although this function doesn't do any asynchronous work, we mark
+// the function as async because it must return a Promise to match the API
+// for other functions that do perform asynchronous work (see sha.browser.js)
+// eslint-disable-next-line
+const hash = (algorithm) => async (data) => {
+  switch (algorithm) {
+    case 'sha3-224':
+      return Buffer.from(sha3.sha3_224.arrayBuffer(data))
+    case 'sha3-256':
+      return Buffer.from(sha3.sha3_256.arrayBuffer(data))
+    case 'sha3-384':
+      return Buffer.from(sha3.sha3_384.arrayBuffer(data))
+    case 'sha3-512':
+      return Buffer.from(sha3.sha3_512.arrayBuffer(data))
+    case 'shake-128':
+      return Buffer.from(sha3.shake128.create(128).update(data).arrayBuffer())
+    case 'shake-256':
+      return Buffer.from(sha3.shake256.create(256).update(data).arrayBuffer())
+    case 'keccak-224':
+      return Buffer.from(sha3.keccak224.arrayBuffer(data))
+    case 'keccak-256':
+      return Buffer.from(sha3.keccak256.arrayBuffer(data))
+    case 'keccak-384':
+      return Buffer.from(sha3.keccak384.arrayBuffer(data))
+    case 'keccak-512':
+      return Buffer.from(sha3.keccak512.arrayBuffer(data))
+    case 'murmur3-128':
+      return Buffer.from(mur.x64.hash128(data), 'hex')
+    case 'murmur3-32':
+      return fromNumberTo32BitBuf(mur.x86.hash32(data))
+
+    default:
+      throw new TypeError(`${algorithm} is not a supported algorithm`)
+  }
+}
+
+const identity = data => Buffer.from(data)
+
+module.exports = {
+  identity,
+  sha1: sha('sha1'),
+  sha2256: sha('sha2-256'),
+  sha2512: sha('sha2-512'),
+  dblSha2256: sha('dbl-sha2-256'),
+  sha3224: hash('sha3-224'),
+  sha3256: hash('sha3-256'),
+  sha3384: hash('sha3-384'),
+  sha3512: hash('sha3-512'),
+  shake128: hash('shake-128'),
+  shake256: hash('shake-256'),
+  keccak224: hash('keccak-224'),
+  keccak256: hash('keccak-256'),
+  keccak384: hash('keccak-384'),
+  keccak512: hash('keccak-512'),
+  murmur3128: hash('murmur3-128'),
+  murmur332: hash('murmur3-32'),
+  addBlake: __webpack_require__(/*! ./blake */ "E8hM")
 }
 
 
@@ -12191,6 +12117,132 @@ module.exports = obj => {
     return camelObj
   }, {})
 }
+
+
+/***/ }),
+
+/***/ "d9A7":
+/*!****************************************************************************!*\
+  !*** ./node_modules/ipld-raw/node_modules/multihashing-async/src/index.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+const { Buffer } = __webpack_require__(/*! buffer */ "tjlA")
+const errcode = __webpack_require__(/*! err-code */ "tqrP")
+const multihash = __webpack_require__(/*! multihashes */ "yP9g")
+const crypto = __webpack_require__(/*! ./crypto */ "WkWz")
+
+/**
+ * Hash the given `buf` using the algorithm specified by `alg`.
+ * @param {Buffer} buf - The value to hash.
+ * @param {number|string} alg - The algorithm to use eg 'sha1'
+ * @param {number} [length] - Optionally trim the result to this length.
+ * @returns {Promise<Buffer>}
+ */
+async function Multihashing (buf, alg, length) {
+  const digest = await Multihashing.digest(buf, alg, length)
+  return multihash.encode(digest, alg, length)
+}
+
+/**
+ * The `buffer` module for easy use in the browser.
+ *
+ * @type {Buffer}
+ */
+Multihashing.Buffer = Buffer // for browser things
+
+/**
+ * Expose multihash itself, to avoid silly double requires.
+ */
+Multihashing.multihash = multihash
+
+/**
+ * @param {Buffer} buf - The value to hash.
+ * @param {number|string} alg - The algorithm to use eg 'sha1'
+ * @param {number} [length] - Optionally trim the result to this length.
+ * @returns {Promise<Buffer>}
+ */
+Multihashing.digest = async (buf, alg, length) => {
+  const hash = Multihashing.createHash(alg)
+  const digest = await hash(buf)
+  return length ? digest.slice(0, length) : digest
+}
+
+/**
+ * Creates a function that hashes with the given algorithm
+ *
+ * @param {string|number} alg - The algorithm to use eg 'sha1'
+ *
+ * @returns {function} - The hash function corresponding to `alg`
+ */
+Multihashing.createHash = function (alg) {
+  if (!alg) {
+    throw errcode(new Error('hash algorithm must be specified'), 'ERR_HASH_ALGORITHM_NOT_SPECIFIED')
+  }
+
+  alg = multihash.coerceCode(alg)
+  if (!Multihashing.functions[alg]) {
+    throw errcode(new Error(`multihash function '${alg}' not yet supported`), 'ERR_HASH_ALGORITHM_NOT_SUPPORTED')
+  }
+
+  return Multihashing.functions[alg]
+}
+
+/**
+ * Mapping of multihash codes to their hashing functions.
+ * @type {Object}
+ */
+Multihashing.functions = {
+  // identity
+  0x00: crypto.identity,
+  // sha1
+  0x11: crypto.sha1,
+  // sha2-256
+  0x12: crypto.sha2256,
+  // sha2-512
+  0x13: crypto.sha2512,
+  // sha3-512
+  0x14: crypto.sha3512,
+  // sha3-384
+  0x15: crypto.sha3384,
+  // sha3-256
+  0x16: crypto.sha3256,
+  // sha3-224
+  0x17: crypto.sha3224,
+  // shake-128
+  0x18: crypto.shake128,
+  // shake-256
+  0x19: crypto.shake256,
+  // keccak-224
+  0x1A: crypto.keccak224,
+  // keccak-256
+  0x1B: crypto.keccak256,
+  // keccak-384
+  0x1C: crypto.keccak384,
+  // keccak-512
+  0x1D: crypto.keccak512,
+  // murmur3-128
+  0x22: crypto.murmur3128,
+  // murmur3-32
+  0x23: crypto.murmur332,
+  // dbl-sha2-256
+  0x56: crypto.dblSha2256
+}
+
+// add blake functions
+crypto.addBlake(Multihashing.functions)
+
+Multihashing.validate = async (buf, hash) => {
+  const newHash = await Multihashing(buf, multihash.decode(hash).name)
+
+  return Buffer.compare(hash, newHash) === 0
+}
+
+module.exports = Multihashing
 
 
 /***/ }),
@@ -21808,58 +21860,6 @@ module.exports = withIs(Block, { className: 'Block', symbolName: '@ipld/js-ipld-
 
 /***/ }),
 
-/***/ "rw1i":
-/*!******************************************************************************************!*\
-  !*** ./node_modules/ipfs-http-client/node_modules/multihashing-async/src/sha.browser.js ***!
-  \******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* eslint-disable require-await */
-
-
-const { Buffer } = __webpack_require__(/*! buffer */ "tjlA")
-const multihash = __webpack_require__(/*! multihashes */ "yP9g")
-
-const crypto = self.crypto || self.msCrypto
-
-const digest = async (data, alg) => {
-  if (typeof self === 'undefined' || (!self.crypto && !self.msCrypto)) {
-    throw new Error(
-      'Please use a browser with webcrypto support and ensure the code has been delivered securely via HTTPS/TLS and run within a Secure Context'
-    )
-  }
-  switch (alg) {
-    case 'sha1':
-      return Buffer.from(await crypto.subtle.digest({ name: 'SHA-1' }, data))
-    case 'sha2-256':
-      return Buffer.from(await crypto.subtle.digest({ name: 'SHA-256' }, data))
-    case 'sha2-512':
-      return Buffer.from(await crypto.subtle.digest({ name: 'SHA-512' }, data))
-    case 'dbl-sha2-256': {
-      const d = await crypto.subtle.digest({ name: 'SHA-256' }, data)
-      return Buffer.from(await crypto.subtle.digest({ name: 'SHA-256' }, d))
-    }
-    default:
-      throw new Error(`${alg} is not a supported algorithm`)
-  }
-}
-
-module.exports = {
-  factory: (alg) => async (data) => {
-    return digest(data, alg)
-  },
-  digest,
-  multihashing: async (buf, alg, length) => {
-    const h = await digest(buf, alg, length)
-    return multihash.encode(h, alg, length)
-  }
-}
-
-
-/***/ }),
-
 /***/ "sk5w":
 /*!*****************************************************!*\
   !*** ./src/app/pages/mint-card/mint-card.page.scss ***!
@@ -23363,7 +23363,7 @@ module.exports = configure(api => {
 const cbor = __webpack_require__(/*! borc */ "AREZ")
 const { Buffer } = __webpack_require__(/*! buffer */ "tjlA")
 const multicodec = __webpack_require__(/*! multicodec */ "OuWa")
-const multihashing = __webpack_require__(/*! multihashing-async */ "MJDW")
+const multihashing = __webpack_require__(/*! multihashing-async */ "d9A7")
 const CID = __webpack_require__(/*! cids */ "iARh")
 const isCircular = __webpack_require__(/*! is-circular */ "+k5y")
 

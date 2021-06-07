@@ -3958,138 +3958,6 @@
     },
 
     /***/
-    "84bH":
-    /*!*************************************************************************************!*\
-      !*** ./node_modules/ipfs-http-client/node_modules/multihashing-async/src/crypto.js ***!
-      \*************************************************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function bH(module, exports, __webpack_require__) {
-      "use strict";
-
-      var _webpack_require__11 = __webpack_require__(
-      /*! buffer */
-      "tjlA"),
-          Buffer = _webpack_require__11.Buffer;
-
-      var sha3 = __webpack_require__(
-      /*! js-sha3 */
-      "zNmP");
-
-      var mur = __webpack_require__(
-      /*! murmurhash3js-revisited */
-      "QWpB");
-
-      var _webpack_require__12 = __webpack_require__(
-      /*! ./sha */
-      "rw1i"),
-          sha = _webpack_require__12.factory;
-
-      var _webpack_require__13 = __webpack_require__(
-      /*! ./utils */
-      "BHeG"),
-          fromNumberTo32BitBuf = _webpack_require__13.fromNumberTo32BitBuf; // Note that although this function doesn't do any asynchronous work, we mark
-      // the function as async because it must return a Promise to match the API
-      // for other functions that do perform asynchronous work (see sha.browser.js)
-      // eslint-disable-next-line
-
-
-      var hash = function hash(algorithm) {
-        return /*#__PURE__*/function () {
-          var _ref23 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee16(data) {
-            return regeneratorRuntime.wrap(function _callee16$(_context17) {
-              while (1) {
-                switch (_context17.prev = _context17.next) {
-                  case 0:
-                    _context17.t0 = algorithm;
-                    _context17.next = _context17.t0 === 'sha3-224' ? 3 : _context17.t0 === 'sha3-256' ? 4 : _context17.t0 === 'sha3-384' ? 5 : _context17.t0 === 'sha3-512' ? 6 : _context17.t0 === 'shake-128' ? 7 : _context17.t0 === 'shake-256' ? 8 : _context17.t0 === 'keccak-224' ? 9 : _context17.t0 === 'keccak-256' ? 10 : _context17.t0 === 'keccak-384' ? 11 : _context17.t0 === 'keccak-512' ? 12 : _context17.t0 === 'murmur3-128' ? 13 : _context17.t0 === 'murmur3-32' ? 14 : 15;
-                    break;
-
-                  case 3:
-                    return _context17.abrupt("return", Buffer.from(sha3.sha3_224.arrayBuffer(data)));
-
-                  case 4:
-                    return _context17.abrupt("return", Buffer.from(sha3.sha3_256.arrayBuffer(data)));
-
-                  case 5:
-                    return _context17.abrupt("return", Buffer.from(sha3.sha3_384.arrayBuffer(data)));
-
-                  case 6:
-                    return _context17.abrupt("return", Buffer.from(sha3.sha3_512.arrayBuffer(data)));
-
-                  case 7:
-                    return _context17.abrupt("return", Buffer.from(sha3.shake128.create(128).update(data).arrayBuffer()));
-
-                  case 8:
-                    return _context17.abrupt("return", Buffer.from(sha3.shake256.create(256).update(data).arrayBuffer()));
-
-                  case 9:
-                    return _context17.abrupt("return", Buffer.from(sha3.keccak224.arrayBuffer(data)));
-
-                  case 10:
-                    return _context17.abrupt("return", Buffer.from(sha3.keccak256.arrayBuffer(data)));
-
-                  case 11:
-                    return _context17.abrupt("return", Buffer.from(sha3.keccak384.arrayBuffer(data)));
-
-                  case 12:
-                    return _context17.abrupt("return", Buffer.from(sha3.keccak512.arrayBuffer(data)));
-
-                  case 13:
-                    return _context17.abrupt("return", Buffer.from(mur.x64.hash128(data), 'hex'));
-
-                  case 14:
-                    return _context17.abrupt("return", fromNumberTo32BitBuf(mur.x86.hash32(data)));
-
-                  case 15:
-                    throw new TypeError("".concat(algorithm, " is not a supported algorithm"));
-
-                  case 16:
-                  case "end":
-                    return _context17.stop();
-                }
-              }
-            }, _callee16);
-          }));
-
-          return function (_x40) {
-            return _ref23.apply(this, arguments);
-          };
-        }();
-      };
-
-      var identity = function identity(data) {
-        return Buffer.from(data);
-      };
-
-      module.exports = {
-        identity: identity,
-        sha1: sha('sha1'),
-        sha2256: sha('sha2-256'),
-        sha2512: sha('sha2-512'),
-        dblSha2256: sha('dbl-sha2-256'),
-        sha3224: hash('sha3-224'),
-        sha3256: hash('sha3-256'),
-        sha3384: hash('sha3-384'),
-        sha3512: hash('sha3-512'),
-        shake128: hash('shake-128'),
-        shake256: hash('shake-256'),
-        keccak224: hash('keccak-224'),
-        keccak256: hash('keccak-256'),
-        keccak384: hash('keccak-384'),
-        keccak512: hash('keccak-512'),
-        murmur3128: hash('murmur3-128'),
-        murmur332: hash('murmur3-32'),
-        addBlake: __webpack_require__(
-        /*! ./blake */
-        "II8N")
-      };
-      /***/
-    },
-
-    /***/
     "8OLg":
     /*!***********************************************************!*\
       !*** ./node_modules/ipfs-http-client/src/bootstrap/rm.js ***!
@@ -4115,22 +3983,22 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref24 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee17(addr) {
+          var _ref23 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee16(addr) {
             var options,
                 res,
-                _args18 = arguments;
-            return regeneratorRuntime.wrap(function _callee17$(_context18) {
+                _args17 = arguments;
+            return regeneratorRuntime.wrap(function _callee16$(_context17) {
               while (1) {
-                switch (_context18.prev = _context18.next) {
+                switch (_context17.prev = _context17.next) {
                   case 0:
-                    options = _args18.length > 1 && _args18[1] !== undefined ? _args18[1] : {};
+                    options = _args17.length > 1 && _args17[1] !== undefined ? _args17[1] : {};
 
                     if (addr && typeof addr === 'object' && !Multiaddr.isMultiaddr(addr)) {
                       options = addr;
                       addr = null;
                     }
 
-                    _context18.next = 4;
+                    _context17.next = 4;
                     return api.post('bootstrap/rm', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -4141,19 +4009,19 @@
                     });
 
                   case 4:
-                    res = _context18.sent;
-                    return _context18.abrupt("return", res.json());
+                    res = _context17.sent;
+                    return _context17.abrupt("return", res.json());
 
                   case 6:
                   case "end":
-                    return _context18.stop();
+                    return _context17.stop();
                 }
               }
-            }, _callee17);
+            }, _callee16);
           }));
 
-          return function (_x41) {
-            return _ref24.apply(this, arguments);
+          return function (_x40) {
+            return _ref23.apply(this, arguments);
           };
         }();
       });
@@ -4233,10 +4101,10 @@
       /*! signed-varint */
       "7HbT");
 
-      var _webpack_require__14 = __webpack_require__(
+      var _webpack_require__11 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__14.Buffer;
+          Buffer = _webpack_require__11.Buffer;
 
       var encoder = function encoder(type, encode, decode, encodingLength) {
         encode.bytes = decode.bytes = 0;
@@ -4541,20 +4409,20 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref25 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee18(addrs) {
+          var _ref24 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee17(addrs) {
             var options,
                 res,
                 _yield$res$json2,
                 Strings,
-                _args19 = arguments;
+                _args18 = arguments;
 
-            return regeneratorRuntime.wrap(function _callee18$(_context19) {
+            return regeneratorRuntime.wrap(function _callee17$(_context18) {
               while (1) {
-                switch (_context19.prev = _context19.next) {
+                switch (_context18.prev = _context18.next) {
                   case 0:
-                    options = _args19.length > 1 && _args19[1] !== undefined ? _args19[1] : {};
+                    options = _args18.length > 1 && _args18[1] !== undefined ? _args18[1] : {};
                     addrs = Array.isArray(addrs) ? addrs : [addrs];
-                    _context19.next = 4;
+                    _context18.next = 4;
                     return api.post('swarm/connect', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -4567,25 +4435,25 @@
                     });
 
                   case 4:
-                    res = _context19.sent;
-                    _context19.next = 7;
+                    res = _context18.sent;
+                    _context18.next = 7;
                     return res.json();
 
                   case 7:
-                    _yield$res$json2 = _context19.sent;
+                    _yield$res$json2 = _context18.sent;
                     Strings = _yield$res$json2.Strings;
-                    return _context19.abrupt("return", Strings || []);
+                    return _context18.abrupt("return", Strings || []);
 
                   case 10:
                   case "end":
-                    return _context19.stop();
+                    return _context18.stop();
                 }
               }
-            }, _callee18);
+            }, _callee17);
           }));
 
-          return function (_x42) {
-            return _ref25.apply(this, arguments);
+          return function (_x41) {
+            return _ref24.apply(this, arguments);
           };
         }();
       });
@@ -4614,17 +4482,17 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref26 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee19(profile) {
+          var _ref25 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee18(profile) {
             var options,
                 res,
                 data,
-                _args20 = arguments;
-            return regeneratorRuntime.wrap(function _callee19$(_context20) {
+                _args19 = arguments;
+            return regeneratorRuntime.wrap(function _callee18$(_context19) {
               while (1) {
-                switch (_context20.prev = _context20.next) {
+                switch (_context19.prev = _context19.next) {
                   case 0:
-                    options = _args20.length > 1 && _args20[1] !== undefined ? _args20[1] : {};
-                    _context20.next = 3;
+                    options = _args19.length > 1 && _args19[1] !== undefined ? _args19[1] : {};
+                    _context19.next = 3;
                     return api.post('config/profile/apply', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -4635,27 +4503,27 @@
                     });
 
                   case 3:
-                    res = _context20.sent;
-                    _context20.next = 6;
+                    res = _context19.sent;
+                    _context19.next = 6;
                     return res.json();
 
                   case 6:
-                    data = _context20.sent;
-                    return _context20.abrupt("return", {
+                    data = _context19.sent;
+                    return _context19.abrupt("return", {
                       original: data.OldCfg,
                       updated: data.NewCfg
                     });
 
                   case 8:
                   case "end":
-                    return _context20.stop();
+                    return _context19.stop();
                 }
               }
-            }, _callee19);
+            }, _callee18);
           }));
 
-          return function (_x43) {
-            return _ref26.apply(this, arguments);
+          return function (_x42) {
+            return _ref25.apply(this, arguments);
           };
         }();
       });
@@ -4720,10 +4588,10 @@
       /*! class-is */
       "7BLb");
 
-      var _webpack_require__15 = __webpack_require__(
+      var _webpack_require__12 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__15.Buffer;
+          Buffer = _webpack_require__12.Buffer;
 
       var sortLinks = __webpack_require__(
       /*! ./sortLinks */
@@ -4733,10 +4601,10 @@
       /*! ../dag-link/dagLink */
       "i5gV");
 
-      var _webpack_require__16 = __webpack_require__(
+      var _webpack_require__13 = __webpack_require__(
       /*! ../serialize.js */
       "fAHA"),
-          serializeDAGNode = _webpack_require__16.serializeDAGNode;
+          serializeDAGNode = _webpack_require__13.serializeDAGNode;
 
       var _toDAGLink = __webpack_require__(
       /*! ./toDagLink */
@@ -4920,40 +4788,6 @@
     },
 
     /***/
-    "BHeG":
-    /*!************************************************************************************!*\
-      !*** ./node_modules/ipfs-http-client/node_modules/multihashing-async/src/utils.js ***!
-      \************************************************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function BHeG(module, exports, __webpack_require__) {
-      "use strict";
-
-      var _webpack_require__17 = __webpack_require__(
-      /*! buffer */
-      "tjlA"),
-          Buffer = _webpack_require__17.Buffer;
-
-      var fromNumberTo32BitBuf = function fromNumberTo32BitBuf(number) {
-        var bytes = new Array(4);
-
-        for (var i = 0; i < 4; i++) {
-          bytes[i] = number & 0xff;
-          number = number >> 8;
-        }
-
-        return Buffer.from(bytes);
-      };
-
-      module.exports = {
-        fromNumberTo32BitBuf: fromNumberTo32BitBuf
-      };
-      /***/
-    },
-
-    /***/
     "BaTB":
     /*!*********************************************************!*\
       !*** ./node_modules/ipfs-http-client/src/name/index.js ***!
@@ -5004,7 +4838,7 @@
 
       var multihashing = __webpack_require__(
       /*! multihashing-async */
-      "MJDW");
+      "d9A7");
 
       exports = module.exports;
       exports.codec = multicodec.DAG_PB;
@@ -5020,36 +4854,36 @@
        */
 
       var cid = /*#__PURE__*/function () {
-        var _ref27 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee20(binaryBlob, userOptions) {
+        var _ref26 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee19(binaryBlob, userOptions) {
           var defaultOptions, options, multihash, codecName, cid;
-          return regeneratorRuntime.wrap(function _callee20$(_context21) {
+          return regeneratorRuntime.wrap(function _callee19$(_context20) {
             while (1) {
-              switch (_context21.prev = _context21.next) {
+              switch (_context20.prev = _context20.next) {
                 case 0:
                   defaultOptions = {
                     cidVersion: 1,
                     hashAlg: exports.defaultHashAlg
                   };
                   options = Object.assign(defaultOptions, userOptions);
-                  _context21.next = 4;
+                  _context20.next = 4;
                   return multihashing(binaryBlob, options.hashAlg);
 
                 case 4:
-                  multihash = _context21.sent;
+                  multihash = _context20.sent;
                   codecName = multicodec.print[exports.codec];
                   cid = new CID(options.cidVersion, codecName, multihash);
-                  return _context21.abrupt("return", cid);
+                  return _context20.abrupt("return", cid);
 
                 case 8:
                 case "end":
-                  return _context21.stop();
+                  return _context20.stop();
               }
             }
-          }, _callee20);
+          }, _callee19);
         }));
 
-        return function cid(_x44, _x45) {
-          return _ref27.apply(this, arguments);
+        return function cid(_x43, _x44) {
+          return _ref26.apply(this, arguments);
         };
       }();
 
@@ -5112,10 +4946,10 @@
     function BrGM(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__18 = __webpack_require__(
+      var _webpack_require__14 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__18.Buffer;
+          Buffer = _webpack_require__14.Buffer;
 
       var toIterable = __webpack_require__(
       /*! stream-to-it/source */
@@ -5131,7 +4965,7 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _read = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee21(path) {
+          var _read = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee20(path) {
             var options,
                 res,
                 _iteratorNormalCompletion7,
@@ -5141,14 +4975,14 @@
                 _step7,
                 _value7,
                 chunk,
-                _args22 = arguments;
+                _args21 = arguments;
 
-            return regeneratorRuntime.wrap(function _callee21$(_context22) {
+            return regeneratorRuntime.wrap(function _callee20$(_context21) {
               while (1) {
-                switch (_context22.prev = _context22.next) {
+                switch (_context21.prev = _context21.next) {
                   case 0:
-                    options = _args22.length > 1 && _args22[1] !== undefined ? _args22[1] : {};
-                    _context22.next = 3;
+                    options = _args21.length > 1 && _args21[1] !== undefined ? _args21[1] : {};
+                    _context21.next = 3;
                     return _awaitAsyncGenerator(api.post('files/read', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -5160,83 +4994,83 @@
                     }));
 
                   case 3:
-                    res = _context22.sent;
+                    res = _context21.sent;
                     _iteratorNormalCompletion7 = true;
                     _didIteratorError7 = false;
-                    _context22.prev = 6;
+                    _context21.prev = 6;
                     _iterator7 = _asyncIterator(toIterable(res.body));
 
                   case 8:
-                    _context22.next = 10;
+                    _context21.next = 10;
                     return _awaitAsyncGenerator(_iterator7.next());
 
                   case 10:
-                    _step7 = _context22.sent;
+                    _step7 = _context21.sent;
                     _iteratorNormalCompletion7 = _step7.done;
-                    _context22.next = 14;
+                    _context21.next = 14;
                     return _awaitAsyncGenerator(_step7.value);
 
                   case 14:
-                    _value7 = _context22.sent;
+                    _value7 = _context21.sent;
 
                     if (_iteratorNormalCompletion7) {
-                      _context22.next = 22;
+                      _context21.next = 22;
                       break;
                     }
 
                     chunk = _value7;
-                    _context22.next = 19;
+                    _context21.next = 19;
                     return Buffer.from(chunk);
 
                   case 19:
                     _iteratorNormalCompletion7 = true;
-                    _context22.next = 8;
+                    _context21.next = 8;
                     break;
 
                   case 22:
-                    _context22.next = 28;
+                    _context21.next = 28;
                     break;
 
                   case 24:
-                    _context22.prev = 24;
-                    _context22.t0 = _context22["catch"](6);
+                    _context21.prev = 24;
+                    _context21.t0 = _context21["catch"](6);
                     _didIteratorError7 = true;
-                    _iteratorError7 = _context22.t0;
+                    _iteratorError7 = _context21.t0;
 
                   case 28:
-                    _context22.prev = 28;
-                    _context22.prev = 29;
+                    _context21.prev = 28;
+                    _context21.prev = 29;
 
                     if (!(!_iteratorNormalCompletion7 && _iterator7["return"] != null)) {
-                      _context22.next = 33;
+                      _context21.next = 33;
                       break;
                     }
 
-                    _context22.next = 33;
+                    _context21.next = 33;
                     return _awaitAsyncGenerator(_iterator7["return"]());
 
                   case 33:
-                    _context22.prev = 33;
+                    _context21.prev = 33;
 
                     if (!_didIteratorError7) {
-                      _context22.next = 36;
+                      _context21.next = 36;
                       break;
                     }
 
                     throw _iteratorError7;
 
                   case 36:
-                    return _context22.finish(33);
+                    return _context21.finish(33);
 
                   case 37:
-                    return _context22.finish(28);
+                    return _context21.finish(28);
 
                   case 38:
                   case "end":
-                    return _context22.stop();
+                    return _context21.stop();
                 }
               }
-            }, _callee21, null, [[6, 24, 28, 38], [29,, 33, 37]]);
+            }, _callee20, null, [[6, 24, 28, 38], [29,, 33, 37]]);
           }));
 
           function read(_x4) {
@@ -5270,16 +5104,16 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee22() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee21() {
           var options,
               res,
-              _args23 = arguments;
-          return regeneratorRuntime.wrap(function _callee22$(_context23) {
+              _args22 = arguments;
+          return regeneratorRuntime.wrap(function _callee21$(_context22) {
             while (1) {
-              switch (_context23.prev = _context23.next) {
+              switch (_context22.prev = _context22.next) {
                 case 0:
-                  options = _args23.length > 0 && _args23[0] !== undefined ? _args23[0] : {};
-                  _context23.next = 3;
+                  options = _args22.length > 0 && _args22[0] !== undefined ? _args22[0] : {};
+                  _context22.next = 3;
                   return api.post('bootstrap/list', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -5288,15 +5122,15 @@
                   });
 
                 case 3:
-                  res = _context23.sent;
-                  return _context23.abrupt("return", res.json());
+                  res = _context22.sent;
+                  return _context22.abrupt("return", res.json());
 
                 case 5:
                 case "end":
-                  return _context23.stop();
+                  return _context22.stop();
               }
             }
-          }, _callee22);
+          }, _callee21);
         }));
       });
       /***/
@@ -5327,16 +5161,16 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee23() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee22() {
           var options,
               res,
-              _args24 = arguments;
-          return regeneratorRuntime.wrap(function _callee23$(_context24) {
+              _args23 = arguments;
+          return regeneratorRuntime.wrap(function _callee22$(_context23) {
             while (1) {
-              switch (_context24.prev = _context24.next) {
+              switch (_context23.prev = _context23.next) {
                 case 0:
-                  options = _args24.length > 0 && _args24[0] !== undefined ? _args24[0] : {};
-                  _context24.next = 3;
+                  options = _args23.length > 0 && _args23[0] !== undefined ? _args23[0] : {};
+                  _context23.next = 3;
                   return api.post('swarm/peers', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -5345,12 +5179,12 @@
                   });
 
                 case 3:
-                  _context24.next = 5;
-                  return _context24.sent.json();
+                  _context23.next = 5;
+                  return _context23.sent.json();
 
                 case 5:
-                  res = _context24.sent;
-                  return _context24.abrupt("return", (res.Peers || []).map(function (peer) {
+                  res = _context23.sent;
+                  return _context23.abrupt("return", (res.Peers || []).map(function (peer) {
                     var info = {};
 
                     try {
@@ -5382,10 +5216,10 @@
 
                 case 7:
                 case "end":
-                  return _context24.stop();
+                  return _context23.stop();
               }
             }
-          }, _callee23);
+          }, _callee22);
         }));
       });
       /***/
@@ -5436,16 +5270,16 @@
       /*! multiaddr-to-uri */
       "/w41");
 
-      var _webpack_require__19 = __webpack_require__(
+      var _webpack_require__15 = __webpack_require__(
       /*! ipfs-utils/src/env */
       "KYSR"),
-          isBrowser = _webpack_require__19.isBrowser,
-          isWebWorker = _webpack_require__19.isWebWorker;
+          isBrowser = _webpack_require__15.isBrowser,
+          isWebWorker = _webpack_require__15.isWebWorker;
 
-      var _webpack_require__20 = __webpack_require__(
+      var _webpack_require__16 = __webpack_require__(
       /*! iso-url */
       "Fq86"),
-          URL = _webpack_require__20.URL;
+          URL = _webpack_require__16.URL;
 
       var parseDuration = __webpack_require__(
       /*! parse-duration */
@@ -5511,46 +5345,46 @@
       };
 
       var errorHandler = /*#__PURE__*/function () {
-        var _ref30 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee24(response) {
+        var _ref29 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee23(response) {
           var msg, data, error;
-          return regeneratorRuntime.wrap(function _callee24$(_context25) {
+          return regeneratorRuntime.wrap(function _callee23$(_context24) {
             while (1) {
-              switch (_context25.prev = _context25.next) {
+              switch (_context24.prev = _context24.next) {
                 case 0:
-                  _context25.prev = 0;
+                  _context24.prev = 0;
 
                   if (!(response.headers.get('Content-Type') || '').startsWith('application/json')) {
-                    _context25.next = 9;
+                    _context24.next = 9;
                     break;
                   }
 
-                  _context25.next = 4;
+                  _context24.next = 4;
                   return response.json();
 
                 case 4:
-                  data = _context25.sent;
+                  data = _context24.sent;
                   log(data);
                   msg = data.Message || data.message;
-                  _context25.next = 12;
+                  _context24.next = 12;
                   break;
 
                 case 9:
-                  _context25.next = 11;
+                  _context24.next = 11;
                   return response.text();
 
                 case 11:
-                  msg = _context25.sent;
+                  msg = _context24.sent;
 
                 case 12:
-                  _context25.next = 18;
+                  _context24.next = 18;
                   break;
 
                 case 14:
-                  _context25.prev = 14;
-                  _context25.t0 = _context25["catch"](0);
-                  log('Failed to parse error response', _context25.t0); // Failed to extract/parse error message from response
+                  _context24.prev = 14;
+                  _context24.t0 = _context24["catch"](0);
+                  log('Failed to parse error response', _context24.t0); // Failed to extract/parse error message from response
 
-                  msg = _context25.t0.message;
+                  msg = _context24.t0.message;
 
                 case 18:
                   error = new HTTP.HTTPError(response); // This is what go-ipfs returns where there's a timeout
@@ -5568,14 +5402,14 @@
 
                 case 22:
                 case "end":
-                  return _context25.stop();
+                  return _context24.stop();
               }
             }
-          }, _callee24, null, [[0, 14]]);
+          }, _callee23, null, [[0, 14]]);
         }));
 
-        return function errorHandler(_x46) {
-          return _ref30.apply(this, arguments);
+        return function errorHandler(_x45) {
+          return _ref29.apply(this, arguments);
         };
       }();
 
@@ -5680,6 +5514,40 @@
     },
 
     /***/
+    "CrJr":
+    /*!****************************************************************************!*\
+      !*** ./node_modules/ipld-raw/node_modules/multihashing-async/src/utils.js ***!
+      \****************************************************************************/
+
+    /*! no static exports found */
+
+    /***/
+    function CrJr(module, exports, __webpack_require__) {
+      "use strict";
+
+      var _webpack_require__17 = __webpack_require__(
+      /*! buffer */
+      "tjlA"),
+          Buffer = _webpack_require__17.Buffer;
+
+      var fromNumberTo32BitBuf = function fromNumberTo32BitBuf(number) {
+        var bytes = new Array(4);
+
+        for (var i = 0; i < 4; i++) {
+          bytes[i] = number & 0xff;
+          number = number >> 8;
+        }
+
+        return Buffer.from(bytes);
+      };
+
+      module.exports = {
+        fromNumberTo32BitBuf: fromNumberTo32BitBuf
+      };
+      /***/
+    },
+
+    /***/
     "CuFS":
     /*!*********************************************************!*\
       !*** ./node_modules/ipfs-http-client/src/refs/local.js ***!
@@ -5705,16 +5573,16 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _refsLocal = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee25() {
+          var _refsLocal = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee24() {
             var options,
                 res,
-                _args26 = arguments;
-            return regeneratorRuntime.wrap(function _callee25$(_context26) {
+                _args25 = arguments;
+            return regeneratorRuntime.wrap(function _callee24$(_context25) {
               while (1) {
-                switch (_context26.prev = _context26.next) {
+                switch (_context25.prev = _context25.next) {
                   case 0:
-                    options = _args26.length > 0 && _args26[0] !== undefined ? _args26[0] : {};
-                    _context26.next = 3;
+                    options = _args25.length > 0 && _args25[0] !== undefined ? _args25[0] : {};
+                    _context25.next = 3;
                     return _awaitAsyncGenerator(api.post('refs/local', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -5724,15 +5592,15 @@
                     }));
 
                   case 3:
-                    res = _context26.sent;
-                    return _context26.delegateYield(_asyncGeneratorDelegate(_asyncIterator(res.ndjson()), _awaitAsyncGenerator), "t0", 5);
+                    res = _context25.sent;
+                    return _context25.delegateYield(_asyncGeneratorDelegate(_asyncIterator(res.ndjson()), _awaitAsyncGenerator), "t0", 5);
 
                   case 5:
                   case "end":
-                    return _context26.stop();
+                    return _context25.stop();
                 }
               }
-            }, _callee25);
+            }, _callee24);
           }));
 
           function refsLocal() {
@@ -5755,10 +5623,10 @@
 
     /***/
     function D13v(module, exports, __webpack_require__) {
-      var _webpack_require__21 = __webpack_require__(
+      var _webpack_require__18 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__21.Buffer;
+          Buffer = _webpack_require__18.Buffer;
 
       var BufferList = __webpack_require__(
       /*! bl/BufferList */
@@ -6228,17 +6096,17 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref31 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee26(name) {
+          var _ref30 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee25(name) {
             var options,
                 res,
                 data,
-                _args27 = arguments;
-            return regeneratorRuntime.wrap(function _callee26$(_context27) {
+                _args26 = arguments;
+            return regeneratorRuntime.wrap(function _callee25$(_context26) {
               while (1) {
-                switch (_context27.prev = _context27.next) {
+                switch (_context26.prev = _context26.next) {
                   case 0:
-                    options = _args27.length > 1 && _args27[1] !== undefined ? _args27[1] : {};
-                    _context27.next = 3;
+                    options = _args26.length > 1 && _args26[1] !== undefined ? _args26[1] : {};
+                    _context26.next = 3;
                     return api.post('key/rm', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -6249,24 +6117,24 @@
                     });
 
                   case 3:
-                    res = _context27.sent;
-                    _context27.next = 6;
+                    res = _context26.sent;
+                    _context26.next = 6;
                     return res.json();
 
                   case 6:
-                    data = _context27.sent;
-                    return _context27.abrupt("return", toCamel(data.Keys[0]));
+                    data = _context26.sent;
+                    return _context26.abrupt("return", toCamel(data.Keys[0]));
 
                   case 8:
                   case "end":
-                    return _context27.stop();
+                    return _context26.stop();
                 }
               }
-            }, _callee26);
+            }, _callee25);
           }));
 
-          return function (_x47) {
-            return _ref31.apply(this, arguments);
+          return function (_x46) {
+            return _ref30.apply(this, arguments);
           };
         }();
       });
@@ -6285,10 +6153,10 @@
     function Dbhl(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__22 = __webpack_require__(
+      var _webpack_require__19 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__22.Buffer;
+          Buffer = _webpack_require__19.Buffer;
 
       var CID = __webpack_require__(
       /*! cids */
@@ -6304,17 +6172,17 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _data = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee27(cid) {
+          var _data = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee26(cid) {
             var options,
                 res,
                 data,
-                _args28 = arguments;
-            return regeneratorRuntime.wrap(function _callee27$(_context28) {
+                _args27 = arguments;
+            return regeneratorRuntime.wrap(function _callee26$(_context27) {
               while (1) {
-                switch (_context28.prev = _context28.next) {
+                switch (_context27.prev = _context27.next) {
                   case 0:
-                    options = _args28.length > 1 && _args28[1] !== undefined ? _args28[1] : {};
-                    _context28.next = 3;
+                    options = _args27.length > 1 && _args27[1] !== undefined ? _args27[1] : {};
+                    _context27.next = 3;
                     return api.post('object/data', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -6325,23 +6193,23 @@
                     });
 
                   case 3:
-                    res = _context28.sent;
-                    _context28.next = 6;
+                    res = _context27.sent;
+                    _context27.next = 6;
                     return res.arrayBuffer();
 
                   case 6:
-                    data = _context28.sent;
-                    return _context28.abrupt("return", Buffer.from(data));
+                    data = _context27.sent;
+                    return _context27.abrupt("return", Buffer.from(data));
 
                   case 8:
                   case "end":
-                    return _context28.stop();
+                    return _context27.stop();
                 }
               }
-            }, _callee27);
+            }, _callee26);
           }));
 
-          function data(_x48) {
+          function data(_x47) {
             return _data.apply(this, arguments);
           }
 
@@ -6388,10 +6256,10 @@
       /*! cids */
       "iARh");
 
-      var _webpack_require__23 = __webpack_require__(
+      var _webpack_require__20 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__23.Buffer;
+          Buffer = _webpack_require__20.Buffer;
 
       var configure = __webpack_require__(
       /*! ../lib/configure */
@@ -6403,17 +6271,17 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref32 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee28(cid) {
+          var _ref31 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee27(cid) {
             var options,
                 res,
-                _args29 = arguments;
-            return regeneratorRuntime.wrap(function _callee28$(_context29) {
+                _args28 = arguments;
+            return regeneratorRuntime.wrap(function _callee27$(_context28) {
               while (1) {
-                switch (_context29.prev = _context29.next) {
+                switch (_context28.prev = _context28.next) {
                   case 0:
-                    options = _args29.length > 1 && _args29[1] !== undefined ? _args29[1] : {};
+                    options = _args28.length > 1 && _args28[1] !== undefined ? _args28[1] : {};
                     cid = new CID(cid);
-                    _context29.next = 4;
+                    _context28.next = 4;
                     return api.post('block/get', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -6424,28 +6292,28 @@
                     });
 
                   case 4:
-                    res = _context29.sent;
-                    _context29.t0 = Block;
-                    _context29.t1 = Buffer;
-                    _context29.next = 9;
+                    res = _context28.sent;
+                    _context28.t0 = Block;
+                    _context28.t1 = Buffer;
+                    _context28.next = 9;
                     return res.arrayBuffer();
 
                   case 9:
-                    _context29.t2 = _context29.sent;
-                    _context29.t3 = _context29.t1.from.call(_context29.t1, _context29.t2);
-                    _context29.t4 = cid;
-                    return _context29.abrupt("return", new _context29.t0(_context29.t3, _context29.t4));
+                    _context28.t2 = _context28.sent;
+                    _context28.t3 = _context28.t1.from.call(_context28.t1, _context28.t2);
+                    _context28.t4 = cid;
+                    return _context28.abrupt("return", new _context28.t0(_context28.t3, _context28.t4));
 
                   case 13:
                   case "end":
-                    return _context29.stop();
+                    return _context28.stop();
                 }
               }
-            }, _callee28);
+            }, _callee27);
           }));
 
-          return function (_x49) {
-            return _ref32.apply(this, arguments);
+          return function (_x48) {
+            return _ref31.apply(this, arguments);
           };
         }();
       });
@@ -6480,14 +6348,14 @@
       /*! ../lib/to-url-search-params */
       "FeRZ");
 
-      var _webpack_require__24 = __webpack_require__(
+      var _webpack_require__21 = __webpack_require__(
       /*! ./response-types */
       "o23V"),
-          Provider = _webpack_require__24.Provider;
+          Provider = _webpack_require__21.Provider;
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _findProvs = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee29(cid) {
+          var _findProvs = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee28(cid) {
             var options,
                 res,
                 _iteratorNormalCompletion8,
@@ -6502,14 +6370,14 @@
                 _step31$value,
                 ID,
                 Addrs,
-                _args30 = arguments;
+                _args29 = arguments;
 
-            return regeneratorRuntime.wrap(function _callee29$(_context30) {
+            return regeneratorRuntime.wrap(function _callee28$(_context29) {
               while (1) {
-                switch (_context30.prev = _context30.next) {
+                switch (_context29.prev = _context29.next) {
                   case 0:
-                    options = _args30.length > 1 && _args30[1] !== undefined ? _args30[1] : {};
-                    _context30.next = 3;
+                    options = _args29.length > 1 && _args29[1] !== undefined ? _args29[1] : {};
+                    _context29.next = 3;
                     return _awaitAsyncGenerator(api.post('dht/findprovs', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -6520,50 +6388,50 @@
                     }));
 
                   case 3:
-                    res = _context30.sent;
+                    res = _context29.sent;
                     _iteratorNormalCompletion8 = true;
                     _didIteratorError8 = false;
-                    _context30.prev = 6;
+                    _context29.prev = 6;
                     _iterator8 = _asyncIterator(res.ndjson());
 
                   case 8:
-                    _context30.next = 10;
+                    _context29.next = 10;
                     return _awaitAsyncGenerator(_iterator8.next());
 
                   case 10:
-                    _step8 = _context30.sent;
+                    _step8 = _context29.sent;
                     _iteratorNormalCompletion8 = _step8.done;
-                    _context30.next = 14;
+                    _context29.next = 14;
                     return _awaitAsyncGenerator(_step8.value);
 
                   case 14:
-                    _value8 = _context30.sent;
+                    _value8 = _context29.sent;
 
                     if (_iteratorNormalCompletion8) {
-                      _context30.next = 38;
+                      _context29.next = 38;
                       break;
                     }
 
                     message = _value8;
 
                     if (!(message.Type === Provider && message.Responses)) {
-                      _context30.next = 35;
+                      _context29.next = 35;
                       break;
                     }
 
                     _iterator31 = _createForOfIteratorHelper(message.Responses);
-                    _context30.prev = 19;
+                    _context29.prev = 19;
 
                     _iterator31.s();
 
                   case 21:
                     if ((_step31 = _iterator31.n()).done) {
-                      _context30.next = 27;
+                      _context29.next = 27;
                       break;
                     }
 
                     _step31$value = _step31.value, ID = _step31$value.ID, Addrs = _step31$value.Addrs;
-                    _context30.next = 25;
+                    _context29.next = 25;
                     return {
                       id: ID,
                       addrs: (Addrs || []).map(function (a) {
@@ -6572,75 +6440,75 @@
                     };
 
                   case 25:
-                    _context30.next = 21;
+                    _context29.next = 21;
                     break;
 
                   case 27:
-                    _context30.next = 32;
+                    _context29.next = 32;
                     break;
 
                   case 29:
-                    _context30.prev = 29;
-                    _context30.t0 = _context30["catch"](19);
+                    _context29.prev = 29;
+                    _context29.t0 = _context29["catch"](19);
 
-                    _iterator31.e(_context30.t0);
+                    _iterator31.e(_context29.t0);
 
                   case 32:
-                    _context30.prev = 32;
+                    _context29.prev = 32;
 
                     _iterator31.f();
 
-                    return _context30.finish(32);
+                    return _context29.finish(32);
 
                   case 35:
                     _iteratorNormalCompletion8 = true;
-                    _context30.next = 8;
+                    _context29.next = 8;
                     break;
 
                   case 38:
-                    _context30.next = 44;
+                    _context29.next = 44;
                     break;
 
                   case 40:
-                    _context30.prev = 40;
-                    _context30.t1 = _context30["catch"](6);
+                    _context29.prev = 40;
+                    _context29.t1 = _context29["catch"](6);
                     _didIteratorError8 = true;
-                    _iteratorError8 = _context30.t1;
+                    _iteratorError8 = _context29.t1;
 
                   case 44:
-                    _context30.prev = 44;
-                    _context30.prev = 45;
+                    _context29.prev = 44;
+                    _context29.prev = 45;
 
                     if (!(!_iteratorNormalCompletion8 && _iterator8["return"] != null)) {
-                      _context30.next = 49;
+                      _context29.next = 49;
                       break;
                     }
 
-                    _context30.next = 49;
+                    _context29.next = 49;
                     return _awaitAsyncGenerator(_iterator8["return"]());
 
                   case 49:
-                    _context30.prev = 49;
+                    _context29.prev = 49;
 
                     if (!_didIteratorError8) {
-                      _context30.next = 52;
+                      _context29.next = 52;
                       break;
                     }
 
                     throw _iteratorError8;
 
                   case 52:
-                    return _context30.finish(49);
+                    return _context29.finish(49);
 
                   case 53:
-                    return _context30.finish(44);
+                    return _context29.finish(44);
 
                   case 54:
                   case "end":
-                    return _context30.stop();
+                    return _context29.stop();
                 }
               }
-            }, _callee29, null, [[6, 40, 44, 54], [19, 29, 32, 35], [45,, 49, 53]]);
+            }, _callee28, null, [[6, 40, 44, 54], [19, 29, 32, 35], [45,, 49, 53]]);
           }));
 
           function findProvs(_x5) {
@@ -6676,6 +6544,82 @@
       exports = module.exports;
       exports.createDagLinkFromB58EncodedHash = createDagLinkFromB58EncodedHash;
       /***/
+    },
+
+    /***/
+    "E8hM":
+    /*!****************************************************************************!*\
+      !*** ./node_modules/ipld-raw/node_modules/multihashing-async/src/blake.js ***!
+      \****************************************************************************/
+
+    /*! no static exports found */
+
+    /***/
+    function E8hM(module, exports, __webpack_require__) {
+      "use strict";
+
+      var _webpack_require__22 = __webpack_require__(
+      /*! buffer */
+      "tjlA"),
+          Buffer = _webpack_require__22.Buffer;
+
+      var blake = __webpack_require__(
+      /*! blakejs */
+      "yPZT");
+
+      var minB = 0xb201;
+      var minS = 0xb241;
+      var blake2b = {
+        init: blake.blake2bInit,
+        update: blake.blake2bUpdate,
+        digest: blake.blake2bFinal
+      };
+      var blake2s = {
+        init: blake.blake2sInit,
+        update: blake.blake2sUpdate,
+        digest: blake.blake2sFinal
+      }; // Note that although this function doesn't do any asynchronous work, we mark
+      // the function as async because it must return a Promise to match the API
+      // for other functions that do perform asynchronous work (see sha.browser.js)
+      // eslint-disable-next-line
+
+      var makeB2Hash = function makeB2Hash(size, hf) {
+        return /*#__PURE__*/function () {
+          var _ref32 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee29(data) {
+            var ctx;
+            return regeneratorRuntime.wrap(function _callee29$(_context30) {
+              while (1) {
+                switch (_context30.prev = _context30.next) {
+                  case 0:
+                    ctx = hf.init(size, null);
+                    hf.update(ctx, data);
+                    return _context30.abrupt("return", Buffer.from(hf.digest(ctx)));
+
+                  case 3:
+                  case "end":
+                    return _context30.stop();
+                }
+              }
+            }, _callee29);
+          }));
+
+          return function (_x49) {
+            return _ref32.apply(this, arguments);
+          };
+        }();
+      };
+
+      module.exports = function (table) {
+        for (var i = 0; i < 64; i++) {
+          table[minB + i] = makeB2Hash(i + 1, blake2b);
+        }
+
+        for (var _i2 = 0; _i2 < 32; _i2++) {
+          table[minS + _i2] = makeB2Hash(_i2 + 1, blake2s);
+        }
+      };
+      /***/
+
     },
 
     /***/
@@ -7641,13 +7585,13 @@
     function Fq86(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__25 = __webpack_require__(
+      var _webpack_require__23 = __webpack_require__(
       /*! ./src/url */
       "HwtC"),
-          URLWithLegacySupport = _webpack_require__25.URLWithLegacySupport,
-          format = _webpack_require__25.format,
-          URLSearchParams = _webpack_require__25.URLSearchParams,
-          defaultBase = _webpack_require__25.defaultBase;
+          URLWithLegacySupport = _webpack_require__23.URLWithLegacySupport,
+          format = _webpack_require__23.format,
+          URLSearchParams = _webpack_require__23.URLSearchParams,
+          defaultBase = _webpack_require__23.defaultBase;
 
       var relative = __webpack_require__(
       /*! ./src/relative */
@@ -7693,10 +7637,10 @@
     function HGUD(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__26 = __webpack_require__(
+      var _webpack_require__24 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__26.Buffer;
+          Buffer = _webpack_require__24.Buffer;
 
       var CID = __webpack_require__(
       /*! cids */
@@ -7714,10 +7658,10 @@
       /*! ../lib/to-url-search-params */
       "FeRZ");
 
-      var _webpack_require__27 = __webpack_require__(
+      var _webpack_require__25 = __webpack_require__(
       /*! ./response-types */
       "o23V"),
-          FinalPeer = _webpack_require__27.FinalPeer;
+          FinalPeer = _webpack_require__25.FinalPeer;
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
@@ -7871,15 +7815,15 @@
       /*! cids */
       "iARh");
 
-      var _webpack_require__28 = __webpack_require__(
+      var _webpack_require__26 = __webpack_require__(
       /*! ipld-dag-pb */
       "yFpY"),
-          DAGNode = _webpack_require__28.DAGNode;
+          DAGNode = _webpack_require__26.DAGNode;
 
-      var _webpack_require__29 = __webpack_require__(
+      var _webpack_require__27 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__29.Buffer;
+          Buffer = _webpack_require__27.Buffer;
 
       var multipartRequest = __webpack_require__(
       /*! ../lib/multipart-request */
@@ -8414,82 +8358,6 @@
     },
 
     /***/
-    "II8N":
-    /*!************************************************************************************!*\
-      !*** ./node_modules/ipfs-http-client/node_modules/multihashing-async/src/blake.js ***!
-      \************************************************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function II8N(module, exports, __webpack_require__) {
-      "use strict";
-
-      var _webpack_require__30 = __webpack_require__(
-      /*! buffer */
-      "tjlA"),
-          Buffer = _webpack_require__30.Buffer;
-
-      var blake = __webpack_require__(
-      /*! blakejs */
-      "yPZT");
-
-      var minB = 0xb201;
-      var minS = 0xb241;
-      var blake2b = {
-        init: blake.blake2bInit,
-        update: blake.blake2bUpdate,
-        digest: blake.blake2bFinal
-      };
-      var blake2s = {
-        init: blake.blake2sInit,
-        update: blake.blake2sUpdate,
-        digest: blake.blake2sFinal
-      }; // Note that although this function doesn't do any asynchronous work, we mark
-      // the function as async because it must return a Promise to match the API
-      // for other functions that do perform asynchronous work (see sha.browser.js)
-      // eslint-disable-next-line
-
-      var makeB2Hash = function makeB2Hash(size, hf) {
-        return /*#__PURE__*/function () {
-          var _ref39 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee36(data) {
-            var ctx;
-            return regeneratorRuntime.wrap(function _callee36$(_context37) {
-              while (1) {
-                switch (_context37.prev = _context37.next) {
-                  case 0:
-                    ctx = hf.init(size, null);
-                    hf.update(ctx, data);
-                    return _context37.abrupt("return", Buffer.from(hf.digest(ctx)));
-
-                  case 3:
-                  case "end":
-                    return _context37.stop();
-                }
-              }
-            }, _callee36);
-          }));
-
-          return function (_x56) {
-            return _ref39.apply(this, arguments);
-          };
-        }();
-      };
-
-      module.exports = function (table) {
-        for (var i = 0; i < 64; i++) {
-          table[minB + i] = makeB2Hash(i + 1, blake2b);
-        }
-
-        for (var _i2 = 0; _i2 < 32; _i2++) {
-          table[minS + _i2] = makeB2Hash(_i2 + 1, blake2s);
-        }
-      };
-      /***/
-
-    },
-
-    /***/
     "IrRL":
     /*!*****************************************!*\
       !*** ./node_modules/borc/src/tagged.js ***!
@@ -8595,6 +8463,172 @@
       }();
 
       module.exports = Tagged;
+      /***/
+    },
+
+    /***/
+    "IrvS":
+    /*!**********************************************************************************!*\
+      !*** ./node_modules/ipld-raw/node_modules/multihashing-async/src/sha.browser.js ***!
+      \**********************************************************************************/
+
+    /*! no static exports found */
+
+    /***/
+    function IrvS(module, exports, __webpack_require__) {
+      "use strict";
+      /* eslint-disable require-await */
+
+      var _webpack_require__28 = __webpack_require__(
+      /*! buffer */
+      "tjlA"),
+          Buffer = _webpack_require__28.Buffer;
+
+      var multihash = __webpack_require__(
+      /*! multihashes */
+      "yP9g");
+
+      var crypto = self.crypto || self.msCrypto;
+
+      var digest = /*#__PURE__*/function () {
+        var _ref39 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee36(data, alg) {
+          var d;
+          return regeneratorRuntime.wrap(function _callee36$(_context37) {
+            while (1) {
+              switch (_context37.prev = _context37.next) {
+                case 0:
+                  if (!(typeof self === 'undefined' || !self.crypto && !self.msCrypto)) {
+                    _context37.next = 2;
+                    break;
+                  }
+
+                  throw new Error('Please use a browser with webcrypto support and ensure the code has been delivered securely via HTTPS/TLS and run within a Secure Context');
+
+                case 2:
+                  _context37.t0 = alg;
+                  _context37.next = _context37.t0 === 'sha1' ? 5 : _context37.t0 === 'sha2-256' ? 10 : _context37.t0 === 'sha2-512' ? 15 : _context37.t0 === 'dbl-sha2-256' ? 20 : 28;
+                  break;
+
+                case 5:
+                  _context37.t1 = Buffer;
+                  _context37.next = 8;
+                  return crypto.subtle.digest({
+                    name: 'SHA-1'
+                  }, data);
+
+                case 8:
+                  _context37.t2 = _context37.sent;
+                  return _context37.abrupt("return", _context37.t1.from.call(_context37.t1, _context37.t2));
+
+                case 10:
+                  _context37.t3 = Buffer;
+                  _context37.next = 13;
+                  return crypto.subtle.digest({
+                    name: 'SHA-256'
+                  }, data);
+
+                case 13:
+                  _context37.t4 = _context37.sent;
+                  return _context37.abrupt("return", _context37.t3.from.call(_context37.t3, _context37.t4));
+
+                case 15:
+                  _context37.t5 = Buffer;
+                  _context37.next = 18;
+                  return crypto.subtle.digest({
+                    name: 'SHA-512'
+                  }, data);
+
+                case 18:
+                  _context37.t6 = _context37.sent;
+                  return _context37.abrupt("return", _context37.t5.from.call(_context37.t5, _context37.t6));
+
+                case 20:
+                  _context37.next = 22;
+                  return crypto.subtle.digest({
+                    name: 'SHA-256'
+                  }, data);
+
+                case 22:
+                  d = _context37.sent;
+                  _context37.t7 = Buffer;
+                  _context37.next = 26;
+                  return crypto.subtle.digest({
+                    name: 'SHA-256'
+                  }, d);
+
+                case 26:
+                  _context37.t8 = _context37.sent;
+                  return _context37.abrupt("return", _context37.t7.from.call(_context37.t7, _context37.t8));
+
+                case 28:
+                  throw new Error("".concat(alg, " is not a supported algorithm"));
+
+                case 29:
+                case "end":
+                  return _context37.stop();
+              }
+            }
+          }, _callee36);
+        }));
+
+        return function digest(_x56, _x57) {
+          return _ref39.apply(this, arguments);
+        };
+      }();
+
+      module.exports = {
+        factory: function factory(alg) {
+          return /*#__PURE__*/function () {
+            var _ref40 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee37(data) {
+              return regeneratorRuntime.wrap(function _callee37$(_context38) {
+                while (1) {
+                  switch (_context38.prev = _context38.next) {
+                    case 0:
+                      return _context38.abrupt("return", digest(data, alg));
+
+                    case 1:
+                    case "end":
+                      return _context38.stop();
+                  }
+                }
+              }, _callee37);
+            }));
+
+            return function (_x58) {
+              return _ref40.apply(this, arguments);
+            };
+          }();
+        },
+        digest: digest,
+        multihashing: function () {
+          var _multihashing = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee38(buf, alg, length) {
+            var h;
+            return regeneratorRuntime.wrap(function _callee38$(_context39) {
+              while (1) {
+                switch (_context39.prev = _context39.next) {
+                  case 0:
+                    _context39.next = 2;
+                    return digest(buf, alg, length);
+
+                  case 2:
+                    h = _context39.sent;
+                    return _context39.abrupt("return", multihash.encode(h, alg, length));
+
+                  case 4:
+                  case "end":
+                    return _context39.stop();
+                }
+              }
+            }, _callee38);
+          }));
+
+          function multihashing(_x59, _x60, _x61) {
+            return _multihashing.apply(this, arguments);
+          }
+
+          return multihashing;
+        }()
+      };
       /***/
     },
 
@@ -9124,56 +9158,56 @@
         if (readable[Symbol.asyncIterator]) return readable; // Browser ReadableStream
 
         if (readable.getReader) {
-          return _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee37() {
+          return _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee39() {
             var reader, _yield$_awaitAsyncGen, done, value;
 
-            return regeneratorRuntime.wrap(function _callee37$(_context38) {
+            return regeneratorRuntime.wrap(function _callee39$(_context40) {
               while (1) {
-                switch (_context38.prev = _context38.next) {
+                switch (_context40.prev = _context40.next) {
                   case 0:
                     reader = readable.getReader();
-                    _context38.prev = 1;
+                    _context40.prev = 1;
 
                   case 2:
                     if (!true) {
-                      _context38.next = 14;
+                      _context40.next = 14;
                       break;
                     }
 
-                    _context38.next = 5;
+                    _context40.next = 5;
                     return _awaitAsyncGenerator(reader.read());
 
                   case 5:
-                    _yield$_awaitAsyncGen = _context38.sent;
+                    _yield$_awaitAsyncGen = _context40.sent;
                     done = _yield$_awaitAsyncGen.done;
                     value = _yield$_awaitAsyncGen.value;
 
                     if (!done) {
-                      _context38.next = 10;
+                      _context40.next = 10;
                       break;
                     }
 
-                    return _context38.abrupt("return");
+                    return _context40.abrupt("return");
 
                   case 10:
-                    _context38.next = 12;
+                    _context40.next = 12;
                     return value;
 
                   case 12:
-                    _context38.next = 2;
+                    _context40.next = 2;
                     break;
 
                   case 14:
-                    _context38.prev = 14;
+                    _context40.prev = 14;
                     reader.releaseLock();
-                    return _context38.finish(14);
+                    return _context40.finish(14);
 
                   case 17:
                   case "end":
-                    return _context38.stop();
+                    return _context40.stop();
                 }
               }
-            }, _callee37, null, [[1,, 14, 17]]);
+            }, _callee39, null, [[1,, 14, 17]]);
           }))();
         }
 
@@ -9265,17 +9299,17 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee38() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee40() {
           var options,
               res,
               data,
-              _args39 = arguments;
-          return regeneratorRuntime.wrap(function _callee38$(_context39) {
+              _args41 = arguments;
+          return regeneratorRuntime.wrap(function _callee40$(_context41) {
             while (1) {
-              switch (_context39.prev = _context39.next) {
+              switch (_context41.prev = _context41.next) {
                 case 0:
-                  options = _args39.length > 0 && _args39[0] !== undefined ? _args39[0] : {};
-                  _context39.next = 3;
+                  options = _args41.length > 0 && _args41[0] !== undefined ? _args41[0] : {};
+                  _context41.next = 3;
                   return api.post('name/pubsub/subs', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -9284,20 +9318,20 @@
                   });
 
                 case 3:
-                  res = _context39.sent;
-                  _context39.next = 6;
+                  res = _context41.sent;
+                  _context41.next = 6;
                   return res.json();
 
                 case 6:
-                  data = _context39.sent;
-                  return _context39.abrupt("return", data.Strings || []);
+                  data = _context41.sent;
+                  return _context41.abrupt("return", data.Strings || []);
 
                 case 8:
                 case "end":
-                  return _context39.stop();
+                  return _context41.stop();
               }
             }
-          }, _callee38);
+          }, _callee40);
         }));
       });
       /***/
@@ -9316,11 +9350,11 @@
       "use strict";
       /* eslint-env browser */
 
-      var _webpack_require__31 = __webpack_require__(
+      var _webpack_require__29 = __webpack_require__(
       /*! ./error */
       "0qpk"),
-          TimeoutError = _webpack_require__31.TimeoutError,
-          AbortError = _webpack_require__31.AbortError;
+          TimeoutError = _webpack_require__29.TimeoutError,
+          AbortError = _webpack_require__29.AbortError;
       /**
        * @typedef {RequestInit & ExtraFetchOptions} FetchOptions
        * @typedef {Object} ExtraFetchOptions
@@ -9507,10 +9541,10 @@
     function K2jH(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__32 = __webpack_require__(
+      var _webpack_require__30 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__32.Buffer;
+          Buffer = _webpack_require__30.Buffer;
 
       var multipartRequest = __webpack_require__(
       /*! ../lib/multipart-request */
@@ -9534,50 +9568,50 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref41 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee39(config) {
+          var _ref42 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee41(config) {
             var options,
                 controller,
                 signal,
                 res,
-                _args40 = arguments;
-            return regeneratorRuntime.wrap(function _callee39$(_context40) {
+                _args42 = arguments;
+            return regeneratorRuntime.wrap(function _callee41$(_context42) {
               while (1) {
-                switch (_context40.prev = _context40.next) {
+                switch (_context42.prev = _context42.next) {
                   case 0:
-                    options = _args40.length > 1 && _args40[1] !== undefined ? _args40[1] : {};
+                    options = _args42.length > 1 && _args42[1] !== undefined ? _args42[1] : {};
                     // allow aborting requests on body errors
                     controller = new AbortController();
                     signal = anySignal([controller.signal, options.signal]);
-                    _context40.t0 = api;
-                    _context40.t1 = _objectSpread;
-                    _context40.t2 = {
+                    _context42.t0 = api;
+                    _context42.t1 = _objectSpread;
+                    _context42.t2 = {
                       timeout: options.timeout,
                       signal: signal,
                       searchParams: toUrlSearchParams(options)
                     };
-                    _context40.next = 8;
+                    _context42.next = 8;
                     return multipartRequest(Buffer.from(JSON.stringify(config)), controller, options.headers);
 
                   case 8:
-                    _context40.t3 = _context40.sent;
-                    _context40.t4 = (0, _context40.t1)(_context40.t2, _context40.t3);
-                    _context40.next = 12;
-                    return _context40.t0.post.call(_context40.t0, 'config/replace', _context40.t4);
+                    _context42.t3 = _context42.sent;
+                    _context42.t4 = (0, _context42.t1)(_context42.t2, _context42.t3);
+                    _context42.next = 12;
+                    return _context42.t0.post.call(_context42.t0, 'config/replace', _context42.t4);
 
                   case 12:
-                    res = _context40.sent;
-                    return _context40.abrupt("return", res.text());
+                    res = _context42.sent;
+                    return _context42.abrupt("return", res.text());
 
                   case 14:
                   case "end":
-                    return _context40.stop();
+                    return _context42.stop();
                 }
               }
-            }, _callee39);
+            }, _callee41);
           }));
 
-          return function (_x57) {
-            return _ref41.apply(this, arguments);
+          return function (_x62) {
+            return _ref42.apply(this, arguments);
           };
         }();
       });
@@ -9638,10 +9672,10 @@
     function K7js(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__33 = __webpack_require__(
+      var _webpack_require__31 = __webpack_require__(
       /*! bignumber.js */
       "kB5k"),
-          BigNumber = _webpack_require__33.BigNumber;
+          BigNumber = _webpack_require__31.BigNumber;
 
       var configure = __webpack_require__(
       /*! ../lib/configure */
@@ -9653,16 +9687,16 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _bw = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee40() {
+          var _bw = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee42() {
             var options,
                 res,
-                _args41 = arguments;
-            return regeneratorRuntime.wrap(function _callee40$(_context41) {
+                _args43 = arguments;
+            return regeneratorRuntime.wrap(function _callee42$(_context43) {
               while (1) {
-                switch (_context41.prev = _context41.next) {
+                switch (_context43.prev = _context43.next) {
                   case 0:
-                    options = _args41.length > 0 && _args41[0] !== undefined ? _args41[0] : {};
-                    _context41.next = 3;
+                    options = _args43.length > 0 && _args43[0] !== undefined ? _args43[0] : {};
+                    _context43.next = 3;
                     return _awaitAsyncGenerator(api.post('stats/bw', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -9679,15 +9713,15 @@
                     }));
 
                   case 3:
-                    res = _context41.sent;
-                    return _context41.delegateYield(_asyncGeneratorDelegate(_asyncIterator(res.ndjson()), _awaitAsyncGenerator), "t0", 5);
+                    res = _context43.sent;
+                    return _context43.delegateYield(_asyncGeneratorDelegate(_asyncIterator(res.ndjson()), _awaitAsyncGenerator), "t0", 5);
 
                   case 5:
                   case "end":
-                    return _context41.stop();
+                    return _context43.stop();
                 }
               }
-            }, _callee40);
+            }, _callee42);
           }));
 
           function bw() {
@@ -9769,17 +9803,17 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee41() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee43() {
           var options,
               res,
               data,
-              _args42 = arguments;
-          return regeneratorRuntime.wrap(function _callee41$(_context42) {
+              _args44 = arguments;
+          return regeneratorRuntime.wrap(function _callee43$(_context44) {
             while (1) {
-              switch (_context42.prev = _context42.next) {
+              switch (_context44.prev = _context44.next) {
                 case 0:
-                  options = _args42.length > 0 && _args42[0] !== undefined ? _args42[0] : {};
-                  _context42.next = 3;
+                  options = _args44.length > 0 && _args44[0] !== undefined ? _args44[0] : {};
+                  _context44.next = 3;
                   return api.post('config/show', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -9788,20 +9822,20 @@
                   });
 
                 case 3:
-                  res = _context42.sent;
-                  _context42.next = 6;
+                  res = _context44.sent;
+                  _context44.next = 6;
                   return res.json();
 
                 case 6:
-                  data = _context42.sent;
-                  return _context42.abrupt("return", data);
+                  data = _context44.sent;
+                  return _context44.abrupt("return", data);
 
                 case 8:
                 case "end":
-                  return _context42.stop();
+                  return _context44.stop();
               }
             }
-          }, _callee41);
+          }, _callee43);
         }));
       });
       /***/
@@ -9819,15 +9853,15 @@
     function LcfU(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__34 = __webpack_require__(
+      var _webpack_require__32 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__34.Buffer;
+          Buffer = _webpack_require__32.Buffer;
 
-      var _webpack_require__35 = __webpack_require__(
+      var _webpack_require__33 = __webpack_require__(
       /*! iso-url */
       "Fq86"),
-          URL = _webpack_require__35.URL;
+          URL = _webpack_require__33.URL;
 
       var Bignumber = __webpack_require__(
       /*! bignumber.js */
@@ -10485,216 +10519,6 @@
     },
 
     /***/
-    "MJDW":
-    /*!************************************************************************************!*\
-      !*** ./node_modules/ipfs-http-client/node_modules/multihashing-async/src/index.js ***!
-      \************************************************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function MJDW(module, exports, __webpack_require__) {
-      "use strict";
-
-      var _webpack_require__36 = __webpack_require__(
-      /*! buffer */
-      "tjlA"),
-          Buffer = _webpack_require__36.Buffer;
-
-      var errcode = __webpack_require__(
-      /*! err-code */
-      "tqrP");
-
-      var multihash = __webpack_require__(
-      /*! multihashes */
-      "yP9g");
-
-      var crypto = __webpack_require__(
-      /*! ./crypto */
-      "84bH");
-      /**
-       * Hash the given `buf` using the algorithm specified by `alg`.
-       * @param {Buffer} buf - The value to hash.
-       * @param {number|string} alg - The algorithm to use eg 'sha1'
-       * @param {number} [length] - Optionally trim the result to this length.
-       * @returns {Promise<Buffer>}
-       */
-
-
-      function Multihashing(_x58, _x59, _x60) {
-        return _Multihashing.apply(this, arguments);
-      }
-      /**
-       * The `buffer` module for easy use in the browser.
-       *
-       * @type {Buffer}
-       */
-
-
-      function _Multihashing() {
-        _Multihashing = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee44(buf, alg, length) {
-          var digest;
-          return regeneratorRuntime.wrap(function _callee44$(_context45) {
-            while (1) {
-              switch (_context45.prev = _context45.next) {
-                case 0:
-                  _context45.next = 2;
-                  return Multihashing.digest(buf, alg, length);
-
-                case 2:
-                  digest = _context45.sent;
-                  return _context45.abrupt("return", multihash.encode(digest, alg, length));
-
-                case 4:
-                case "end":
-                  return _context45.stop();
-              }
-            }
-          }, _callee44);
-        }));
-        return _Multihashing.apply(this, arguments);
-      }
-
-      Multihashing.Buffer = Buffer; // for browser things
-
-      /**
-       * Expose multihash itself, to avoid silly double requires.
-       */
-
-      Multihashing.multihash = multihash;
-      /**
-       * @param {Buffer} buf - The value to hash.
-       * @param {number|string} alg - The algorithm to use eg 'sha1'
-       * @param {number} [length] - Optionally trim the result to this length.
-       * @returns {Promise<Buffer>}
-       */
-
-      Multihashing.digest = /*#__PURE__*/function () {
-        var _ref43 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee42(buf, alg, length) {
-          var hash, digest;
-          return regeneratorRuntime.wrap(function _callee42$(_context43) {
-            while (1) {
-              switch (_context43.prev = _context43.next) {
-                case 0:
-                  hash = Multihashing.createHash(alg);
-                  _context43.next = 3;
-                  return hash(buf);
-
-                case 3:
-                  digest = _context43.sent;
-                  return _context43.abrupt("return", length ? digest.slice(0, length) : digest);
-
-                case 5:
-                case "end":
-                  return _context43.stop();
-              }
-            }
-          }, _callee42);
-        }));
-
-        return function (_x61, _x62, _x63) {
-          return _ref43.apply(this, arguments);
-        };
-      }();
-      /**
-       * Creates a function that hashes with the given algorithm
-       *
-       * @param {string|number} alg - The algorithm to use eg 'sha1'
-       *
-       * @returns {function} - The hash function corresponding to `alg`
-       */
-
-
-      Multihashing.createHash = function (alg) {
-        if (!alg) {
-          throw errcode(new Error('hash algorithm must be specified'), 'ERR_HASH_ALGORITHM_NOT_SPECIFIED');
-        }
-
-        alg = multihash.coerceCode(alg);
-
-        if (!Multihashing.functions[alg]) {
-          throw errcode(new Error("multihash function '".concat(alg, "' not yet supported")), 'ERR_HASH_ALGORITHM_NOT_SUPPORTED');
-        }
-
-        return Multihashing.functions[alg];
-      };
-      /**
-       * Mapping of multihash codes to their hashing functions.
-       * @type {Object}
-       */
-
-
-      Multihashing.functions = {
-        // identity
-        0x00: crypto.identity,
-        // sha1
-        0x11: crypto.sha1,
-        // sha2-256
-        0x12: crypto.sha2256,
-        // sha2-512
-        0x13: crypto.sha2512,
-        // sha3-512
-        0x14: crypto.sha3512,
-        // sha3-384
-        0x15: crypto.sha3384,
-        // sha3-256
-        0x16: crypto.sha3256,
-        // sha3-224
-        0x17: crypto.sha3224,
-        // shake-128
-        0x18: crypto.shake128,
-        // shake-256
-        0x19: crypto.shake256,
-        // keccak-224
-        0x1A: crypto.keccak224,
-        // keccak-256
-        0x1B: crypto.keccak256,
-        // keccak-384
-        0x1C: crypto.keccak384,
-        // keccak-512
-        0x1D: crypto.keccak512,
-        // murmur3-128
-        0x22: crypto.murmur3128,
-        // murmur3-32
-        0x23: crypto.murmur332,
-        // dbl-sha2-256
-        0x56: crypto.dblSha2256
-      }; // add blake functions
-
-      crypto.addBlake(Multihashing.functions);
-
-      Multihashing.validate = /*#__PURE__*/function () {
-        var _ref44 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee43(buf, hash) {
-          var newHash;
-          return regeneratorRuntime.wrap(function _callee43$(_context44) {
-            while (1) {
-              switch (_context44.prev = _context44.next) {
-                case 0:
-                  _context44.next = 2;
-                  return Multihashing(buf, multihash.decode(hash).name);
-
-                case 2:
-                  newHash = _context44.sent;
-                  return _context44.abrupt("return", Buffer.compare(hash, newHash) === 0);
-
-                case 4:
-                case "end":
-                  return _context44.stop();
-              }
-            }
-          }, _callee43);
-        }));
-
-        return function (_x64, _x65) {
-          return _ref44.apply(this, arguments);
-        };
-      }();
-
-      module.exports = Multihashing;
-      /***/
-    },
-
-    /***/
     "MSQn":
     /*!**************************************************!*\
       !*** ./node_modules/ipfs-http-client/src/get.js ***!
@@ -10710,10 +10534,10 @@
       /*! it-tar */
       "TOie");
 
-      var _webpack_require__37 = __webpack_require__(
+      var _webpack_require__34 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__37.Buffer;
+          Buffer = _webpack_require__34.Buffer;
 
       var CID = __webpack_require__(
       /*! cids */
@@ -10729,7 +10553,7 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _get = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee45(path) {
+          var _get = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee44(path) {
             var options,
                 res,
                 extractor,
@@ -10742,14 +10566,14 @@
                 _value30,
                 header,
                 body,
-                _args46 = arguments;
+                _args45 = arguments;
 
-            return regeneratorRuntime.wrap(function _callee45$(_context46) {
+            return regeneratorRuntime.wrap(function _callee44$(_context45) {
               while (1) {
-                switch (_context46.prev = _context46.next) {
+                switch (_context45.prev = _context45.next) {
                   case 0:
-                    options = _args46.length > 1 && _args46[1] !== undefined ? _args46[1] : {};
-                    _context46.next = 3;
+                    options = _args45.length > 1 && _args45[1] !== undefined ? _args45[1] : {};
+                    _context45.next = 3;
                     return _awaitAsyncGenerator(api.post('get', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -10760,49 +10584,49 @@
                     }));
 
                   case 3:
-                    res = _context46.sent;
+                    res = _context45.sent;
                     extractor = Tar.extract();
                     _iteratorNormalCompletion12 = true;
                     _didIteratorError12 = false;
-                    _context46.prev = 7;
+                    _context45.prev = 7;
                     _iterator12 = _asyncIterator(extractor(res.iterator()));
 
                   case 9:
-                    _context46.next = 11;
+                    _context45.next = 11;
                     return _awaitAsyncGenerator(_iterator12.next());
 
                   case 11:
-                    _step12 = _context46.sent;
+                    _step12 = _context45.sent;
                     _iteratorNormalCompletion12 = _step12.done;
-                    _context46.next = 15;
+                    _context45.next = 15;
                     return _awaitAsyncGenerator(_step12.value);
 
                   case 15:
-                    _value12 = _context46.sent;
+                    _value12 = _context45.sent;
 
                     if (_iteratorNormalCompletion12) {
-                      _context46.next = 28;
+                      _context45.next = 28;
                       break;
                     }
 
                     _value30 = _value12, header = _value30.header, body = _value30.body;
 
                     if (!(header.type === 'directory')) {
-                      _context46.next = 23;
+                      _context45.next = 23;
                       break;
                     }
 
-                    _context46.next = 21;
+                    _context45.next = 21;
                     return {
                       path: header.name
                     };
 
                   case 21:
-                    _context46.next = 25;
+                    _context45.next = 25;
                     break;
 
                   case 23:
-                    _context46.next = 25;
+                    _context45.next = 25;
                     return {
                       path: header.name,
                       content: body
@@ -10810,53 +10634,53 @@
 
                   case 25:
                     _iteratorNormalCompletion12 = true;
-                    _context46.next = 9;
+                    _context45.next = 9;
                     break;
 
                   case 28:
-                    _context46.next = 34;
+                    _context45.next = 34;
                     break;
 
                   case 30:
-                    _context46.prev = 30;
-                    _context46.t0 = _context46["catch"](7);
+                    _context45.prev = 30;
+                    _context45.t0 = _context45["catch"](7);
                     _didIteratorError12 = true;
-                    _iteratorError12 = _context46.t0;
+                    _iteratorError12 = _context45.t0;
 
                   case 34:
-                    _context46.prev = 34;
-                    _context46.prev = 35;
+                    _context45.prev = 34;
+                    _context45.prev = 35;
 
                     if (!(!_iteratorNormalCompletion12 && _iterator12["return"] != null)) {
-                      _context46.next = 39;
+                      _context45.next = 39;
                       break;
                     }
 
-                    _context46.next = 39;
+                    _context45.next = 39;
                     return _awaitAsyncGenerator(_iterator12["return"]());
 
                   case 39:
-                    _context46.prev = 39;
+                    _context45.prev = 39;
 
                     if (!_didIteratorError12) {
-                      _context46.next = 42;
+                      _context45.next = 42;
                       break;
                     }
 
                     throw _iteratorError12;
 
                   case 42:
-                    return _context46.finish(39);
+                    return _context45.finish(39);
 
                   case 43:
-                    return _context46.finish(34);
+                    return _context45.finish(34);
 
                   case 44:
                   case "end":
-                    return _context46.stop();
+                    return _context45.stop();
                 }
               }
-            }, _callee45, null, [[7, 30, 34, 44], [35,, 39, 43]]);
+            }, _callee44, null, [[7, 30, 34, 44], [35,, 39, 43]]);
           }));
 
           function get(_x9) {
@@ -10895,7 +10719,7 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _rm = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee46(cid) {
+          var _rm = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee45(cid) {
             var options,
                 res,
                 _iteratorNormalCompletion13,
@@ -10905,19 +10729,19 @@
                 _step13,
                 _value13,
                 removed,
-                _args47 = arguments;
+                _args46 = arguments;
 
-            return regeneratorRuntime.wrap(function _callee46$(_context47) {
+            return regeneratorRuntime.wrap(function _callee45$(_context46) {
               while (1) {
-                switch (_context47.prev = _context47.next) {
+                switch (_context46.prev = _context46.next) {
                   case 0:
-                    options = _args47.length > 1 && _args47[1] !== undefined ? _args47[1] : {};
+                    options = _args46.length > 1 && _args46[1] !== undefined ? _args46[1] : {};
 
                     if (!Array.isArray(cid)) {
                       cid = [cid];
                     }
 
-                    _context47.next = 4;
+                    _context46.next = 4;
                     return _awaitAsyncGenerator(api.post('block/rm', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -10931,83 +10755,83 @@
                     }));
 
                   case 4:
-                    res = _context47.sent;
+                    res = _context46.sent;
                     _iteratorNormalCompletion13 = true;
                     _didIteratorError13 = false;
-                    _context47.prev = 7;
+                    _context46.prev = 7;
                     _iterator13 = _asyncIterator(res.ndjson());
 
                   case 9:
-                    _context47.next = 11;
+                    _context46.next = 11;
                     return _awaitAsyncGenerator(_iterator13.next());
 
                   case 11:
-                    _step13 = _context47.sent;
+                    _step13 = _context46.sent;
                     _iteratorNormalCompletion13 = _step13.done;
-                    _context47.next = 15;
+                    _context46.next = 15;
                     return _awaitAsyncGenerator(_step13.value);
 
                   case 15:
-                    _value13 = _context47.sent;
+                    _value13 = _context46.sent;
 
                     if (_iteratorNormalCompletion13) {
-                      _context47.next = 23;
+                      _context46.next = 23;
                       break;
                     }
 
                     removed = _value13;
-                    _context47.next = 20;
+                    _context46.next = 20;
                     return toCoreInterface(removed);
 
                   case 20:
                     _iteratorNormalCompletion13 = true;
-                    _context47.next = 9;
+                    _context46.next = 9;
                     break;
 
                   case 23:
-                    _context47.next = 29;
+                    _context46.next = 29;
                     break;
 
                   case 25:
-                    _context47.prev = 25;
-                    _context47.t0 = _context47["catch"](7);
+                    _context46.prev = 25;
+                    _context46.t0 = _context46["catch"](7);
                     _didIteratorError13 = true;
-                    _iteratorError13 = _context47.t0;
+                    _iteratorError13 = _context46.t0;
 
                   case 29:
-                    _context47.prev = 29;
-                    _context47.prev = 30;
+                    _context46.prev = 29;
+                    _context46.prev = 30;
 
                     if (!(!_iteratorNormalCompletion13 && _iterator13["return"] != null)) {
-                      _context47.next = 34;
+                      _context46.next = 34;
                       break;
                     }
 
-                    _context47.next = 34;
+                    _context46.next = 34;
                     return _awaitAsyncGenerator(_iterator13["return"]());
 
                   case 34:
-                    _context47.prev = 34;
+                    _context46.prev = 34;
 
                     if (!_didIteratorError13) {
-                      _context47.next = 37;
+                      _context46.next = 37;
                       break;
                     }
 
                     throw _iteratorError13;
 
                   case 37:
-                    return _context47.finish(34);
+                    return _context46.finish(34);
 
                   case 38:
-                    return _context47.finish(29);
+                    return _context46.finish(29);
 
                   case 39:
                   case "end":
-                    return _context47.stop();
+                    return _context46.stop();
                 }
               }
-            }, _callee46, null, [[7, 25, 29, 39], [30,, 34, 38]]);
+            }, _callee45, null, [[7, 25, 29, 39], [30,, 34, 38]]);
           }));
 
           function rm(_x10) {
@@ -11299,19 +11123,19 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee47() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee46() {
           var options,
               res,
               _yield$res$json5,
               Strings,
-              _args48 = arguments;
+              _args47 = arguments;
 
-          return regeneratorRuntime.wrap(function _callee47$(_context48) {
+          return regeneratorRuntime.wrap(function _callee46$(_context47) {
             while (1) {
-              switch (_context48.prev = _context48.next) {
+              switch (_context47.prev = _context47.next) {
                 case 0:
-                  options = _args48.length > 0 && _args48[0] !== undefined ? _args48[0] : {};
-                  _context48.next = 3;
+                  options = _args47.length > 0 && _args47[0] !== undefined ? _args47[0] : {};
+                  _context47.next = 3;
                   return api.post('swarm/addrs/local', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -11320,23 +11144,23 @@
                   });
 
                 case 3:
-                  res = _context48.sent;
-                  _context48.next = 6;
+                  res = _context47.sent;
+                  _context47.next = 6;
                   return res.json();
 
                 case 6:
-                  _yield$res$json5 = _context48.sent;
+                  _yield$res$json5 = _context47.sent;
                   Strings = _yield$res$json5.Strings;
-                  return _context48.abrupt("return", (Strings || []).map(function (a) {
+                  return _context47.abrupt("return", (Strings || []).map(function (a) {
                     return multiaddr(a);
                   }));
 
                 case 9:
                 case "end":
-                  return _context48.stop();
+                  return _context47.stop();
               }
             }
-          }, _callee47);
+          }, _callee46);
         }));
       });
       /***/
@@ -11354,10 +11178,10 @@
     function NMoP(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__38 = __webpack_require__(
+      var _webpack_require__35 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__38.Buffer;
+          Buffer = _webpack_require__35.Buffer;
 
       var CID = __webpack_require__(
       /*! cids */
@@ -11373,16 +11197,16 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref46 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee48(cid) {
+          var _ref45 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee47(cid) {
             var options,
                 res,
-                _args49 = arguments;
-            return regeneratorRuntime.wrap(function _callee48$(_context49) {
+                _args48 = arguments;
+            return regeneratorRuntime.wrap(function _callee47$(_context48) {
               while (1) {
-                switch (_context49.prev = _context49.next) {
+                switch (_context48.prev = _context48.next) {
                   case 0:
-                    options = _args49.length > 1 && _args49[1] !== undefined ? _args49[1] : {};
-                    _context49.next = 3;
+                    options = _args48.length > 1 && _args48[1] !== undefined ? _args48[1] : {};
+                    _context48.next = 3;
                     return api.post('object/stat', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -11393,19 +11217,19 @@
                     });
 
                   case 3:
-                    res = _context49.sent;
-                    return _context49.abrupt("return", res.json());
+                    res = _context48.sent;
+                    return _context48.abrupt("return", res.json());
 
                   case 5:
                   case "end":
-                    return _context49.stop();
+                    return _context48.stop();
                 }
               }
-            }, _callee48);
+            }, _callee47);
           }));
 
-          return function (_x66) {
-            return _ref46.apply(this, arguments);
+          return function (_x63) {
+            return _ref45.apply(this, arguments);
           };
         }();
       });
@@ -11635,16 +11459,16 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref47 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee49(subsystem, level) {
+          var _ref46 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee48(subsystem, level) {
             var options,
                 res,
-                _args50 = arguments;
-            return regeneratorRuntime.wrap(function _callee49$(_context50) {
+                _args49 = arguments;
+            return regeneratorRuntime.wrap(function _callee48$(_context49) {
               while (1) {
-                switch (_context50.prev = _context50.next) {
+                switch (_context49.prev = _context49.next) {
                   case 0:
-                    options = _args50.length > 2 && _args50[2] !== undefined ? _args50[2] : {};
-                    _context50.next = 3;
+                    options = _args49.length > 2 && _args49[2] !== undefined ? _args49[2] : {};
+                    _context49.next = 3;
                     return api.post('log/level', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -11655,25 +11479,25 @@
                     });
 
                   case 3:
-                    res = _context50.sent;
-                    _context50.t0 = toCamel;
-                    _context50.next = 7;
+                    res = _context49.sent;
+                    _context49.t0 = toCamel;
+                    _context49.next = 7;
                     return res.json();
 
                   case 7:
-                    _context50.t1 = _context50.sent;
-                    return _context50.abrupt("return", (0, _context50.t0)(_context50.t1));
+                    _context49.t1 = _context49.sent;
+                    return _context49.abrupt("return", (0, _context49.t0)(_context49.t1));
 
                   case 9:
                   case "end":
-                    return _context50.stop();
+                    return _context49.stop();
                 }
               }
-            }, _callee49);
+            }, _callee48);
           }));
 
-          return function (_x67, _x68) {
-            return _ref47.apply(this, arguments);
+          return function (_x64, _x65) {
+            return _ref46.apply(this, arguments);
           };
         }();
       });
@@ -11700,23 +11524,23 @@
         var subsTracker = SubscriptionTracker.singleton(); // eslint-disable-next-line require-await
 
         return /*#__PURE__*/function () {
-          var _ref48 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee50(topic, handler) {
-            return regeneratorRuntime.wrap(function _callee50$(_context51) {
+          var _ref47 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee49(topic, handler) {
+            return regeneratorRuntime.wrap(function _callee49$(_context50) {
               while (1) {
-                switch (_context51.prev = _context51.next) {
+                switch (_context50.prev = _context50.next) {
                   case 0:
-                    return _context51.abrupt("return", subsTracker.unsubscribe(topic, handler));
+                    return _context50.abrupt("return", subsTracker.unsubscribe(topic, handler));
 
                   case 1:
                   case "end":
-                    return _context51.stop();
+                    return _context50.stop();
                 }
               }
-            }, _callee50);
+            }, _callee49);
           }));
 
-          return function (_x69, _x70) {
-            return _ref48.apply(this, arguments);
+          return function (_x66, _x67) {
+            return _ref47.apply(this, arguments);
           };
         }();
       };
@@ -11756,10 +11580,10 @@
     function Oud2(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__39 = __webpack_require__(
+      var _webpack_require__36 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__39.Buffer;
+          Buffer = _webpack_require__36.Buffer;
 
       var CID = __webpack_require__(
       /*! cids */
@@ -11775,19 +11599,19 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref49 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee51(cid, dLink) {
+          var _ref48 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee50(cid, dLink) {
             var options,
                 res,
                 _yield$res$json6,
                 Hash,
-                _args52 = arguments;
+                _args51 = arguments;
 
-            return regeneratorRuntime.wrap(function _callee51$(_context52) {
+            return regeneratorRuntime.wrap(function _callee50$(_context51) {
               while (1) {
-                switch (_context52.prev = _context52.next) {
+                switch (_context51.prev = _context51.next) {
                   case 0:
-                    options = _args52.length > 2 && _args52[2] !== undefined ? _args52[2] : {};
-                    _context52.next = 3;
+                    options = _args51.length > 2 && _args51[2] !== undefined ? _args51[2] : {};
+                    _context51.next = 3;
                     return api.post('object/patch/add-link', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -11798,25 +11622,25 @@
                     });
 
                   case 3:
-                    res = _context52.sent;
-                    _context52.next = 6;
+                    res = _context51.sent;
+                    _context51.next = 6;
                     return res.json();
 
                   case 6:
-                    _yield$res$json6 = _context52.sent;
+                    _yield$res$json6 = _context51.sent;
                     Hash = _yield$res$json6.Hash;
-                    return _context52.abrupt("return", new CID(Hash));
+                    return _context51.abrupt("return", new CID(Hash));
 
                   case 9:
                   case "end":
-                    return _context52.stop();
+                    return _context51.stop();
                 }
               }
-            }, _callee51);
+            }, _callee50);
           }));
 
-          return function (_x71, _x72) {
-            return _ref49.apply(this, arguments);
+          return function (_x68, _x69) {
+            return _ref48.apply(this, arguments);
           };
         }();
       });
@@ -11894,11 +11718,11 @@
     function PV6L(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__40 = __webpack_require__(
+      var _webpack_require__37 = __webpack_require__(
       /*! ./url */
       "HwtC"),
-          URLWithLegacySupport = _webpack_require__40.URLWithLegacySupport,
-          format = _webpack_require__40.format;
+          URLWithLegacySupport = _webpack_require__37.URLWithLegacySupport,
+          format = _webpack_require__37.format;
 
       module.exports = function (url) {
         var location = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -11951,19 +11775,19 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref50 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee52(key, value) {
+          var _ref49 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee51(key, value) {
             var options,
                 params,
                 res,
-                _args53 = arguments;
-            return regeneratorRuntime.wrap(function _callee52$(_context53) {
+                _args52 = arguments;
+            return regeneratorRuntime.wrap(function _callee51$(_context52) {
               while (1) {
-                switch (_context53.prev = _context53.next) {
+                switch (_context52.prev = _context52.next) {
                   case 0:
-                    options = _args53.length > 2 && _args53[2] !== undefined ? _args53[2] : {};
+                    options = _args52.length > 2 && _args52[2] !== undefined ? _args52[2] : {};
 
                     if (!(typeof key !== 'string')) {
-                      _context53.next = 3;
+                      _context52.next = 3;
                       break;
                     }
 
@@ -11982,7 +11806,7 @@
                       params.json = true;
                     }
 
-                    _context53.next = 7;
+                    _context52.next = 7;
                     return api.post('config', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -11991,25 +11815,25 @@
                     });
 
                   case 7:
-                    res = _context53.sent;
-                    _context53.t0 = toCamel;
-                    _context53.next = 11;
+                    res = _context52.sent;
+                    _context52.t0 = toCamel;
+                    _context52.next = 11;
                     return res.json();
 
                   case 11:
-                    _context53.t1 = _context53.sent;
-                    return _context53.abrupt("return", (0, _context53.t0)(_context53.t1));
+                    _context52.t1 = _context52.sent;
+                    return _context52.abrupt("return", (0, _context52.t0)(_context52.t1));
 
                   case 13:
                   case "end":
-                    return _context53.stop();
+                    return _context52.stop();
                 }
               }
-            }, _callee52);
+            }, _callee51);
           }));
 
-          return function (_x73, _x74) {
-            return _ref50.apply(this, arguments);
+          return function (_x70, _x71) {
+            return _ref49.apply(this, arguments);
           };
         }();
       });
@@ -12042,16 +11866,16 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref51 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee53(oldName, newName) {
+          var _ref50 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee52(oldName, newName) {
             var options,
                 res,
-                _args54 = arguments;
-            return regeneratorRuntime.wrap(function _callee53$(_context54) {
+                _args53 = arguments;
+            return regeneratorRuntime.wrap(function _callee52$(_context53) {
               while (1) {
-                switch (_context54.prev = _context54.next) {
+                switch (_context53.prev = _context53.next) {
                   case 0:
-                    options = _args54.length > 2 && _args54[2] !== undefined ? _args54[2] : {};
-                    _context54.next = 3;
+                    options = _args53.length > 2 && _args53[2] !== undefined ? _args53[2] : {};
+                    _context53.next = 3;
                     return api.post('key/rename', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -12062,25 +11886,25 @@
                     });
 
                   case 3:
-                    res = _context54.sent;
-                    _context54.t0 = toCamel;
-                    _context54.next = 7;
+                    res = _context53.sent;
+                    _context53.t0 = toCamel;
+                    _context53.next = 7;
                     return res.json();
 
                   case 7:
-                    _context54.t1 = _context54.sent;
-                    return _context54.abrupt("return", (0, _context54.t0)(_context54.t1));
+                    _context53.t1 = _context53.sent;
+                    return _context53.abrupt("return", (0, _context53.t0)(_context53.t1));
 
                   case 9:
                   case "end":
-                    return _context54.stop();
+                    return _context53.stop();
                 }
               }
-            }, _callee53);
+            }, _callee52);
           }));
 
-          return function (_x75, _x76) {
-            return _ref51.apply(this, arguments);
+          return function (_x72, _x73) {
+            return _ref50.apply(this, arguments);
           };
         }();
       });
@@ -12191,34 +12015,34 @@
        */
 
       var all = /*#__PURE__*/function () {
-        var _ref52 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee54(source) {
+        var _ref51 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee53(source) {
           var arr, _iteratorNormalCompletion14, _didIteratorError14, _iteratorError14, _iterator14, _step14, _value14, entry;
 
-          return regeneratorRuntime.wrap(function _callee54$(_context55) {
+          return regeneratorRuntime.wrap(function _callee53$(_context54) {
             while (1) {
-              switch (_context55.prev = _context55.next) {
+              switch (_context54.prev = _context54.next) {
                 case 0:
                   arr = [];
                   _iteratorNormalCompletion14 = true;
                   _didIteratorError14 = false;
-                  _context55.prev = 3;
+                  _context54.prev = 3;
                   _iterator14 = _asyncIterator(source);
 
                 case 5:
-                  _context55.next = 7;
+                  _context54.next = 7;
                   return _iterator14.next();
 
                 case 7:
-                  _step14 = _context55.sent;
+                  _step14 = _context54.sent;
                   _iteratorNormalCompletion14 = _step14.done;
-                  _context55.next = 11;
+                  _context54.next = 11;
                   return _step14.value;
 
                 case 11:
-                  _value14 = _context55.sent;
+                  _value14 = _context54.sent;
 
                   if (_iteratorNormalCompletion14) {
-                    _context55.next = 18;
+                    _context54.next = 18;
                     break;
                   }
 
@@ -12227,60 +12051,60 @@
 
                 case 15:
                   _iteratorNormalCompletion14 = true;
-                  _context55.next = 5;
+                  _context54.next = 5;
                   break;
 
                 case 18:
-                  _context55.next = 24;
+                  _context54.next = 24;
                   break;
 
                 case 20:
-                  _context55.prev = 20;
-                  _context55.t0 = _context55["catch"](3);
+                  _context54.prev = 20;
+                  _context54.t0 = _context54["catch"](3);
                   _didIteratorError14 = true;
-                  _iteratorError14 = _context55.t0;
+                  _iteratorError14 = _context54.t0;
 
                 case 24:
-                  _context55.prev = 24;
-                  _context55.prev = 25;
+                  _context54.prev = 24;
+                  _context54.prev = 25;
 
                   if (!(!_iteratorNormalCompletion14 && _iterator14["return"] != null)) {
-                    _context55.next = 29;
+                    _context54.next = 29;
                     break;
                   }
 
-                  _context55.next = 29;
+                  _context54.next = 29;
                   return _iterator14["return"]();
 
                 case 29:
-                  _context55.prev = 29;
+                  _context54.prev = 29;
 
                   if (!_didIteratorError14) {
-                    _context55.next = 32;
+                    _context54.next = 32;
                     break;
                   }
 
                   throw _iteratorError14;
 
                 case 32:
-                  return _context55.finish(29);
+                  return _context54.finish(29);
 
                 case 33:
-                  return _context55.finish(24);
+                  return _context54.finish(24);
 
                 case 34:
-                  return _context55.abrupt("return", arr);
+                  return _context54.abrupt("return", arr);
 
                 case 35:
                 case "end":
-                  return _context55.stop();
+                  return _context54.stop();
               }
             }
-          }, _callee54, null, [[3, 20, 24, 34], [25,, 29, 33]]);
+          }, _callee53, null, [[3, 20, 24, 34], [25,, 29, 33]]);
         }));
 
-        return function all(_x77) {
-          return _ref52.apply(this, arguments);
+        return function all(_x74) {
+          return _ref51.apply(this, arguments);
         };
       }();
 
@@ -12313,16 +12137,16 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee55() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee54() {
           var options,
               res,
-              _args56 = arguments;
-          return regeneratorRuntime.wrap(function _callee55$(_context56) {
+              _args55 = arguments;
+          return regeneratorRuntime.wrap(function _callee54$(_context55) {
             while (1) {
-              switch (_context56.prev = _context56.next) {
+              switch (_context55.prev = _context55.next) {
                 case 0:
-                  options = _args56.length > 0 && _args56[0] !== undefined ? _args56[0] : {};
-                  _context56.next = 3;
+                  options = _args55.length > 0 && _args55[0] !== undefined ? _args55[0] : {};
+                  _context55.next = 3;
                   return api.post('dns', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -12331,21 +12155,21 @@
                   });
 
                 case 3:
-                  res = _context56.sent;
-                  _context56.t0 = toCamel;
-                  _context56.next = 7;
+                  res = _context55.sent;
+                  _context55.t0 = toCamel;
+                  _context55.next = 7;
                   return res.json();
 
                 case 7:
-                  _context56.t1 = _context56.sent;
-                  return _context56.abrupt("return", (0, _context56.t0)(_context56.t1));
+                  _context55.t1 = _context55.sent;
+                  return _context55.abrupt("return", (0, _context55.t0)(_context55.t1));
 
                 case 9:
                 case "end":
-                  return _context56.stop();
+                  return _context55.stop();
               }
             }
-          }, _callee55);
+          }, _callee54);
         }));
       });
       /***/
@@ -12373,16 +12197,16 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _tail = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee56() {
+          var _tail = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee55() {
             var options,
                 res,
-                _args57 = arguments;
-            return regeneratorRuntime.wrap(function _callee56$(_context57) {
+                _args56 = arguments;
+            return regeneratorRuntime.wrap(function _callee55$(_context56) {
               while (1) {
-                switch (_context57.prev = _context57.next) {
+                switch (_context56.prev = _context56.next) {
                   case 0:
-                    options = _args57.length > 0 && _args57[0] !== undefined ? _args57[0] : {};
-                    _context57.next = 3;
+                    options = _args56.length > 0 && _args56[0] !== undefined ? _args56[0] : {};
+                    _context56.next = 3;
                     return _awaitAsyncGenerator(api.post('log/tail', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -12391,15 +12215,15 @@
                     }));
 
                   case 3:
-                    res = _context57.sent;
-                    return _context57.delegateYield(_asyncGeneratorDelegate(_asyncIterator(res.ndjson()), _awaitAsyncGenerator), "t0", 5);
+                    res = _context56.sent;
+                    return _context56.delegateYield(_asyncGeneratorDelegate(_asyncIterator(res.ndjson()), _awaitAsyncGenerator), "t0", 5);
 
                   case 5:
                   case "end":
-                    return _context57.stop();
+                    return _context56.stop();
                 }
               }
-            }, _callee56);
+            }, _callee55);
           }));
 
           function tail() {
@@ -12433,16 +12257,16 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee57() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee56() {
           var options,
               res,
-              _args58 = arguments;
-          return regeneratorRuntime.wrap(function _callee57$(_context58) {
+              _args57 = arguments;
+          return regeneratorRuntime.wrap(function _callee56$(_context57) {
             while (1) {
-              switch (_context58.prev = _context58.next) {
+              switch (_context57.prev = _context57.next) {
                 case 0:
-                  options = _args58.length > 0 && _args58[0] !== undefined ? _args58[0] : {};
-                  _context58.next = 3;
+                  options = _args57.length > 0 && _args57[0] !== undefined ? _args57[0] : {};
+                  _context57.next = 3;
                   return api.post('bootstrap/add', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -12453,15 +12277,15 @@
                   });
 
                 case 3:
-                  res = _context58.sent;
-                  return _context58.abrupt("return", res.json());
+                  res = _context57.sent;
+                  return _context57.abrupt("return", res.json());
 
                 case 5:
                 case "end":
-                  return _context58.stop();
+                  return _context57.stop();
               }
             }
-          }, _callee57);
+          }, _callee56);
         }));
       });
       /***/
@@ -12484,19 +12308,19 @@
       "Zws2");
 
       module.exports = /*#__PURE__*/function () {
-        var _urlSource = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee58(url, options) {
+        var _urlSource = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee57(url, options) {
           var http, response;
-          return regeneratorRuntime.wrap(function _callee58$(_context59) {
+          return regeneratorRuntime.wrap(function _callee57$(_context58) {
             while (1) {
-              switch (_context59.prev = _context59.next) {
+              switch (_context58.prev = _context58.next) {
                 case 0:
                   http = new Http();
-                  _context59.next = 3;
+                  _context58.next = 3;
                   return _awaitAsyncGenerator(http.get(url, options));
 
                 case 3:
-                  response = _context59.sent;
-                  _context59.next = 6;
+                  response = _context58.sent;
+                  _context58.next = 6;
                   return {
                     path: decodeURIComponent(new URL(url).pathname.split('/').pop() || ''),
                     content: response.iterator()
@@ -12504,10 +12328,10 @@
 
                 case 6:
                 case "end":
-                  return _context59.stop();
+                  return _context58.stop();
               }
             }
-          }, _callee58);
+          }, _callee57);
         }));
 
         function urlSource(_x11, _x12) {
@@ -12649,17 +12473,17 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee59() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee58() {
           var options,
               res,
               data,
-              _args60 = arguments;
-          return regeneratorRuntime.wrap(function _callee59$(_context60) {
+              _args59 = arguments;
+          return regeneratorRuntime.wrap(function _callee58$(_context59) {
             while (1) {
-              switch (_context60.prev = _context60.next) {
+              switch (_context59.prev = _context59.next) {
                 case 0:
-                  options = _args60.length > 0 && _args60[0] !== undefined ? _args60[0] : {};
-                  _context60.next = 3;
+                  options = _args59.length > 0 && _args59[0] !== undefined ? _args59[0] : {};
+                  _context59.next = 3;
                   return api.post('config/profile/list', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -12668,22 +12492,22 @@
                   });
 
                 case 3:
-                  res = _context60.sent;
-                  _context60.next = 6;
+                  res = _context59.sent;
+                  _context59.next = 6;
                   return res.json();
 
                 case 6:
-                  data = _context60.sent;
-                  return _context60.abrupt("return", data.map(function (profile) {
+                  data = _context59.sent;
+                  return _context59.abrupt("return", data.map(function (profile) {
                     return toCamel(profile);
                   }));
 
                 case 8:
                 case "end":
-                  return _context60.stop();
+                  return _context59.stop();
               }
             }
-          }, _callee59);
+          }, _callee58);
         }));
       });
       /***/
@@ -12701,10 +12525,10 @@
     function SMC(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__41 = __webpack_require__(
+      var _webpack_require__38 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__41.Buffer;
+          Buffer = _webpack_require__38.Buffer;
 
       var isIp = __webpack_require__(
       /*! is-ip */
@@ -13216,10 +13040,10 @@
     function SBVZ(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__42 = __webpack_require__(
+      var _webpack_require__39 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__42.Buffer;
+          Buffer = _webpack_require__39.Buffer;
 
       var configure = __webpack_require__(
       /*! ../lib/configure */
@@ -13229,14 +13053,14 @@
       /*! ../lib/to-url-search-params */
       "FeRZ");
 
-      var _webpack_require__43 = __webpack_require__(
+      var _webpack_require__40 = __webpack_require__(
       /*! ./response-types */
       "o23V"),
-          Value = _webpack_require__43.Value;
+          Value = _webpack_require__40.Value;
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _get2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee60(key) {
+          var _get2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee59(key) {
             var options,
                 res,
                 _iteratorNormalCompletion15,
@@ -13246,14 +13070,14 @@
                 _step15,
                 _value15,
                 message,
-                _args61 = arguments;
+                _args60 = arguments;
 
-            return regeneratorRuntime.wrap(function _callee60$(_context61) {
+            return regeneratorRuntime.wrap(function _callee59$(_context60) {
               while (1) {
-                switch (_context61.prev = _context61.next) {
+                switch (_context60.prev = _context60.next) {
                   case 0:
-                    options = _args61.length > 1 && _args61[1] !== undefined ? _args61[1] : {};
-                    _context61.next = 3;
+                    options = _args60.length > 1 && _args60[1] !== undefined ? _args60[1] : {};
+                    _context60.next = 3;
                     return api.post('dht/get', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -13264,94 +13088,94 @@
                     });
 
                   case 3:
-                    res = _context61.sent;
+                    res = _context60.sent;
                     _iteratorNormalCompletion15 = true;
                     _didIteratorError15 = false;
-                    _context61.prev = 6;
+                    _context60.prev = 6;
                     _iterator15 = _asyncIterator(res.ndjson());
 
                   case 8:
-                    _context61.next = 10;
+                    _context60.next = 10;
                     return _iterator15.next();
 
                   case 10:
-                    _step15 = _context61.sent;
+                    _step15 = _context60.sent;
                     _iteratorNormalCompletion15 = _step15.done;
-                    _context61.next = 14;
+                    _context60.next = 14;
                     return _step15.value;
 
                   case 14:
-                    _value15 = _context61.sent;
+                    _value15 = _context60.sent;
 
                     if (_iteratorNormalCompletion15) {
-                      _context61.next = 22;
+                      _context60.next = 22;
                       break;
                     }
 
                     message = _value15;
 
                     if (!(message.Type === Value)) {
-                      _context61.next = 19;
+                      _context60.next = 19;
                       break;
                     }
 
-                    return _context61.abrupt("return", Buffer.from(message.Extra, 'base64'));
+                    return _context60.abrupt("return", Buffer.from(message.Extra, 'base64'));
 
                   case 19:
                     _iteratorNormalCompletion15 = true;
-                    _context61.next = 8;
+                    _context60.next = 8;
                     break;
 
                   case 22:
-                    _context61.next = 28;
+                    _context60.next = 28;
                     break;
 
                   case 24:
-                    _context61.prev = 24;
-                    _context61.t0 = _context61["catch"](6);
+                    _context60.prev = 24;
+                    _context60.t0 = _context60["catch"](6);
                     _didIteratorError15 = true;
-                    _iteratorError15 = _context61.t0;
+                    _iteratorError15 = _context60.t0;
 
                   case 28:
-                    _context61.prev = 28;
-                    _context61.prev = 29;
+                    _context60.prev = 28;
+                    _context60.prev = 29;
 
                     if (!(!_iteratorNormalCompletion15 && _iterator15["return"] != null)) {
-                      _context61.next = 33;
+                      _context60.next = 33;
                       break;
                     }
 
-                    _context61.next = 33;
+                    _context60.next = 33;
                     return _iterator15["return"]();
 
                   case 33:
-                    _context61.prev = 33;
+                    _context60.prev = 33;
 
                     if (!_didIteratorError15) {
-                      _context61.next = 36;
+                      _context60.next = 36;
                       break;
                     }
 
                     throw _iteratorError15;
 
                   case 36:
-                    return _context61.finish(33);
+                    return _context60.finish(33);
 
                   case 37:
-                    return _context61.finish(28);
+                    return _context60.finish(28);
 
                   case 38:
                     throw new Error('not found');
 
                   case 39:
                   case "end":
-                    return _context61.stop();
+                    return _context60.stop();
                 }
               }
-            }, _callee60, null, [[6, 24, 28, 38], [29,, 33, 37]]);
+            }, _callee59, null, [[6, 24, 28, 38], [29,, 33, 37]]);
           }));
 
-          function get(_x78) {
+          function get(_x75) {
             return _get2.apply(this, arguments);
           }
 
@@ -13387,16 +13211,16 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _gc = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee61() {
+          var _gc = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee60() {
             var options,
                 res,
-                _args62 = arguments;
-            return regeneratorRuntime.wrap(function _callee61$(_context62) {
+                _args61 = arguments;
+            return regeneratorRuntime.wrap(function _callee60$(_context61) {
               while (1) {
-                switch (_context62.prev = _context62.next) {
+                switch (_context61.prev = _context61.next) {
                   case 0:
-                    options = _args62.length > 0 && _args62[0] !== undefined ? _args62[0] : {};
-                    _context62.next = 3;
+                    options = _args61.length > 0 && _args61[0] !== undefined ? _args61[0] : {};
+                    _context61.next = 3;
                     return _awaitAsyncGenerator(api.post('repo/gc', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -13411,15 +13235,15 @@
                     }));
 
                   case 3:
-                    res = _context62.sent;
-                    return _context62.delegateYield(_asyncGeneratorDelegate(_asyncIterator(res.ndjson()), _awaitAsyncGenerator), "t0", 5);
+                    res = _context61.sent;
+                    return _context61.delegateYield(_asyncGeneratorDelegate(_asyncIterator(res.ndjson()), _awaitAsyncGenerator), "t0", 5);
 
                   case 5:
                   case "end":
-                    return _context62.stop();
+                    return _context61.stop();
                 }
               }
-            }, _callee61);
+            }, _callee60);
           }));
 
           function gc() {
@@ -13454,25 +13278,25 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref56 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee62(topic) {
+          var _ref55 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee61(topic) {
             var options,
                 res,
                 _yield$res$json7,
                 Strings,
-                _args63 = arguments;
+                _args62 = arguments;
 
-            return regeneratorRuntime.wrap(function _callee62$(_context63) {
+            return regeneratorRuntime.wrap(function _callee61$(_context62) {
               while (1) {
-                switch (_context63.prev = _context63.next) {
+                switch (_context62.prev = _context62.next) {
                   case 0:
-                    options = _args63.length > 1 && _args63[1] !== undefined ? _args63[1] : {};
+                    options = _args62.length > 1 && _args62[1] !== undefined ? _args62[1] : {};
 
                     if (!options && typeof topic === 'object') {
                       options = topic || {};
                       topic = null;
                     }
 
-                    _context63.next = 4;
+                    _context62.next = 4;
                     return api.post('pubsub/peers', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -13483,25 +13307,25 @@
                     });
 
                   case 4:
-                    res = _context63.sent;
-                    _context63.next = 7;
+                    res = _context62.sent;
+                    _context62.next = 7;
                     return res.json();
 
                   case 7:
-                    _yield$res$json7 = _context63.sent;
+                    _yield$res$json7 = _context62.sent;
                     Strings = _yield$res$json7.Strings;
-                    return _context63.abrupt("return", Strings || []);
+                    return _context62.abrupt("return", Strings || []);
 
                   case 10:
                   case "end":
-                    return _context63.stop();
+                    return _context62.stop();
                 }
               }
-            }, _callee62);
+            }, _callee61);
           }));
 
-          return function (_x79) {
-            return _ref56.apply(this, arguments);
+          return function (_x76) {
+            return _ref55.apply(this, arguments);
           };
         }();
       });
@@ -13564,16 +13388,16 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee63() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee62() {
           var options,
               res,
-              _args64 = arguments;
-          return regeneratorRuntime.wrap(function _callee63$(_context64) {
+              _args63 = arguments;
+          return regeneratorRuntime.wrap(function _callee62$(_context63) {
             while (1) {
-              switch (_context64.prev = _context64.next) {
+              switch (_context63.prev = _context63.next) {
                 case 0:
-                  options = _args64.length > 0 && _args64[0] !== undefined ? _args64[0] : {};
-                  _context64.next = 3;
+                  options = _args63.length > 0 && _args63[0] !== undefined ? _args63[0] : {};
+                  _context63.next = 3;
                   return api.post('diag/cmds', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -13582,15 +13406,15 @@
                   });
 
                 case 3:
-                  res = _context64.sent;
-                  return _context64.abrupt("return", res.json());
+                  res = _context63.sent;
+                  return _context63.abrupt("return", res.json());
 
                 case 5:
                 case "end":
-                  return _context64.stop();
+                  return _context63.stop();
               }
             }
-          }, _callee63);
+          }, _callee62);
         }));
       });
       /***/
@@ -13872,7 +13696,7 @@
 
       var multihashing = __webpack_require__(
       /*! multihashing-async */
-      "MJDW");
+      "d9A7");
 
       var multicodec = __webpack_require__(
       /*! multicodec */
@@ -13936,35 +13760,35 @@
            * @returns {Promise.<CID>}
            */
           cid: function () {
-            var _cid = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee64(binaryBlob, userOptions) {
+            var _cid = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee63(binaryBlob, userOptions) {
               var defaultOptions, options, multihash, codecName, cid;
-              return regeneratorRuntime.wrap(function _callee64$(_context65) {
+              return regeneratorRuntime.wrap(function _callee63$(_context64) {
                 while (1) {
-                  switch (_context65.prev = _context65.next) {
+                  switch (_context64.prev = _context64.next) {
                     case 0:
                       defaultOptions = {
                         cidVersion: 1,
                         hashAlg: module.exports.defaultHashAlg
                       };
                       options = Object.assign(defaultOptions, userOptions);
-                      _context65.next = 4;
+                      _context64.next = 4;
                       return multihashing(binaryBlob, options.hashAlg);
 
                     case 4:
-                      multihash = _context65.sent;
+                      multihash = _context64.sent;
                       codecName = multicodec.print[module.exports.codec];
                       cid = new CID(options.cidVersion, codecName, multihash);
-                      return _context65.abrupt("return", cid);
+                      return _context64.abrupt("return", cid);
 
                     case 8:
                     case "end":
-                      return _context65.stop();
+                      return _context64.stop();
                   }
                 }
-              }, _callee64);
+              }, _callee63);
             }));
 
-            function cid(_x80, _x81) {
+            function cid(_x77, _x78) {
               return _cid.apply(this, arguments);
             }
 
@@ -13987,19 +13811,19 @@
     function TvW(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__44 = __webpack_require__(
+      var _webpack_require__41 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__44.Buffer;
+          Buffer = _webpack_require__41.Buffer;
 
       var CID = __webpack_require__(
       /*! cids */
       "iARh");
 
-      var _webpack_require__45 = __webpack_require__(
+      var _webpack_require__42 = __webpack_require__(
       /*! ipld-dag-pb */
       "yFpY"),
-          DAGLink = _webpack_require__45.DAGLink;
+          DAGLink = _webpack_require__42.DAGLink;
 
       var configure = __webpack_require__(
       /*! ../lib/configure */
@@ -14011,17 +13835,17 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref58 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee65(cid) {
+          var _ref57 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee64(cid) {
             var options,
                 res,
                 data,
-                _args66 = arguments;
-            return regeneratorRuntime.wrap(function _callee65$(_context66) {
+                _args65 = arguments;
+            return regeneratorRuntime.wrap(function _callee64$(_context65) {
               while (1) {
-                switch (_context66.prev = _context66.next) {
+                switch (_context65.prev = _context65.next) {
                   case 0:
-                    options = _args66.length > 1 && _args66[1] !== undefined ? _args66[1] : {};
-                    _context66.next = 3;
+                    options = _args65.length > 1 && _args65[1] !== undefined ? _args65[1] : {};
+                    _context65.next = 3;
                     return api.post('object/links', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -14032,26 +13856,26 @@
                     });
 
                   case 3:
-                    res = _context66.sent;
-                    _context66.next = 6;
+                    res = _context65.sent;
+                    _context65.next = 6;
                     return res.json();
 
                   case 6:
-                    data = _context66.sent;
-                    return _context66.abrupt("return", (data.Links || []).map(function (l) {
+                    data = _context65.sent;
+                    return _context65.abrupt("return", (data.Links || []).map(function (l) {
                       return new DAGLink(l.Name, l.Size, l.Hash);
                     }));
 
                   case 8:
                   case "end":
-                    return _context66.stop();
+                    return _context65.stop();
                 }
               }
-            }, _callee65);
+            }, _callee64);
           }));
 
-          return function (_x82) {
-            return _ref58.apply(this, arguments);
+          return function (_x79) {
+            return _ref57.apply(this, arguments);
           };
         }();
       });
@@ -14088,7 +13912,7 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ls2 = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee66(path) {
+          var _ls2 = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee65(path) {
             var options,
                 res,
                 _iteratorNormalCompletion16,
@@ -14101,23 +13925,23 @@
                 _iterator36,
                 _step36,
                 entry,
-                _args67 = arguments;
+                _args66 = arguments;
 
-            return regeneratorRuntime.wrap(function _callee66$(_context67) {
+            return regeneratorRuntime.wrap(function _callee65$(_context66) {
               while (1) {
-                switch (_context67.prev = _context67.next) {
+                switch (_context66.prev = _context66.next) {
                   case 0:
-                    options = _args67.length > 1 && _args67[1] !== undefined ? _args67[1] : {};
+                    options = _args66.length > 1 && _args66[1] !== undefined ? _args66[1] : {};
 
                     if (!(!path || typeof path !== 'string')) {
-                      _context67.next = 3;
+                      _context66.next = 3;
                       break;
                     }
 
                     throw new Error('ipfs.files.ls requires a path');
 
                   case 3:
-                    _context67.next = 5;
+                    _context66.next = 5;
                     return _awaitAsyncGenerator(api.post('files/ls', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -14132,130 +13956,130 @@
                     }));
 
                   case 5:
-                    res = _context67.sent;
+                    res = _context66.sent;
                     _iteratorNormalCompletion16 = true;
                     _didIteratorError16 = false;
-                    _context67.prev = 8;
+                    _context66.prev = 8;
                     _iterator16 = _asyncIterator(res.ndjson());
 
                   case 10:
-                    _context67.next = 12;
+                    _context66.next = 12;
                     return _awaitAsyncGenerator(_iterator16.next());
 
                   case 12:
-                    _step16 = _context67.sent;
+                    _step16 = _context66.sent;
                     _iteratorNormalCompletion16 = _step16.done;
-                    _context67.next = 16;
+                    _context66.next = 16;
                     return _awaitAsyncGenerator(_step16.value);
 
                   case 16:
-                    _value16 = _context67.sent;
+                    _value16 = _context66.sent;
 
                     if (_iteratorNormalCompletion16) {
-                      _context67.next = 44;
+                      _context66.next = 44;
                       break;
                     }
 
                     result = _value16;
 
                     if (!('Entries' in result)) {
-                      _context67.next = 39;
+                      _context66.next = 39;
                       break;
                     }
 
                     _iterator36 = _createForOfIteratorHelper(result.Entries || []);
-                    _context67.prev = 21;
+                    _context66.prev = 21;
 
                     _iterator36.s();
 
                   case 23:
                     if ((_step36 = _iterator36.n()).done) {
-                      _context67.next = 29;
+                      _context66.next = 29;
                       break;
                     }
 
                     entry = _step36.value;
-                    _context67.next = 27;
+                    _context66.next = 27;
                     return toCoreInterface(toCamelWithMetadata(entry));
 
                   case 27:
-                    _context67.next = 23;
+                    _context66.next = 23;
                     break;
 
                   case 29:
-                    _context67.next = 34;
+                    _context66.next = 34;
                     break;
 
                   case 31:
-                    _context67.prev = 31;
-                    _context67.t0 = _context67["catch"](21);
+                    _context66.prev = 31;
+                    _context66.t0 = _context66["catch"](21);
 
-                    _iterator36.e(_context67.t0);
+                    _iterator36.e(_context66.t0);
 
                   case 34:
-                    _context67.prev = 34;
+                    _context66.prev = 34;
 
                     _iterator36.f();
 
-                    return _context67.finish(34);
+                    return _context66.finish(34);
 
                   case 37:
-                    _context67.next = 41;
+                    _context66.next = 41;
                     break;
 
                   case 39:
-                    _context67.next = 41;
+                    _context66.next = 41;
                     return toCoreInterface(toCamelWithMetadata(result));
 
                   case 41:
                     _iteratorNormalCompletion16 = true;
-                    _context67.next = 10;
+                    _context66.next = 10;
                     break;
 
                   case 44:
-                    _context67.next = 50;
+                    _context66.next = 50;
                     break;
 
                   case 46:
-                    _context67.prev = 46;
-                    _context67.t1 = _context67["catch"](8);
+                    _context66.prev = 46;
+                    _context66.t1 = _context66["catch"](8);
                     _didIteratorError16 = true;
-                    _iteratorError16 = _context67.t1;
+                    _iteratorError16 = _context66.t1;
 
                   case 50:
-                    _context67.prev = 50;
-                    _context67.prev = 51;
+                    _context66.prev = 50;
+                    _context66.prev = 51;
 
                     if (!(!_iteratorNormalCompletion16 && _iterator16["return"] != null)) {
-                      _context67.next = 55;
+                      _context66.next = 55;
                       break;
                     }
 
-                    _context67.next = 55;
+                    _context66.next = 55;
                     return _awaitAsyncGenerator(_iterator16["return"]());
 
                   case 55:
-                    _context67.prev = 55;
+                    _context66.prev = 55;
 
                     if (!_didIteratorError16) {
-                      _context67.next = 58;
+                      _context66.next = 58;
                       break;
                     }
 
                     throw _iteratorError16;
 
                   case 58:
-                    return _context67.finish(55);
+                    return _context66.finish(55);
 
                   case 59:
-                    return _context67.finish(50);
+                    return _context66.finish(50);
 
                   case 60:
                   case "end":
-                    return _context67.stop();
+                    return _context66.stop();
                 }
               }
-            }, _callee66, null, [[8, 46, 50, 60], [21, 31, 34, 37], [51,, 55, 59]]);
+            }, _callee65, null, [[8, 46, 50, 60], [21, 31, 34, 37], [51,, 55, 59]]);
           }));
 
           function ls(_x13) {
@@ -14510,17 +14334,17 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee67() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee66() {
           var options,
               res,
               data,
-              _args68 = arguments;
-          return regeneratorRuntime.wrap(function _callee67$(_context68) {
+              _args67 = arguments;
+          return regeneratorRuntime.wrap(function _callee66$(_context67) {
             while (1) {
-              switch (_context68.prev = _context68.next) {
+              switch (_context67.prev = _context67.next) {
                 case 0:
-                  options = _args68.length > 0 && _args68[0] !== undefined ? _args68[0] : {};
-                  _context68.next = 3;
+                  options = _args67.length > 0 && _args67[0] !== undefined ? _args67[0] : {};
+                  _context67.next = 3;
                   return api.post('version', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -14529,20 +14353,20 @@
                   });
 
                 case 3:
-                  res = _context68.sent;
-                  _context68.next = 6;
+                  res = _context67.sent;
+                  _context67.next = 6;
                   return res.json();
 
                 case 6:
-                  data = _context68.sent;
-                  return _context68.abrupt("return", toCamel(data));
+                  data = _context67.sent;
+                  return _context67.abrupt("return", toCamel(data));
 
                 case 8:
                 case "end":
-                  return _context68.stop();
+                  return _context67.stop();
               }
             }
-          }, _callee67);
+          }, _callee66);
         }));
       });
       /***/
@@ -14578,23 +14402,23 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref60 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee68(path) {
+          var _ref59 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee67(path) {
             var options,
                 res,
                 data,
-                _args69 = arguments;
-            return regeneratorRuntime.wrap(function _callee68$(_context69) {
+                _args68 = arguments;
+            return regeneratorRuntime.wrap(function _callee67$(_context68) {
               while (1) {
-                switch (_context69.prev = _context69.next) {
+                switch (_context68.prev = _context68.next) {
                   case 0:
-                    options = _args69.length > 1 && _args69[1] !== undefined ? _args69[1] : {};
+                    options = _args68.length > 1 && _args68[1] !== undefined ? _args68[1] : {};
 
                     if (typeof path !== 'string') {
                       options = path || {};
                       path = '/';
                     }
 
-                    _context69.next = 4;
+                    _context68.next = 4;
                     return api.post('files/stat', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -14605,25 +14429,25 @@
                     });
 
                   case 4:
-                    res = _context69.sent;
-                    _context69.next = 7;
+                    res = _context68.sent;
+                    _context68.next = 7;
                     return res.json();
 
                   case 7:
-                    data = _context69.sent;
+                    data = _context68.sent;
                     data.WithLocality = data.WithLocality || false;
-                    return _context69.abrupt("return", toCoreInterface(toCamelWithMetadata(data)));
+                    return _context68.abrupt("return", toCoreInterface(toCamelWithMetadata(data)));
 
                   case 10:
                   case "end":
-                    return _context69.stop();
+                    return _context68.stop();
                 }
               }
-            }, _callee68);
+            }, _callee67);
           }));
 
-          return function (_x83) {
-            return _ref60.apply(this, arguments);
+          return function (_x80) {
+            return _ref59.apply(this, arguments);
           };
         }();
       });
@@ -14663,17 +14487,17 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref61 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee69(cid) {
+          var _ref60 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee68(cid) {
             var options,
                 res,
                 data,
-                _args70 = arguments;
-            return regeneratorRuntime.wrap(function _callee69$(_context70) {
+                _args69 = arguments;
+            return regeneratorRuntime.wrap(function _callee68$(_context69) {
               while (1) {
-                switch (_context70.prev = _context70.next) {
+                switch (_context69.prev = _context69.next) {
                   case 0:
-                    options = _args70.length > 1 && _args70[1] !== undefined ? _args70[1] : {};
-                    _context70.next = 3;
+                    options = _args69.length > 1 && _args69[1] !== undefined ? _args69[1] : {};
+                    _context69.next = 3;
                     return api.post('block/stat', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -14684,27 +14508,27 @@
                     });
 
                   case 3:
-                    res = _context70.sent;
-                    _context70.next = 6;
+                    res = _context69.sent;
+                    _context69.next = 6;
                     return res.json();
 
                   case 6:
-                    data = _context70.sent;
-                    return _context70.abrupt("return", {
+                    data = _context69.sent;
+                    return _context69.abrupt("return", {
                       cid: new CID(data.Key),
                       size: data.Size
                     });
 
                   case 8:
                   case "end":
-                    return _context70.stop();
+                    return _context69.stop();
                 }
               }
-            }, _callee69);
+            }, _callee68);
           }));
 
-          return function (_x84) {
-            return _ref61.apply(this, arguments);
+          return function (_x81) {
+            return _ref60.apply(this, arguments);
           };
         }();
       });
@@ -14733,16 +14557,16 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _touch = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee70(path) {
+          var _touch = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee69(path) {
             var options,
                 res,
-                _args71 = arguments;
-            return regeneratorRuntime.wrap(function _callee70$(_context71) {
+                _args70 = arguments;
+            return regeneratorRuntime.wrap(function _callee69$(_context70) {
               while (1) {
-                switch (_context71.prev = _context71.next) {
+                switch (_context70.prev = _context70.next) {
                   case 0:
-                    options = _args71.length > 1 && _args71[1] !== undefined ? _args71[1] : {};
-                    _context71.next = 3;
+                    options = _args70.length > 1 && _args70[1] !== undefined ? _args70[1] : {};
+                    _context70.next = 3;
                     return api.post('files/touch', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -14753,19 +14577,19 @@
                     });
 
                   case 3:
-                    res = _context71.sent;
-                    _context71.next = 6;
+                    res = _context70.sent;
+                    _context70.next = 6;
                     return res.text();
 
                   case 6:
                   case "end":
-                    return _context71.stop();
+                    return _context70.stop();
                 }
               }
-            }, _callee70);
+            }, _callee69);
           }));
 
-          function touch(_x85) {
+          function touch(_x82) {
             return _touch.apply(this, arguments);
           }
 
@@ -14830,10 +14654,10 @@
       /*! ./to-stream */
       "t2O4");
 
-      var _webpack_require__46 = __webpack_require__(
+      var _webpack_require__43 = __webpack_require__(
       /*! nanoid */
       "4b23"),
-          nanoid = _webpack_require__46.nanoid;
+          nanoid = _webpack_require__43.nanoid;
 
       var modeToString = __webpack_require__(
       /*! ../lib/mode-to-string */
@@ -14854,49 +14678,49 @@
       }
 
       function _multipartRequest() {
-        _multipartRequest = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee72() {
+        _multipartRequest = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee71() {
           var source,
               abortController,
               headers,
               boundary,
               streamFiles,
               _streamFiles,
-              _args73 = arguments;
+              _args72 = arguments;
 
-          return regeneratorRuntime.wrap(function _callee72$(_context73) {
+          return regeneratorRuntime.wrap(function _callee71$(_context72) {
             while (1) {
-              switch (_context73.prev = _context73.next) {
+              switch (_context72.prev = _context72.next) {
                 case 0:
                   _streamFiles = function _streamFiles3() {
-                    _streamFiles = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee71(source) {
+                    _streamFiles = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee70(source) {
                       var index, _iteratorNormalCompletion17, _didIteratorError17, _iteratorError17, _iterator17, _step17, _value17, _value31, content, path, mode, mtime, fileSuffix, type, _mtimeToObject, secs, nsecs;
 
-                      return regeneratorRuntime.wrap(function _callee71$(_context72) {
+                      return regeneratorRuntime.wrap(function _callee70$(_context71) {
                         while (1) {
-                          switch (_context72.prev = _context72.next) {
+                          switch (_context71.prev = _context71.next) {
                             case 0:
-                              _context72.prev = 0;
+                              _context71.prev = 0;
                               index = 0;
                               _iteratorNormalCompletion17 = true;
                               _didIteratorError17 = false;
-                              _context72.prev = 4;
+                              _context71.prev = 4;
                               _iterator17 = _asyncIterator(normaliseInput(source));
 
                             case 6:
-                              _context72.next = 8;
+                              _context71.next = 8;
                               return _awaitAsyncGenerator(_iterator17.next());
 
                             case 8:
-                              _step17 = _context72.sent;
+                              _step17 = _context71.sent;
                               _iteratorNormalCompletion17 = _step17.done;
-                              _context72.next = 12;
+                              _context71.next = 12;
                               return _awaitAsyncGenerator(_step17.value);
 
                             case 12:
-                              _value17 = _context72.sent;
+                              _value17 = _context71.sent;
 
                               if (_iteratorNormalCompletion17) {
-                                _context72.next = 45;
+                                _context71.next = 45;
                                 break;
                               }
 
@@ -14905,138 +14729,138 @@
                               type = content ? 'file' : 'dir';
 
                               if (!(index > 0)) {
-                                _context72.next = 21;
+                                _context71.next = 21;
                                 break;
                               }
 
-                              _context72.next = 20;
+                              _context71.next = 20;
                               return '\r\n';
 
                             case 20:
                               fileSuffix = "-".concat(index);
 
                             case 21:
-                              _context72.next = 23;
+                              _context71.next = 23;
                               return "--".concat(boundary, "\r\n");
 
                             case 23:
-                              _context72.next = 25;
+                              _context71.next = 25;
                               return "Content-Disposition: form-data; name=\"".concat(type).concat(fileSuffix, "\"; filename=\"").concat(encodeURIComponent(path), "\"\r\n");
 
                             case 25:
-                              _context72.next = 27;
+                              _context71.next = 27;
                               return "Content-Type: ".concat(content ? 'application/octet-stream' : 'application/x-directory', "\r\n");
 
                             case 27:
                               if (!(mode !== null && mode !== undefined)) {
-                                _context72.next = 30;
+                                _context71.next = 30;
                                 break;
                               }
 
-                              _context72.next = 30;
+                              _context71.next = 30;
                               return "mode: ".concat(modeToString(mode), "\r\n");
 
                             case 30:
                               if (!(mtime != null)) {
-                                _context72.next = 37;
+                                _context71.next = 37;
                                 break;
                               }
 
                               _mtimeToObject = mtimeToObject(mtime), secs = _mtimeToObject.secs, nsecs = _mtimeToObject.nsecs;
-                              _context72.next = 34;
+                              _context71.next = 34;
                               return "mtime: ".concat(secs, "\r\n");
 
                             case 34:
                               if (!(nsecs != null)) {
-                                _context72.next = 37;
+                                _context71.next = 37;
                                 break;
                               }
 
-                              _context72.next = 37;
+                              _context71.next = 37;
                               return "mtime-nsecs: ".concat(nsecs, "\r\n");
 
                             case 37:
-                              _context72.next = 39;
+                              _context71.next = 39;
                               return '\r\n';
 
                             case 39:
                               if (!content) {
-                                _context72.next = 41;
+                                _context71.next = 41;
                                 break;
                               }
 
-                              return _context72.delegateYield(_asyncGeneratorDelegate(_asyncIterator(content), _awaitAsyncGenerator), "t0", 41);
+                              return _context71.delegateYield(_asyncGeneratorDelegate(_asyncIterator(content), _awaitAsyncGenerator), "t0", 41);
 
                             case 41:
                               index++;
 
                             case 42:
                               _iteratorNormalCompletion17 = true;
-                              _context72.next = 6;
+                              _context71.next = 6;
                               break;
 
                             case 45:
-                              _context72.next = 51;
+                              _context71.next = 51;
                               break;
 
                             case 47:
-                              _context72.prev = 47;
-                              _context72.t1 = _context72["catch"](4);
+                              _context71.prev = 47;
+                              _context71.t1 = _context71["catch"](4);
                               _didIteratorError17 = true;
-                              _iteratorError17 = _context72.t1;
+                              _iteratorError17 = _context71.t1;
 
                             case 51:
-                              _context72.prev = 51;
-                              _context72.prev = 52;
+                              _context71.prev = 51;
+                              _context71.prev = 52;
 
                               if (!(!_iteratorNormalCompletion17 && _iterator17["return"] != null)) {
-                                _context72.next = 56;
+                                _context71.next = 56;
                                 break;
                               }
 
-                              _context72.next = 56;
+                              _context71.next = 56;
                               return _awaitAsyncGenerator(_iterator17["return"]());
 
                             case 56:
-                              _context72.prev = 56;
+                              _context71.prev = 56;
 
                               if (!_didIteratorError17) {
-                                _context72.next = 59;
+                                _context71.next = 59;
                                 break;
                               }
 
                               throw _iteratorError17;
 
                             case 59:
-                              return _context72.finish(56);
+                              return _context71.finish(56);
 
                             case 60:
-                              return _context72.finish(51);
+                              return _context71.finish(51);
 
                             case 61:
-                              _context72.next = 66;
+                              _context71.next = 66;
                               break;
 
                             case 63:
-                              _context72.prev = 63;
-                              _context72.t2 = _context72["catch"](0);
+                              _context71.prev = 63;
+                              _context71.t2 = _context71["catch"](0);
                               // workaround for https://github.com/node-fetch/node-fetch/issues/753
-                              abortController.abort(_context72.t2);
+                              abortController.abort(_context71.t2);
 
                             case 66:
-                              _context72.prev = 66;
-                              _context72.next = 69;
+                              _context71.prev = 66;
+                              _context71.next = 69;
                               return "\r\n--".concat(boundary, "--\r\n");
 
                             case 69:
-                              return _context72.finish(66);
+                              return _context71.finish(66);
 
                             case 70:
                             case "end":
-                              return _context72.stop();
+                              return _context71.stop();
                           }
                         }
-                      }, _callee71, null, [[0, 63, 66, 70], [4, 47, 51, 61], [52,, 56, 60]]);
+                      }, _callee70, null, [[0, 63, 66, 70], [4, 47, 51, 61], [52,, 56, 60]]);
                     }));
                     return _streamFiles.apply(this, arguments);
                   };
@@ -15045,29 +14869,29 @@
                     return _streamFiles.apply(this, arguments);
                   };
 
-                  source = _args73.length > 0 && _args73[0] !== undefined ? _args73[0] : '';
-                  abortController = _args73.length > 1 ? _args73[1] : undefined;
-                  headers = _args73.length > 2 && _args73[2] !== undefined ? _args73[2] : {};
-                  boundary = _args73.length > 3 && _args73[3] !== undefined ? _args73[3] : "-----------------------------".concat(nanoid());
-                  _context73.t0 = merge(headers, {
+                  source = _args72.length > 0 && _args72[0] !== undefined ? _args72[0] : '';
+                  abortController = _args72.length > 1 ? _args72[1] : undefined;
+                  headers = _args72.length > 2 && _args72[2] !== undefined ? _args72[2] : {};
+                  boundary = _args72.length > 3 && _args72[3] !== undefined ? _args72[3] : "-----------------------------".concat(nanoid());
+                  _context72.t0 = merge(headers, {
                     'Content-Type': "multipart/form-data; boundary=".concat(boundary)
                   });
-                  _context73.next = 9;
+                  _context72.next = 9;
                   return toStream(streamFiles(source));
 
                 case 9:
-                  _context73.t1 = _context73.sent;
-                  return _context73.abrupt("return", {
-                    headers: _context73.t0,
-                    body: _context73.t1
+                  _context72.t1 = _context72.sent;
+                  return _context72.abrupt("return", {
+                    headers: _context72.t0,
+                    body: _context72.t1
                   });
 
                 case 11:
                 case "end":
-                  return _context73.stop();
+                  return _context72.stop();
               }
             }
-          }, _callee72);
+          }, _callee71);
         }));
         return _multipartRequest.apply(this, arguments);
       }
@@ -15119,31 +14943,31 @@
         "b/+6")(options);
 
         return /*#__PURE__*/function () {
-          var _ref62 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee73(cid) {
+          var _ref61 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee72(cid) {
             var options,
                 resolved,
                 block,
                 dagResolver,
-                _args74 = arguments;
-            return regeneratorRuntime.wrap(function _callee73$(_context74) {
+                _args73 = arguments;
+            return regeneratorRuntime.wrap(function _callee72$(_context73) {
               while (1) {
-                switch (_context74.prev = _context74.next) {
+                switch (_context73.prev = _context73.next) {
                   case 0:
-                    options = _args74.length > 1 && _args74[1] !== undefined ? _args74[1] : {};
-                    _context74.next = 3;
+                    options = _args73.length > 1 && _args73[1] !== undefined ? _args73[1] : {};
+                    _context73.next = 3;
                     return dagResolve(cid, options);
 
                   case 3:
-                    resolved = _context74.sent;
-                    _context74.next = 6;
+                    resolved = _context73.sent;
+                    _context73.next = 6;
                     return getBlock(resolved.cid, options);
 
                   case 6:
-                    block = _context74.sent;
+                    block = _context73.sent;
                     dagResolver = resolvers[block.cid.codec];
 
                     if (dagResolver) {
-                      _context74.next = 10;
+                      _context73.next = 10;
                       break;
                     }
 
@@ -15156,18 +14980,18 @@
                       resolved.remainderPath = '/';
                     }
 
-                    return _context74.abrupt("return", dagResolver.resolve(block.data, resolved.remainderPath));
+                    return _context73.abrupt("return", dagResolver.resolve(block.data, resolved.remainderPath));
 
                   case 12:
                   case "end":
-                    return _context74.stop();
+                    return _context73.stop();
                 }
               }
-            }, _callee73);
+            }, _callee72);
           }));
 
-          return function (_x86) {
-            return _ref62.apply(this, arguments);
+          return function (_x83) {
+            return _ref61.apply(this, arguments);
           };
         }();
       });
@@ -15186,10 +15010,10 @@
     function WAPC(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__47 = __webpack_require__(
+      var _webpack_require__44 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__47.Buffer;
+          Buffer = _webpack_require__44.Buffer;
 
       var convert = __webpack_require__(
       /*! ./convert */
@@ -15445,17 +15269,17 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref63 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee74(path) {
+          var _ref62 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee73(path) {
             var options,
                 res,
                 data,
-                _args75 = arguments;
-            return regeneratorRuntime.wrap(function _callee74$(_context75) {
+                _args74 = arguments;
+            return regeneratorRuntime.wrap(function _callee73$(_context74) {
               while (1) {
-                switch (_context75.prev = _context75.next) {
+                switch (_context74.prev = _context74.next) {
                   case 0:
-                    options = _args75.length > 1 && _args75[1] !== undefined ? _args75[1] : {};
-                    _context75.next = 3;
+                    options = _args74.length > 1 && _args74[1] !== undefined ? _args74[1] : {};
+                    _context74.next = 3;
                     return api.post('pin/rm', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -15466,13 +15290,13 @@
                     });
 
                   case 3:
-                    res = _context75.sent;
-                    _context75.next = 6;
+                    res = _context74.sent;
+                    _context74.next = 6;
                     return res.json();
 
                   case 6:
-                    data = _context75.sent;
-                    return _context75.abrupt("return", (data.Pins || []).map(function (cid) {
+                    data = _context74.sent;
+                    return _context74.abrupt("return", (data.Pins || []).map(function (cid) {
                       return {
                         cid: new CID(cid)
                       };
@@ -15480,14 +15304,14 @@
 
                   case 8:
                   case "end":
-                    return _context75.stop();
+                    return _context74.stop();
                 }
               }
-            }, _callee74);
+            }, _callee73);
           }));
 
-          return function (_x87) {
-            return _ref63.apply(this, arguments);
+          return function (_x84) {
+            return _ref62.apply(this, arguments);
           };
         }();
       });
@@ -15522,25 +15346,25 @@
         var all = addAll(options);
         return configure(function () {
           return /*#__PURE__*/function () {
-            var _add = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee75(input) {
+            var _add = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee74(input) {
               var options,
-                  _args76 = arguments;
-              return regeneratorRuntime.wrap(function _callee75$(_context76) {
+                  _args75 = arguments;
+              return regeneratorRuntime.wrap(function _callee74$(_context75) {
                 while (1) {
-                  switch (_context76.prev = _context76.next) {
+                  switch (_context75.prev = _context75.next) {
                     case 0:
-                      options = _args76.length > 1 && _args76[1] !== undefined ? _args76[1] : {};
-                      return _context76.abrupt("return", last(all(input, options)));
+                      options = _args75.length > 1 && _args75[1] !== undefined ? _args75[1] : {};
+                      return _context75.abrupt("return", last(all(input, options)));
 
                     case 2:
                     case "end":
-                      return _context76.stop();
+                      return _context75.stop();
                   }
                 }
-              }, _callee75);
+              }, _callee74);
             }));
 
-            function add(_x88) {
+            function add(_x85) {
               return _add.apply(this, arguments);
             }
 
@@ -15550,6 +15374,138 @@
       };
       /***/
 
+    },
+
+    /***/
+    "WkWz":
+    /*!*****************************************************************************!*\
+      !*** ./node_modules/ipld-raw/node_modules/multihashing-async/src/crypto.js ***!
+      \*****************************************************************************/
+
+    /*! no static exports found */
+
+    /***/
+    function WkWz(module, exports, __webpack_require__) {
+      "use strict";
+
+      var _webpack_require__45 = __webpack_require__(
+      /*! buffer */
+      "tjlA"),
+          Buffer = _webpack_require__45.Buffer;
+
+      var sha3 = __webpack_require__(
+      /*! js-sha3 */
+      "zNmP");
+
+      var mur = __webpack_require__(
+      /*! murmurhash3js-revisited */
+      "QWpB");
+
+      var _webpack_require__46 = __webpack_require__(
+      /*! ./sha */
+      "IrvS"),
+          sha = _webpack_require__46.factory;
+
+      var _webpack_require__47 = __webpack_require__(
+      /*! ./utils */
+      "CrJr"),
+          fromNumberTo32BitBuf = _webpack_require__47.fromNumberTo32BitBuf; // Note that although this function doesn't do any asynchronous work, we mark
+      // the function as async because it must return a Promise to match the API
+      // for other functions that do perform asynchronous work (see sha.browser.js)
+      // eslint-disable-next-line
+
+
+      var hash = function hash(algorithm) {
+        return /*#__PURE__*/function () {
+          var _ref63 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee75(data) {
+            return regeneratorRuntime.wrap(function _callee75$(_context76) {
+              while (1) {
+                switch (_context76.prev = _context76.next) {
+                  case 0:
+                    _context76.t0 = algorithm;
+                    _context76.next = _context76.t0 === 'sha3-224' ? 3 : _context76.t0 === 'sha3-256' ? 4 : _context76.t0 === 'sha3-384' ? 5 : _context76.t0 === 'sha3-512' ? 6 : _context76.t0 === 'shake-128' ? 7 : _context76.t0 === 'shake-256' ? 8 : _context76.t0 === 'keccak-224' ? 9 : _context76.t0 === 'keccak-256' ? 10 : _context76.t0 === 'keccak-384' ? 11 : _context76.t0 === 'keccak-512' ? 12 : _context76.t0 === 'murmur3-128' ? 13 : _context76.t0 === 'murmur3-32' ? 14 : 15;
+                    break;
+
+                  case 3:
+                    return _context76.abrupt("return", Buffer.from(sha3.sha3_224.arrayBuffer(data)));
+
+                  case 4:
+                    return _context76.abrupt("return", Buffer.from(sha3.sha3_256.arrayBuffer(data)));
+
+                  case 5:
+                    return _context76.abrupt("return", Buffer.from(sha3.sha3_384.arrayBuffer(data)));
+
+                  case 6:
+                    return _context76.abrupt("return", Buffer.from(sha3.sha3_512.arrayBuffer(data)));
+
+                  case 7:
+                    return _context76.abrupt("return", Buffer.from(sha3.shake128.create(128).update(data).arrayBuffer()));
+
+                  case 8:
+                    return _context76.abrupt("return", Buffer.from(sha3.shake256.create(256).update(data).arrayBuffer()));
+
+                  case 9:
+                    return _context76.abrupt("return", Buffer.from(sha3.keccak224.arrayBuffer(data)));
+
+                  case 10:
+                    return _context76.abrupt("return", Buffer.from(sha3.keccak256.arrayBuffer(data)));
+
+                  case 11:
+                    return _context76.abrupt("return", Buffer.from(sha3.keccak384.arrayBuffer(data)));
+
+                  case 12:
+                    return _context76.abrupt("return", Buffer.from(sha3.keccak512.arrayBuffer(data)));
+
+                  case 13:
+                    return _context76.abrupt("return", Buffer.from(mur.x64.hash128(data), 'hex'));
+
+                  case 14:
+                    return _context76.abrupt("return", fromNumberTo32BitBuf(mur.x86.hash32(data)));
+
+                  case 15:
+                    throw new TypeError("".concat(algorithm, " is not a supported algorithm"));
+
+                  case 16:
+                  case "end":
+                    return _context76.stop();
+                }
+              }
+            }, _callee75);
+          }));
+
+          return function (_x86) {
+            return _ref63.apply(this, arguments);
+          };
+        }();
+      };
+
+      var identity = function identity(data) {
+        return Buffer.from(data);
+      };
+
+      module.exports = {
+        identity: identity,
+        sha1: sha('sha1'),
+        sha2256: sha('sha2-256'),
+        sha2512: sha('sha2-512'),
+        dblSha2256: sha('dbl-sha2-256'),
+        sha3224: hash('sha3-224'),
+        sha3256: hash('sha3-256'),
+        sha3384: hash('sha3-384'),
+        sha3512: hash('sha3-512'),
+        shake128: hash('shake-128'),
+        shake256: hash('shake-256'),
+        keccak224: hash('keccak-224'),
+        keccak256: hash('keccak-256'),
+        keccak384: hash('keccak-384'),
+        keccak512: hash('keccak-512'),
+        murmur3128: hash('murmur3-128'),
+        murmur332: hash('murmur3-32'),
+        addBlake: __webpack_require__(
+        /*! ./blake */
+        "E8hM")
+      };
+      /***/
     },
 
     /***/
@@ -16533,7 +16489,7 @@
             }, _callee77);
           }));
 
-          return function (_x89) {
+          return function (_x87) {
             return _ref64.apply(this, arguments);
           };
         }();
@@ -16845,7 +16801,7 @@
             }, _callee79);
           }));
 
-          return function (_x90) {
+          return function (_x88) {
             return _ref65.apply(this, arguments);
           };
         }();
@@ -16924,7 +16880,7 @@
             }, _callee80);
           }));
 
-          return function (_x91, _x92) {
+          return function (_x89, _x90) {
             return _ref66.apply(this, arguments);
           };
         }();
@@ -17275,7 +17231,7 @@
               }, _callee82, this);
             }));
 
-            function fetch(_x93) {
+            function fetch(_x91) {
               return _fetch2.apply(this, arguments);
             }
 
@@ -17985,7 +17941,7 @@
             }, _callee85);
           }));
 
-          return function (_x94) {
+          return function (_x92) {
             return _ref69.apply(this, arguments);
           };
         }();
@@ -18141,6 +18097,216 @@
     },
 
     /***/
+    "d9A7":
+    /*!****************************************************************************!*\
+      !*** ./node_modules/ipld-raw/node_modules/multihashing-async/src/index.js ***!
+      \****************************************************************************/
+
+    /*! no static exports found */
+
+    /***/
+    function d9A7(module, exports, __webpack_require__) {
+      "use strict";
+
+      var _webpack_require__57 = __webpack_require__(
+      /*! buffer */
+      "tjlA"),
+          Buffer = _webpack_require__57.Buffer;
+
+      var errcode = __webpack_require__(
+      /*! err-code */
+      "tqrP");
+
+      var multihash = __webpack_require__(
+      /*! multihashes */
+      "yP9g");
+
+      var crypto = __webpack_require__(
+      /*! ./crypto */
+      "WkWz");
+      /**
+       * Hash the given `buf` using the algorithm specified by `alg`.
+       * @param {Buffer} buf - The value to hash.
+       * @param {number|string} alg - The algorithm to use eg 'sha1'
+       * @param {number} [length] - Optionally trim the result to this length.
+       * @returns {Promise<Buffer>}
+       */
+
+
+      function Multihashing(_x93, _x94, _x95) {
+        return _Multihashing.apply(this, arguments);
+      }
+      /**
+       * The `buffer` module for easy use in the browser.
+       *
+       * @type {Buffer}
+       */
+
+
+      function _Multihashing() {
+        _Multihashing = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee89(buf, alg, length) {
+          var digest;
+          return regeneratorRuntime.wrap(function _callee89$(_context90) {
+            while (1) {
+              switch (_context90.prev = _context90.next) {
+                case 0:
+                  _context90.next = 2;
+                  return Multihashing.digest(buf, alg, length);
+
+                case 2:
+                  digest = _context90.sent;
+                  return _context90.abrupt("return", multihash.encode(digest, alg, length));
+
+                case 4:
+                case "end":
+                  return _context90.stop();
+              }
+            }
+          }, _callee89);
+        }));
+        return _Multihashing.apply(this, arguments);
+      }
+
+      Multihashing.Buffer = Buffer; // for browser things
+
+      /**
+       * Expose multihash itself, to avoid silly double requires.
+       */
+
+      Multihashing.multihash = multihash;
+      /**
+       * @param {Buffer} buf - The value to hash.
+       * @param {number|string} alg - The algorithm to use eg 'sha1'
+       * @param {number} [length] - Optionally trim the result to this length.
+       * @returns {Promise<Buffer>}
+       */
+
+      Multihashing.digest = /*#__PURE__*/function () {
+        var _ref71 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee87(buf, alg, length) {
+          var hash, digest;
+          return regeneratorRuntime.wrap(function _callee87$(_context88) {
+            while (1) {
+              switch (_context88.prev = _context88.next) {
+                case 0:
+                  hash = Multihashing.createHash(alg);
+                  _context88.next = 3;
+                  return hash(buf);
+
+                case 3:
+                  digest = _context88.sent;
+                  return _context88.abrupt("return", length ? digest.slice(0, length) : digest);
+
+                case 5:
+                case "end":
+                  return _context88.stop();
+              }
+            }
+          }, _callee87);
+        }));
+
+        return function (_x96, _x97, _x98) {
+          return _ref71.apply(this, arguments);
+        };
+      }();
+      /**
+       * Creates a function that hashes with the given algorithm
+       *
+       * @param {string|number} alg - The algorithm to use eg 'sha1'
+       *
+       * @returns {function} - The hash function corresponding to `alg`
+       */
+
+
+      Multihashing.createHash = function (alg) {
+        if (!alg) {
+          throw errcode(new Error('hash algorithm must be specified'), 'ERR_HASH_ALGORITHM_NOT_SPECIFIED');
+        }
+
+        alg = multihash.coerceCode(alg);
+
+        if (!Multihashing.functions[alg]) {
+          throw errcode(new Error("multihash function '".concat(alg, "' not yet supported")), 'ERR_HASH_ALGORITHM_NOT_SUPPORTED');
+        }
+
+        return Multihashing.functions[alg];
+      };
+      /**
+       * Mapping of multihash codes to their hashing functions.
+       * @type {Object}
+       */
+
+
+      Multihashing.functions = {
+        // identity
+        0x00: crypto.identity,
+        // sha1
+        0x11: crypto.sha1,
+        // sha2-256
+        0x12: crypto.sha2256,
+        // sha2-512
+        0x13: crypto.sha2512,
+        // sha3-512
+        0x14: crypto.sha3512,
+        // sha3-384
+        0x15: crypto.sha3384,
+        // sha3-256
+        0x16: crypto.sha3256,
+        // sha3-224
+        0x17: crypto.sha3224,
+        // shake-128
+        0x18: crypto.shake128,
+        // shake-256
+        0x19: crypto.shake256,
+        // keccak-224
+        0x1A: crypto.keccak224,
+        // keccak-256
+        0x1B: crypto.keccak256,
+        // keccak-384
+        0x1C: crypto.keccak384,
+        // keccak-512
+        0x1D: crypto.keccak512,
+        // murmur3-128
+        0x22: crypto.murmur3128,
+        // murmur3-32
+        0x23: crypto.murmur332,
+        // dbl-sha2-256
+        0x56: crypto.dblSha2256
+      }; // add blake functions
+
+      crypto.addBlake(Multihashing.functions);
+
+      Multihashing.validate = /*#__PURE__*/function () {
+        var _ref72 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee88(buf, hash) {
+          var newHash;
+          return regeneratorRuntime.wrap(function _callee88$(_context89) {
+            while (1) {
+              switch (_context89.prev = _context89.next) {
+                case 0:
+                  _context89.next = 2;
+                  return Multihashing(buf, multihash.decode(hash).name);
+
+                case 2:
+                  newHash = _context89.sent;
+                  return _context89.abrupt("return", Buffer.compare(hash, newHash) === 0);
+
+                case 4:
+                case "end":
+                  return _context89.stop();
+              }
+            }
+          }, _callee88);
+        }));
+
+        return function (_x99, _x100) {
+          return _ref72.apply(this, arguments);
+        };
+      }();
+
+      module.exports = Multihashing;
+      /***/
+    },
+
+    /***/
     "dKtH":
     /*!*****************************************************!*\
       !*** ./node_modules/ipfs-http-client/src/log/ls.js ***!
@@ -18161,17 +18327,17 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee87() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee90() {
           var options,
               res,
               data,
-              _args88 = arguments;
-          return regeneratorRuntime.wrap(function _callee87$(_context88) {
+              _args91 = arguments;
+          return regeneratorRuntime.wrap(function _callee90$(_context91) {
             while (1) {
-              switch (_context88.prev = _context88.next) {
+              switch (_context91.prev = _context91.next) {
                 case 0:
-                  options = _args88.length > 0 && _args88[0] !== undefined ? _args88[0] : {};
-                  _context88.next = 3;
+                  options = _args91.length > 0 && _args91[0] !== undefined ? _args91[0] : {};
+                  _context91.next = 3;
                   return api.post('log/ls', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -18180,20 +18346,20 @@
                   });
 
                 case 3:
-                  res = _context88.sent;
-                  _context88.next = 6;
+                  res = _context91.sent;
+                  _context91.next = 6;
                   return res.json();
 
                 case 6:
-                  data = _context88.sent;
-                  return _context88.abrupt("return", data.Strings);
+                  data = _context91.sent;
+                  return _context91.abrupt("return", data.Strings);
 
                 case 8:
                 case "end":
-                  return _context88.stop();
+                  return _context91.stop();
               }
             }
-          }, _callee87);
+          }, _callee90);
         }));
       });
       /***/
@@ -18313,7 +18479,7 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _addAll = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee88(input) {
+          var _addAll = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee91(input) {
             var options,
                 progressFn,
                 controller,
@@ -18326,21 +18492,21 @@
                 _step21,
                 _value21,
                 file,
-                _args89 = arguments;
+                _args92 = arguments;
 
-            return regeneratorRuntime.wrap(function _callee88$(_context89) {
+            return regeneratorRuntime.wrap(function _callee91$(_context92) {
               while (1) {
-                switch (_context89.prev = _context89.next) {
+                switch (_context92.prev = _context92.next) {
                   case 0:
-                    options = _args89.length > 1 && _args89[1] !== undefined ? _args89[1] : {};
+                    options = _args92.length > 1 && _args92[1] !== undefined ? _args92[1] : {};
                     progressFn = options.progress; // allow aborting requests on body errors
 
                     controller = new AbortController();
                     signal = anySignal([controller.signal, options.signal]);
-                    _context89.t0 = _awaitAsyncGenerator;
-                    _context89.t1 = api;
-                    _context89.t2 = _objectSpread;
-                    _context89.t3 = {
+                    _context92.t0 = _awaitAsyncGenerator;
+                    _context92.t1 = api;
+                    _context92.t2 = _objectSpread;
+                    _context92.t3 = {
                       searchParams: toUrlSearchParams(_objectSpread(_objectSpread({
                         'stream-channels': true
                       }, options), {}, {
@@ -18349,38 +18515,38 @@
                       timeout: options.timeout,
                       signal: signal
                     };
-                    _context89.next = 10;
+                    _context92.next = 10;
                     return _awaitAsyncGenerator(multipartRequest(input, controller, options.headers));
 
                   case 10:
-                    _context89.t4 = _context89.sent;
-                    _context89.t5 = (0, _context89.t2)(_context89.t3, _context89.t4);
-                    _context89.t6 = _context89.t1.post.call(_context89.t1, 'add', _context89.t5);
-                    _context89.next = 15;
-                    return (0, _context89.t0)(_context89.t6);
+                    _context92.t4 = _context92.sent;
+                    _context92.t5 = (0, _context92.t2)(_context92.t3, _context92.t4);
+                    _context92.t6 = _context92.t1.post.call(_context92.t1, 'add', _context92.t5);
+                    _context92.next = 15;
+                    return (0, _context92.t0)(_context92.t6);
 
                   case 15:
-                    res = _context89.sent;
+                    res = _context92.sent;
                     _iteratorNormalCompletion21 = true;
                     _didIteratorError21 = false;
-                    _context89.prev = 18;
+                    _context92.prev = 18;
                     _iterator21 = _asyncIterator(res.ndjson());
 
                   case 20:
-                    _context89.next = 22;
+                    _context92.next = 22;
                     return _awaitAsyncGenerator(_iterator21.next());
 
                   case 22:
-                    _step21 = _context89.sent;
+                    _step21 = _context92.sent;
                     _iteratorNormalCompletion21 = _step21.done;
-                    _context89.next = 26;
+                    _context92.next = 26;
                     return _awaitAsyncGenerator(_step21.value);
 
                   case 26:
-                    _value21 = _context89.sent;
+                    _value21 = _context92.sent;
 
                     if (_iteratorNormalCompletion21) {
-                      _context89.next = 39;
+                      _context92.next = 39;
                       break;
                     }
 
@@ -18388,67 +18554,67 @@
                     file = toCamel(file);
 
                     if (!(progressFn && file.bytes)) {
-                      _context89.next = 34;
+                      _context92.next = 34;
                       break;
                     }
 
                     progressFn(file.bytes);
-                    _context89.next = 36;
+                    _context92.next = 36;
                     break;
 
                   case 34:
-                    _context89.next = 36;
+                    _context92.next = 36;
                     return toCoreInterface(file);
 
                   case 36:
                     _iteratorNormalCompletion21 = true;
-                    _context89.next = 20;
+                    _context92.next = 20;
                     break;
 
                   case 39:
-                    _context89.next = 45;
+                    _context92.next = 45;
                     break;
 
                   case 41:
-                    _context89.prev = 41;
-                    _context89.t7 = _context89["catch"](18);
+                    _context92.prev = 41;
+                    _context92.t7 = _context92["catch"](18);
                     _didIteratorError21 = true;
-                    _iteratorError21 = _context89.t7;
+                    _iteratorError21 = _context92.t7;
 
                   case 45:
-                    _context89.prev = 45;
-                    _context89.prev = 46;
+                    _context92.prev = 45;
+                    _context92.prev = 46;
 
                     if (!(!_iteratorNormalCompletion21 && _iterator21["return"] != null)) {
-                      _context89.next = 50;
+                      _context92.next = 50;
                       break;
                     }
 
-                    _context89.next = 50;
+                    _context92.next = 50;
                     return _awaitAsyncGenerator(_iterator21["return"]());
 
                   case 50:
-                    _context89.prev = 50;
+                    _context92.prev = 50;
 
                     if (!_didIteratorError21) {
-                      _context89.next = 53;
+                      _context92.next = 53;
                       break;
                     }
 
                     throw _iteratorError21;
 
                   case 53:
-                    return _context89.finish(50);
+                    return _context92.finish(50);
 
                   case 54:
-                    return _context89.finish(45);
+                    return _context92.finish(45);
 
                   case 55:
                   case "end":
-                    return _context89.stop();
+                    return _context92.stop();
                 }
               }
-            }, _callee88, null, [[18, 41, 45, 55], [46,, 50, 54]]);
+            }, _callee91, null, [[18, 41, 45, 55], [46,, 50, 54]]);
           }));
 
           function addAll(_x19) {
@@ -18459,13 +18625,13 @@
         }();
       });
 
-      function toCoreInterface(_ref72) {
-        var name = _ref72.name,
-            hash = _ref72.hash,
-            size = _ref72.size,
-            mode = _ref72.mode,
-            mtime = _ref72.mtime,
-            mtimeNsecs = _ref72.mtimeNsecs;
+      function toCoreInterface(_ref74) {
+        var name = _ref74.name,
+            hash = _ref74.hash,
+            size = _ref74.size,
+            mode = _ref74.mode,
+            mtime = _ref74.mtime,
+            mtimeNsecs = _ref74.mtimeNsecs;
         var output = {
           path: name,
           cid: new CID(hash),
@@ -18499,10 +18665,10 @@
 
     /***/
     function drbO(module, exports, __webpack_require__) {
-      var _webpack_require__57 = __webpack_require__(
+      var _webpack_require__58 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__57.Buffer;
+          Buffer = _webpack_require__58.Buffer;
 
       var alloc = Buffer.alloc;
       var ZEROS = '0000000000000000000';
@@ -18652,16 +18818,16 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee89() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee92() {
           var options,
               res,
-              _args90 = arguments;
-          return regeneratorRuntime.wrap(function _callee89$(_context90) {
+              _args93 = arguments;
+          return regeneratorRuntime.wrap(function _callee92$(_context93) {
             while (1) {
-              switch (_context90.prev = _context90.next) {
+              switch (_context93.prev = _context93.next) {
                 case 0:
-                  options = _args90.length > 0 && _args90[0] !== undefined ? _args90[0] : {};
-                  _context90.next = 3;
+                  options = _args93.length > 0 && _args93[0] !== undefined ? _args93[0] : {};
+                  _context93.next = 3;
                   return api.post('bitswap/wantlist', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -18670,21 +18836,21 @@
                   });
 
                 case 3:
-                  _context90.next = 5;
-                  return _context90.sent.json();
+                  _context93.next = 5;
+                  return _context93.sent.json();
 
                 case 5:
-                  res = _context90.sent;
-                  return _context90.abrupt("return", (res.Keys || []).map(function (k) {
+                  res = _context93.sent;
+                  return _context93.abrupt("return", (res.Keys || []).map(function (k) {
                     return new CID(k['/']);
                   }));
 
                 case 7:
                 case "end":
-                  return _context90.stop();
+                  return _context93.stop();
               }
             }
-          }, _callee89);
+          }, _callee92);
         }));
       });
       /***/
@@ -18716,26 +18882,26 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref74 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee90(path) {
+          var _ref76 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee93(path) {
             var options,
                 res,
                 data,
-                _args91 = arguments;
-            return regeneratorRuntime.wrap(function _callee90$(_context91) {
+                _args94 = arguments;
+            return regeneratorRuntime.wrap(function _callee93$(_context94) {
               while (1) {
-                switch (_context91.prev = _context91.next) {
+                switch (_context94.prev = _context94.next) {
                   case 0:
-                    options = _args91.length > 1 && _args91[1] !== undefined ? _args91[1] : {};
+                    options = _args94.length > 1 && _args94[1] !== undefined ? _args94[1] : {};
 
                     if (!(!path || typeof path !== 'string')) {
-                      _context91.next = 3;
+                      _context94.next = 3;
                       break;
                     }
 
                     throw new Error('ipfs.files.flush requires a path');
 
                   case 3:
-                    _context91.next = 5;
+                    _context94.next = 5;
                     return api.post('files/flush', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -18746,24 +18912,24 @@
                     });
 
                   case 5:
-                    res = _context91.sent;
-                    _context91.next = 8;
+                    res = _context94.sent;
+                    _context94.next = 8;
                     return res.json();
 
                   case 8:
-                    data = _context91.sent;
-                    return _context91.abrupt("return", new CID(data.Cid));
+                    data = _context94.sent;
+                    return _context94.abrupt("return", new CID(data.Cid));
 
                   case 10:
                   case "end":
-                    return _context91.stop();
+                    return _context94.stop();
                 }
               }
-            }, _callee90);
+            }, _callee93);
           }));
 
-          return function (_x95) {
-            return _ref74.apply(this, arguments);
+          return function (_x101) {
+            return _ref76.apply(this, arguments);
           };
         }();
       });
@@ -18785,145 +18951,145 @@
       "XDq5");
 
       module.exports = function (source) {
-        var reader = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee91() {
+        var reader = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee94() {
           var bytes, bl, _iteratorNormalCompletion22, _didIteratorError22, _iteratorError22, _iterator22, _step22, _value22, chunk, data;
 
-          return regeneratorRuntime.wrap(function _callee91$(_context92) {
+          return regeneratorRuntime.wrap(function _callee94$(_context95) {
             while (1) {
-              switch (_context92.prev = _context92.next) {
+              switch (_context95.prev = _context95.next) {
                 case 0:
-                  _context92.next = 2;
+                  _context95.next = 2;
                   return;
 
                 case 2:
-                  bytes = _context92.sent;
+                  bytes = _context95.sent;
                   // Allows us to receive 8 when reader.next(8) is called
                   bl = new BufferList();
                   _iteratorNormalCompletion22 = true;
                   _didIteratorError22 = false;
-                  _context92.prev = 6;
+                  _context95.prev = 6;
                   _iterator22 = _asyncIterator(source);
 
                 case 8:
-                  _context92.next = 10;
+                  _context95.next = 10;
                   return _awaitAsyncGenerator(_iterator22.next());
 
                 case 10:
-                  _step22 = _context92.sent;
+                  _step22 = _context95.sent;
                   _iteratorNormalCompletion22 = _step22.done;
-                  _context92.next = 14;
+                  _context95.next = 14;
                   return _awaitAsyncGenerator(_step22.value);
 
                 case 14:
-                  _value22 = _context92.sent;
+                  _value22 = _context95.sent;
 
                   if (_iteratorNormalCompletion22) {
-                    _context92.next = 42;
+                    _context95.next = 42;
                     break;
                   }
 
                   chunk = _value22;
 
                   if (bytes) {
-                    _context92.next = 23;
+                    _context95.next = 23;
                     break;
                   }
 
-                  _context92.next = 20;
+                  _context95.next = 20;
                   return bl.append(chunk);
 
                 case 20:
-                  bytes = _context92.sent;
+                  bytes = _context95.sent;
                   bl = new BufferList();
-                  return _context92.abrupt("continue", 39);
+                  return _context95.abrupt("continue", 39);
 
                 case 23:
                   bl.append(chunk);
 
                 case 24:
                   if (!(bl.length >= bytes)) {
-                    _context92.next = 39;
+                    _context95.next = 39;
                     break;
                   }
 
                   data = bl.shallowSlice(0, bytes);
                   bl.consume(bytes);
-                  _context92.next = 29;
+                  _context95.next = 29;
                   return data;
 
                 case 29:
-                  bytes = _context92.sent;
+                  bytes = _context95.sent;
 
                   if (bytes) {
-                    _context92.next = 37;
+                    _context95.next = 37;
                     break;
                   }
 
                   if (!bl.length) {
-                    _context92.next = 36;
+                    _context95.next = 36;
                     break;
                   }
 
-                  _context92.next = 34;
+                  _context95.next = 34;
                   return bl;
 
                 case 34:
-                  bytes = _context92.sent;
+                  bytes = _context95.sent;
                   bl = new BufferList();
 
                 case 36:
-                  return _context92.abrupt("break", 39);
+                  return _context95.abrupt("break", 39);
 
                 case 37:
-                  _context92.next = 24;
+                  _context95.next = 24;
                   break;
 
                 case 39:
                   _iteratorNormalCompletion22 = true;
-                  _context92.next = 8;
+                  _context95.next = 8;
                   break;
 
                 case 42:
-                  _context92.next = 48;
+                  _context95.next = 48;
                   break;
 
                 case 44:
-                  _context92.prev = 44;
-                  _context92.t0 = _context92["catch"](6);
+                  _context95.prev = 44;
+                  _context95.t0 = _context95["catch"](6);
                   _didIteratorError22 = true;
-                  _iteratorError22 = _context92.t0;
+                  _iteratorError22 = _context95.t0;
 
                 case 48:
-                  _context92.prev = 48;
-                  _context92.prev = 49;
+                  _context95.prev = 48;
+                  _context95.prev = 49;
 
                   if (!(!_iteratorNormalCompletion22 && _iterator22["return"] != null)) {
-                    _context92.next = 53;
+                    _context95.next = 53;
                     break;
                   }
 
-                  _context92.next = 53;
+                  _context95.next = 53;
                   return _awaitAsyncGenerator(_iterator22["return"]());
 
                 case 53:
-                  _context92.prev = 53;
+                  _context95.prev = 53;
 
                   if (!_didIteratorError22) {
-                    _context92.next = 56;
+                    _context95.next = 56;
                     break;
                   }
 
                   throw _iteratorError22;
 
                 case 56:
-                  return _context92.finish(53);
+                  return _context95.finish(53);
 
                 case 57:
-                  return _context92.finish(48);
+                  return _context95.finish(48);
 
                 case 58:
                   if (!bytes) {
-                    _context92.next = 60;
+                    _context95.next = 60;
                     break;
                   }
 
@@ -18934,10 +19100,10 @@
 
                 case 60:
                 case "end":
-                  return _context92.stop();
+                  return _context95.stop();
               }
             }
-          }, _callee91, null, [[6, 44, 48, 58], [49,, 53, 57]]);
+          }, _callee94, null, [[6, 44, 48, 58], [49,, 53, 57]]);
         }))();
 
         reader.next();
@@ -19007,23 +19173,23 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref75 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee92(path, input) {
+          var _ref77 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee95(path, input) {
             var options,
                 controller,
                 signal,
                 res,
-                _args93 = arguments;
-            return regeneratorRuntime.wrap(function _callee92$(_context93) {
+                _args96 = arguments;
+            return regeneratorRuntime.wrap(function _callee95$(_context96) {
               while (1) {
-                switch (_context93.prev = _context93.next) {
+                switch (_context96.prev = _context96.next) {
                   case 0:
-                    options = _args93.length > 2 && _args93[2] !== undefined ? _args93[2] : {};
+                    options = _args96.length > 2 && _args96[2] !== undefined ? _args96[2] : {};
                     // allow aborting requests on body errors
                     controller = new AbortController();
                     signal = anySignal([controller.signal, options.signal]);
-                    _context93.t0 = api;
-                    _context93.t1 = _objectSpread;
-                    _context93.t2 = {
+                    _context96.t0 = api;
+                    _context96.t1 = _objectSpread;
+                    _context96.t2 = {
                       timeout: options.timeout,
                       signal: signal,
                       searchParams: toUrlSearchParams(_objectSpread({
@@ -19032,7 +19198,7 @@
                         count: options.count || options.length
                       }, options))
                     };
-                    _context93.next = 8;
+                    _context96.next = 8;
                     return multipartRequest({
                       content: input,
                       path: 'arg',
@@ -19041,26 +19207,26 @@
                     }, controller, options.headers);
 
                   case 8:
-                    _context93.t3 = _context93.sent;
-                    _context93.t4 = (0, _context93.t1)(_context93.t2, _context93.t3);
-                    _context93.next = 12;
-                    return _context93.t0.post.call(_context93.t0, 'files/write', _context93.t4);
+                    _context96.t3 = _context96.sent;
+                    _context96.t4 = (0, _context96.t1)(_context96.t2, _context96.t3);
+                    _context96.next = 12;
+                    return _context96.t0.post.call(_context96.t0, 'files/write', _context96.t4);
 
                   case 12:
-                    res = _context93.sent;
-                    _context93.next = 15;
+                    res = _context96.sent;
+                    _context96.next = 15;
                     return res.text();
 
                   case 15:
                   case "end":
-                    return _context93.stop();
+                    return _context96.stop();
                 }
               }
-            }, _callee92);
+            }, _callee95);
           }));
 
-          return function (_x96, _x97) {
-            return _ref75.apply(this, arguments);
+          return function (_x102, _x103) {
+            return _ref77.apply(this, arguments);
           };
         }();
       });
@@ -19233,16 +19399,16 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref76 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee93(name) {
+          var _ref78 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee96(name) {
             var options,
                 res,
-                _args94 = arguments;
-            return regeneratorRuntime.wrap(function _callee93$(_context94) {
+                _args97 = arguments;
+            return regeneratorRuntime.wrap(function _callee96$(_context97) {
               while (1) {
-                switch (_context94.prev = _context94.next) {
+                switch (_context97.prev = _context97.next) {
                   case 0:
-                    options = _args94.length > 1 && _args94[1] !== undefined ? _args94[1] : {};
-                    _context94.next = 3;
+                    options = _args97.length > 1 && _args97[1] !== undefined ? _args97[1] : {};
+                    _context97.next = 3;
                     return api.post('name/pubsub/cancel', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -19253,25 +19419,25 @@
                     });
 
                   case 3:
-                    res = _context94.sent;
-                    _context94.t0 = toCamel;
-                    _context94.next = 7;
+                    res = _context97.sent;
+                    _context97.t0 = toCamel;
+                    _context97.next = 7;
                     return res.json();
 
                   case 7:
-                    _context94.t1 = _context94.sent;
-                    return _context94.abrupt("return", (0, _context94.t0)(_context94.t1));
+                    _context97.t1 = _context97.sent;
+                    return _context97.abrupt("return", (0, _context97.t0)(_context97.t1));
 
                   case 9:
                   case "end":
-                    return _context94.stop();
+                    return _context97.stop();
                 }
               }
-            }, _callee93);
+            }, _callee96);
           }));
 
-          return function (_x98) {
-            return _ref76.apply(this, arguments);
+          return function (_x104) {
+            return _ref78.apply(this, arguments);
           };
         }();
       });
@@ -19499,16 +19665,16 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref77 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee94(path) {
+          var _ref79 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee97(path) {
             var options,
                 res,
-                _args95 = arguments;
-            return regeneratorRuntime.wrap(function _callee94$(_context95) {
+                _args98 = arguments;
+            return regeneratorRuntime.wrap(function _callee97$(_context98) {
               while (1) {
-                switch (_context95.prev = _context95.next) {
+                switch (_context98.prev = _context98.next) {
                   case 0:
-                    options = _args95.length > 1 && _args95[1] !== undefined ? _args95[1] : {};
-                    _context95.next = 3;
+                    options = _args98.length > 1 && _args98[1] !== undefined ? _args98[1] : {};
+                    _context98.next = 3;
                     return api.post('files/mkdir', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -19519,20 +19685,20 @@
                     });
 
                   case 3:
-                    res = _context95.sent;
-                    _context95.next = 6;
+                    res = _context98.sent;
+                    _context98.next = 6;
                     return res.text();
 
                   case 6:
                   case "end":
-                    return _context95.stop();
+                    return _context98.stop();
                 }
               }
-            }, _callee94);
+            }, _callee97);
           }));
 
-          return function (_x99) {
-            return _ref77.apply(this, arguments);
+          return function (_x105) {
+            return _ref79.apply(this, arguments);
           };
         }();
       });
@@ -21064,10 +21230,10 @@
     function hDHj(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__58 = __webpack_require__(
+      var _webpack_require__59 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__58.Buffer;
+          Buffer = _webpack_require__59.Buffer;
 
       var ieee754 = __webpack_require__(
       /*! ieee754 */
@@ -21097,10 +21263,10 @@
       /*! ./tagged */
       "IrRL");
 
-      var _webpack_require__59 = __webpack_require__(
+      var _webpack_require__60 = __webpack_require__(
       /*! iso-url */
       "Fq86"),
-          URL = _webpack_require__59.URL;
+          URL = _webpack_require__60.URL;
       /**
        * Transform binary cbor data into JavaScript objects.
        */
@@ -21868,17 +22034,17 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref78 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee95(name) {
+          var _ref80 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee98(name) {
             var options,
                 res,
                 data,
-                _args96 = arguments;
-            return regeneratorRuntime.wrap(function _callee95$(_context96) {
+                _args99 = arguments;
+            return regeneratorRuntime.wrap(function _callee98$(_context99) {
               while (1) {
-                switch (_context96.prev = _context96.next) {
+                switch (_context99.prev = _context99.next) {
                   case 0:
-                    options = _args96.length > 1 && _args96[1] !== undefined ? _args96[1] : {};
-                    _context96.next = 3;
+                    options = _args99.length > 1 && _args99[1] !== undefined ? _args99[1] : {};
+                    _context99.next = 3;
                     return api.post('key/gen', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -21889,24 +22055,24 @@
                     });
 
                   case 3:
-                    res = _context96.sent;
-                    _context96.next = 6;
+                    res = _context99.sent;
+                    _context99.next = 6;
                     return res.json();
 
                   case 6:
-                    data = _context96.sent;
-                    return _context96.abrupt("return", toCamel(data));
+                    data = _context99.sent;
+                    return _context99.abrupt("return", toCamel(data));
 
                   case 8:
                   case "end":
-                    return _context96.stop();
+                    return _context99.stop();
                 }
               }
-            }, _callee95);
+            }, _callee98);
           }));
 
-          return function (_x100) {
-            return _ref78.apply(this, arguments);
+          return function (_x106) {
+            return _ref80.apply(this, arguments);
           };
         }();
       });
@@ -22006,10 +22172,10 @@
     function i4cb(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__60 = __webpack_require__(
+      var _webpack_require__61 = __webpack_require__(
       /*! bignumber.js */
       "kB5k"),
-          BigNumber = _webpack_require__60.BigNumber;
+          BigNumber = _webpack_require__61.BigNumber;
 
       var CID = __webpack_require__(
       /*! cids */
@@ -22024,16 +22190,16 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee96() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee99() {
           var options,
               res,
-              _args97 = arguments;
-          return regeneratorRuntime.wrap(function _callee96$(_context97) {
+              _args100 = arguments;
+          return regeneratorRuntime.wrap(function _callee99$(_context100) {
             while (1) {
-              switch (_context97.prev = _context97.next) {
+              switch (_context100.prev = _context100.next) {
                 case 0:
-                  options = _args97.length > 0 && _args97[0] !== undefined ? _args97[0] : {};
-                  _context97.next = 3;
+                  options = _args100.length > 0 && _args100[0] !== undefined ? _args100[0] : {};
+                  _context100.next = 3;
                   return api.post('bitswap/stat', {
                     searchParams: toUrlSearchParams(options),
                     timeout: options.timeout,
@@ -22042,21 +22208,21 @@
                   });
 
                 case 3:
-                  res = _context97.sent;
-                  _context97.t0 = toCoreInterface;
-                  _context97.next = 7;
+                  res = _context100.sent;
+                  _context100.t0 = toCoreInterface;
+                  _context100.next = 7;
                   return res.json();
 
                 case 7:
-                  _context97.t1 = _context97.sent;
-                  return _context97.abrupt("return", (0, _context97.t0)(_context97.t1));
+                  _context100.t1 = _context100.sent;
+                  return _context100.abrupt("return", (0, _context100.t0)(_context100.t1));
 
                 case 9:
                 case "end":
-                  return _context97.stop();
+                  return _context100.stop();
               }
             }
-          }, _callee96);
+          }, _callee99);
         }));
       });
 
@@ -22099,10 +22265,10 @@
       /*! class-is */
       "7BLb");
 
-      var _webpack_require__61 = __webpack_require__(
+      var _webpack_require__62 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__61.Buffer; // Link represents an IPFS Merkle DAG Link between Nodes.
+          Buffer = _webpack_require__62.Buffer; // Link represents an IPFS Merkle DAG Link between Nodes.
 
 
       var DAGLink = /*#__PURE__*/function () {
@@ -22201,10 +22367,10 @@
     function iARh(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__62 = __webpack_require__(
+      var _webpack_require__63 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__62.Buffer;
+          Buffer = _webpack_require__63.Buffer;
 
       var mh = __webpack_require__(
       /*! multihashes */
@@ -22582,10 +22748,10 @@
       /*! cids */
       "iARh");
 
-      var _webpack_require__63 = __webpack_require__(
+      var _webpack_require__64 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__63.Buffer;
+          Buffer = _webpack_require__64.Buffer;
 
       var rmLink = function rmLink(dagNode, nameOrCid) {
         // It's a name
@@ -22618,10 +22784,10 @@
     function ihTf(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__64 = __webpack_require__(
+      var _webpack_require__65 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__64.Buffer;
+          Buffer = _webpack_require__65.Buffer;
       /**
        * Takes an (async) iterable that yields buffer-like-objects and concats them
        * into one buffer
@@ -22630,39 +22796,39 @@
        */
 
 
-      function toBuffer(_x101) {
+      function toBuffer(_x107) {
         return _toBuffer.apply(this, arguments);
       }
 
       function _toBuffer() {
-        _toBuffer = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee97(stream) {
+        _toBuffer = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee100(stream) {
           var buffer, _iteratorNormalCompletion23, _didIteratorError23, _iteratorError23, _iterator23, _step23, _value23, buf;
 
-          return regeneratorRuntime.wrap(function _callee97$(_context98) {
+          return regeneratorRuntime.wrap(function _callee100$(_context101) {
             while (1) {
-              switch (_context98.prev = _context98.next) {
+              switch (_context101.prev = _context101.next) {
                 case 0:
                   buffer = Buffer.alloc(0);
                   _iteratorNormalCompletion23 = true;
                   _didIteratorError23 = false;
-                  _context98.prev = 3;
+                  _context101.prev = 3;
                   _iterator23 = _asyncIterator(stream);
 
                 case 5:
-                  _context98.next = 7;
+                  _context101.next = 7;
                   return _iterator23.next();
 
                 case 7:
-                  _step23 = _context98.sent;
+                  _step23 = _context101.sent;
                   _iteratorNormalCompletion23 = _step23.done;
-                  _context98.next = 11;
+                  _context101.next = 11;
                   return _step23.value;
 
                 case 11:
-                  _value23 = _context98.sent;
+                  _value23 = _context101.sent;
 
                   if (_iteratorNormalCompletion23) {
-                    _context98.next = 18;
+                    _context101.next = 18;
                     break;
                   }
 
@@ -22671,56 +22837,56 @@
 
                 case 15:
                   _iteratorNormalCompletion23 = true;
-                  _context98.next = 5;
+                  _context101.next = 5;
                   break;
 
                 case 18:
-                  _context98.next = 24;
+                  _context101.next = 24;
                   break;
 
                 case 20:
-                  _context98.prev = 20;
-                  _context98.t0 = _context98["catch"](3);
+                  _context101.prev = 20;
+                  _context101.t0 = _context101["catch"](3);
                   _didIteratorError23 = true;
-                  _iteratorError23 = _context98.t0;
+                  _iteratorError23 = _context101.t0;
 
                 case 24:
-                  _context98.prev = 24;
-                  _context98.prev = 25;
+                  _context101.prev = 24;
+                  _context101.prev = 25;
 
                   if (!(!_iteratorNormalCompletion23 && _iterator23["return"] != null)) {
-                    _context98.next = 29;
+                    _context101.next = 29;
                     break;
                   }
 
-                  _context98.next = 29;
+                  _context101.next = 29;
                   return _iterator23["return"]();
 
                 case 29:
-                  _context98.prev = 29;
+                  _context101.prev = 29;
 
                   if (!_didIteratorError23) {
-                    _context98.next = 32;
+                    _context101.next = 32;
                     break;
                   }
 
                   throw _iteratorError23;
 
                 case 32:
-                  return _context98.finish(29);
+                  return _context101.finish(29);
 
                 case 33:
-                  return _context98.finish(24);
+                  return _context101.finish(24);
 
                 case 34:
-                  return _context98.abrupt("return", buffer);
+                  return _context101.abrupt("return", buffer);
 
                 case 35:
                 case "end":
-                  return _context98.stop();
+                  return _context101.stop();
               }
             }
-          }, _callee97, null, [[3, 20, 24, 34], [25,, 29, 33]]);
+          }, _callee100, null, [[3, 20, 24, 34], [25,, 29, 33]]);
         }));
         return _toBuffer.apply(this, arguments);
       }
@@ -22741,10 +22907,10 @@
     function jARG(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__65 = __webpack_require__(
+      var _webpack_require__66 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__65.Buffer;
+          Buffer = _webpack_require__66.Buffer;
 
       var CID = __webpack_require__(
       /*! cids */
@@ -22772,61 +22938,61 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref80 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee98(cid, data) {
+          var _ref82 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee101(cid, data) {
             var options,
                 controller,
                 signal,
                 res,
                 _yield$res$json9,
                 Hash,
-                _args99 = arguments;
+                _args102 = arguments;
 
-            return regeneratorRuntime.wrap(function _callee98$(_context99) {
+            return regeneratorRuntime.wrap(function _callee101$(_context102) {
               while (1) {
-                switch (_context99.prev = _context99.next) {
+                switch (_context102.prev = _context102.next) {
                   case 0:
-                    options = _args99.length > 2 && _args99[2] !== undefined ? _args99[2] : {};
+                    options = _args102.length > 2 && _args102[2] !== undefined ? _args102[2] : {};
                     // allow aborting requests on body errors
                     controller = new AbortController();
                     signal = anySignal([controller.signal, options.signal]);
-                    _context99.t0 = api;
-                    _context99.t1 = _objectSpread;
-                    _context99.t2 = {
+                    _context102.t0 = api;
+                    _context102.t1 = _objectSpread;
+                    _context102.t2 = {
                       timeout: options.timeout,
                       signal: signal,
                       searchParams: toUrlSearchParams(_objectSpread({
                         arg: "".concat(Buffer.isBuffer(cid) ? new CID(cid) : cid)
                       }, options))
                     };
-                    _context99.next = 8;
+                    _context102.next = 8;
                     return multipartRequest(data, controller, options.headers);
 
                   case 8:
-                    _context99.t3 = _context99.sent;
-                    _context99.t4 = (0, _context99.t1)(_context99.t2, _context99.t3);
-                    _context99.next = 12;
-                    return _context99.t0.post.call(_context99.t0, 'object/patch/append-data', _context99.t4);
+                    _context102.t3 = _context102.sent;
+                    _context102.t4 = (0, _context102.t1)(_context102.t2, _context102.t3);
+                    _context102.next = 12;
+                    return _context102.t0.post.call(_context102.t0, 'object/patch/append-data', _context102.t4);
 
                   case 12:
-                    res = _context99.sent;
-                    _context99.next = 15;
+                    res = _context102.sent;
+                    _context102.next = 15;
                     return res.json();
 
                   case 15:
-                    _yield$res$json9 = _context99.sent;
+                    _yield$res$json9 = _context102.sent;
                     Hash = _yield$res$json9.Hash;
-                    return _context99.abrupt("return", new CID(Hash));
+                    return _context102.abrupt("return", new CID(Hash));
 
                   case 18:
                   case "end":
-                    return _context99.stop();
+                    return _context102.stop();
                 }
               }
-            }, _callee98);
+            }, _callee101);
           }));
 
-          return function (_x102, _x103) {
-            return _ref80.apply(this, arguments);
+          return function (_x108, _x109) {
+            return _ref82.apply(this, arguments);
           };
         }();
       });
@@ -22905,10 +23071,10 @@
     function jpl7(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__66 = __webpack_require__(
+      var _webpack_require__67 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__66.Buffer;
+          Buffer = _webpack_require__67.Buffer;
 
       var Decoder = __webpack_require__(
       /*! ./decoder */
@@ -23157,18 +23323,18 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee99() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee102() {
           var options,
               _yield$yield$api$post2,
               Strings,
-              _args100 = arguments;
+              _args103 = arguments;
 
-          return regeneratorRuntime.wrap(function _callee99$(_context100) {
+          return regeneratorRuntime.wrap(function _callee102$(_context103) {
             while (1) {
-              switch (_context100.prev = _context100.next) {
+              switch (_context103.prev = _context103.next) {
                 case 0:
-                  options = _args100.length > 0 && _args100[0] !== undefined ? _args100[0] : {};
-                  _context100.next = 3;
+                  options = _args103.length > 0 && _args103[0] !== undefined ? _args103[0] : {};
+                  _context103.next = 3;
                   return api.post('pubsub/ls', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -23177,20 +23343,20 @@
                   });
 
                 case 3:
-                  _context100.next = 5;
-                  return _context100.sent.json();
+                  _context103.next = 5;
+                  return _context103.sent.json();
 
                 case 5:
-                  _yield$yield$api$post2 = _context100.sent;
+                  _yield$yield$api$post2 = _context103.sent;
                   Strings = _yield$yield$api$post2.Strings;
-                  return _context100.abrupt("return", Strings || []);
+                  return _context103.abrupt("return", Strings || []);
 
                 case 8:
                 case "end":
-                  return _context100.stop();
+                  return _context103.stop();
               }
             }
-          }, _callee99);
+          }, _callee102);
         }));
       });
       /***/
@@ -26016,33 +26182,33 @@
         return size && 512 - size;
       }
 
-      function discardPadding(_x104, _x105) {
+      function discardPadding(_x110, _x111) {
         return _discardPadding.apply(this, arguments);
       }
 
       function _discardPadding() {
-        _discardPadding = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee103(reader, size) {
+        _discardPadding = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee106(reader, size) {
           var overflow;
-          return regeneratorRuntime.wrap(function _callee103$(_context105) {
+          return regeneratorRuntime.wrap(function _callee106$(_context108) {
             while (1) {
-              switch (_context105.prev = _context105.next) {
+              switch (_context108.prev = _context108.next) {
                 case 0:
                   overflow = getPadding(size);
 
                   if (!overflow) {
-                    _context105.next = 4;
+                    _context108.next = 4;
                     break;
                   }
 
-                  _context105.next = 4;
+                  _context108.next = 4;
                   return reader.next(overflow);
 
                 case 4:
                 case "end":
-                  return _context105.stop();
+                  return _context108.stop();
               }
             }
-          }, _callee103);
+          }, _callee106);
         }));
         return _discardPadding.apply(this, arguments);
       }
@@ -26051,196 +26217,196 @@
         options = options || {};
         options.highWaterMark = options.highWaterMark || 1024 * 16;
         return function (source) {
-          return _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee102() {
+          return _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee105() {
             var reader, gnuLongPath, gnuLongLinkPath, paxGlobal, pax, _loop, _iteratorNormalCompletion24, _didIteratorError24, _iteratorError24, _iterator24, _step24, _value24, _ret;
 
-            return regeneratorRuntime.wrap(function _callee102$(_context104) {
+            return regeneratorRuntime.wrap(function _callee105$(_context107) {
               while (1) {
-                switch (_context104.prev = _context104.next) {
+                switch (_context107.prev = _context107.next) {
                   case 0:
                     reader = LteReader(source);
-                    _context104.prev = 1;
+                    _context107.prev = 1;
                     _loop = /*#__PURE__*/regeneratorRuntime.mark(function _loop() {
                       var headerBytes, _yield$_awaitAsyncGen2, done, value, header, _yield$_awaitAsyncGen3, _done, gnuLongPathBytes, _yield$_awaitAsyncGen4, _done2, gnuLongLinkPathBytes, _yield$_awaitAsyncGen5, _done3, paxGlobalBytes, _yield$_awaitAsyncGen6, _done4, paxBytes, bytesRemaining, bodyConsumed, firstChunk, body, _;
 
-                      return regeneratorRuntime.wrap(function _loop$(_context103) {
+                      return regeneratorRuntime.wrap(function _loop$(_context106) {
                         while (1) {
-                          switch (_context103.prev = _context103.next) {
+                          switch (_context106.prev = _context106.next) {
                             case 0:
                               headerBytes = void 0;
-                              _context103.prev = 1;
-                              _context103.next = 4;
+                              _context106.prev = 1;
+                              _context106.next = 4;
                               return _awaitAsyncGenerator(reader.next(512));
 
                             case 4:
-                              _yield$_awaitAsyncGen2 = _context103.sent;
+                              _yield$_awaitAsyncGen2 = _context106.sent;
                               done = _yield$_awaitAsyncGen2.done;
                               value = _yield$_awaitAsyncGen2.value;
 
                               if (!done) {
-                                _context103.next = 9;
+                                _context106.next = 9;
                                 break;
                               }
 
-                              return _context103.abrupt("return", {
+                              return _context106.abrupt("return", {
                                 v: void 0
                               });
 
                             case 9:
                               headerBytes = value;
-                              _context103.next = 17;
+                              _context106.next = 17;
                               break;
 
                             case 12:
-                              _context103.prev = 12;
-                              _context103.t0 = _context103["catch"](1);
+                              _context106.prev = 12;
+                              _context106.t0 = _context106["catch"](1);
 
-                              if (!(_context103.t0.code === 'ERR_UNDER_READ')) {
-                                _context103.next = 16;
+                              if (!(_context106.t0.code === 'ERR_UNDER_READ')) {
+                                _context106.next = 16;
                                 break;
                               }
 
-                              return _context103.abrupt("return", {
+                              return _context106.abrupt("return", {
                                 v: void 0
                               });
 
                             case 16:
-                              throw _context103.t0;
+                              throw _context106.t0;
 
                             case 17:
                               header = Headers.decode(headerBytes, options.filenameEncoding);
 
                               if (header) {
-                                _context103.next = 20;
+                                _context106.next = 20;
                                 break;
                               }
 
-                              return _context103.abrupt("return", "continue");
+                              return _context106.abrupt("return", "continue");
 
                             case 20:
                               if (!(header.type === 'gnu-long-path')) {
-                                _context103.next = 32;
+                                _context106.next = 32;
                                 break;
                               }
 
-                              _context103.next = 23;
+                              _context106.next = 23;
                               return _awaitAsyncGenerator(reader.next(header.size));
 
                             case 23:
-                              _yield$_awaitAsyncGen3 = _context103.sent;
+                              _yield$_awaitAsyncGen3 = _context106.sent;
                               _done = _yield$_awaitAsyncGen3.done;
                               gnuLongPathBytes = _yield$_awaitAsyncGen3.value;
 
                               if (!_done) {
-                                _context103.next = 28;
+                                _context106.next = 28;
                                 break;
                               }
 
-                              return _context103.abrupt("return", {
+                              return _context106.abrupt("return", {
                                 v: void 0
                               });
 
                             case 28:
                               gnuLongPath = Headers.decodeLongPath(gnuLongPathBytes, options.filenameEncoding);
-                              _context103.next = 31;
+                              _context106.next = 31;
                               return _awaitAsyncGenerator(discardPadding(reader, header.size));
 
                             case 31:
-                              return _context103.abrupt("return", "continue");
+                              return _context106.abrupt("return", "continue");
 
                             case 32:
                               if (!(header.type === 'gnu-long-link-path')) {
-                                _context103.next = 44;
+                                _context106.next = 44;
                                 break;
                               }
 
-                              _context103.next = 35;
+                              _context106.next = 35;
                               return _awaitAsyncGenerator(reader.next(header.size));
 
                             case 35:
-                              _yield$_awaitAsyncGen4 = _context103.sent;
+                              _yield$_awaitAsyncGen4 = _context106.sent;
                               _done2 = _yield$_awaitAsyncGen4.done;
                               gnuLongLinkPathBytes = _yield$_awaitAsyncGen4.value;
 
                               if (!_done2) {
-                                _context103.next = 40;
+                                _context106.next = 40;
                                 break;
                               }
 
-                              return _context103.abrupt("return", {
+                              return _context106.abrupt("return", {
                                 v: void 0
                               });
 
                             case 40:
                               gnuLongLinkPath = Headers.decodeLongPath(gnuLongLinkPathBytes, options.filenameEncoding);
-                              _context103.next = 43;
+                              _context106.next = 43;
                               return _awaitAsyncGenerator(discardPadding(reader, header.size));
 
                             case 43:
-                              return _context103.abrupt("return", "continue");
+                              return _context106.abrupt("return", "continue");
 
                             case 44:
                               if (!(header.type === 'pax-global-header')) {
-                                _context103.next = 56;
+                                _context106.next = 56;
                                 break;
                               }
 
-                              _context103.next = 47;
+                              _context106.next = 47;
                               return _awaitAsyncGenerator(reader.next(header.size));
 
                             case 47:
-                              _yield$_awaitAsyncGen5 = _context103.sent;
+                              _yield$_awaitAsyncGen5 = _context106.sent;
                               _done3 = _yield$_awaitAsyncGen5.done;
                               paxGlobalBytes = _yield$_awaitAsyncGen5.value;
 
                               if (!_done3) {
-                                _context103.next = 52;
+                                _context106.next = 52;
                                 break;
                               }
 
-                              return _context103.abrupt("return", {
+                              return _context106.abrupt("return", {
                                 v: void 0
                               });
 
                             case 52:
                               paxGlobal = Headers.decodePax(paxGlobalBytes, options.filenameEncoding);
-                              _context103.next = 55;
+                              _context106.next = 55;
                               return _awaitAsyncGenerator(discardPadding(reader, header.size));
 
                             case 55:
-                              return _context103.abrupt("return", "continue");
+                              return _context106.abrupt("return", "continue");
 
                             case 56:
                               if (!(header.type === 'pax-header')) {
-                                _context103.next = 69;
+                                _context106.next = 69;
                                 break;
                               }
 
-                              _context103.next = 59;
+                              _context106.next = 59;
                               return _awaitAsyncGenerator(reader.next(header.size));
 
                             case 59:
-                              _yield$_awaitAsyncGen6 = _context103.sent;
+                              _yield$_awaitAsyncGen6 = _context106.sent;
                               _done4 = _yield$_awaitAsyncGen6.done;
                               paxBytes = _yield$_awaitAsyncGen6.value;
 
                               if (!_done4) {
-                                _context103.next = 64;
+                                _context106.next = 64;
                                 break;
                               }
 
-                              return _context103.abrupt("return", {
+                              return _context106.abrupt("return", {
                                 v: void 0
                               });
 
                             case 64:
                               pax = Headers.decodePax(paxBytes, options.filenameEncoding);
                               if (paxGlobal) pax = _objectSpread(_objectSpread({}, paxGlobal), pax);
-                              _context103.next = 68;
+                              _context106.next = 68;
                               return _awaitAsyncGenerator(discardPadding(reader, header.size));
 
                             case 68:
-                              return _context103.abrupt("return", "continue");
+                              return _context106.abrupt("return", "continue");
 
                             case 69:
                               if (gnuLongPath) {
@@ -26262,28 +26428,28 @@
                               }
 
                               if (!(!header.size || header.type === 'directory')) {
-                                _context103.next = 76;
+                                _context106.next = 76;
                                 break;
                               }
 
-                              _context103.next = 75;
+                              _context106.next = 75;
                               return {
                                 header: header,
-                                body: _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee100() {
-                                  return regeneratorRuntime.wrap(function _callee100$(_context101) {
+                                body: _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee103() {
+                                  return regeneratorRuntime.wrap(function _callee103$(_context104) {
                                     while (1) {
-                                      switch (_context101.prev = _context101.next) {
+                                      switch (_context104.prev = _context104.next) {
                                         case 0:
                                         case "end":
-                                          return _context101.stop();
+                                          return _context104.stop();
                                       }
                                     }
-                                  }, _callee100);
+                                  }, _callee103);
                                 }))()
                               };
 
                             case 75:
-                              return _context103.abrupt("return", "continue");
+                              return _context106.abrupt("return", "continue");
 
                             case 76:
                               bytesRemaining = header.size;
@@ -26291,103 +26457,103 @@
                               // This allows us to stream entries for small files from the tar without
                               // explicitly streaming the body of each.
 
-                              _context103.next = 80;
+                              _context106.next = 80;
                               return _awaitAsyncGenerator(reader.nextLte(Math.min(bytesRemaining, options.highWaterMark)));
 
                             case 80:
-                              firstChunk = _context103.sent;
+                              firstChunk = _context106.sent;
                               bytesRemaining -= firstChunk.value.length;
                               if (!bytesRemaining) bodyConsumed.resolve();
-                              body = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee101() {
+                              body = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee104() {
                                 var _yield$_awaitAsyncGen7, _done5, _value32;
 
-                                return regeneratorRuntime.wrap(function _callee101$(_context102) {
+                                return regeneratorRuntime.wrap(function _callee104$(_context105) {
                                   while (1) {
-                                    switch (_context102.prev = _context102.next) {
+                                    switch (_context105.prev = _context105.next) {
                                       case 0:
-                                        _context102.prev = 0;
-                                        _context102.next = 3;
+                                        _context105.prev = 0;
+                                        _context105.next = 3;
                                         return firstChunk.value;
 
                                       case 3:
                                         if (!bytesRemaining) {
-                                          _context102.next = 17;
+                                          _context105.next = 17;
                                           break;
                                         }
 
-                                        _context102.next = 6;
+                                        _context105.next = 6;
                                         return _awaitAsyncGenerator(reader.nextLte(bytesRemaining));
 
                                       case 6:
-                                        _yield$_awaitAsyncGen7 = _context102.sent;
+                                        _yield$_awaitAsyncGen7 = _context105.sent;
                                         _done5 = _yield$_awaitAsyncGen7.done;
                                         _value32 = _yield$_awaitAsyncGen7.value;
 
                                         if (!_done5) {
-                                          _context102.next = 12;
+                                          _context105.next = 12;
                                           break;
                                         }
 
                                         bytesRemaining = 0;
-                                        return _context102.abrupt("return");
+                                        return _context105.abrupt("return");
 
                                       case 12:
                                         bytesRemaining -= _value32.length;
-                                        _context102.next = 15;
+                                        _context105.next = 15;
                                         return _value32;
 
                                       case 15:
-                                        _context102.next = 3;
+                                        _context105.next = 3;
                                         break;
 
                                       case 17:
-                                        _context102.prev = 17;
+                                        _context105.prev = 17;
                                         bodyConsumed.resolve();
-                                        return _context102.finish(17);
+                                        return _context105.finish(17);
 
                                       case 20:
                                       case "end":
-                                        return _context102.stop();
+                                        return _context105.stop();
                                     }
                                   }
-                                }, _callee101, null, [[0,, 17, 20]]);
+                                }, _callee104, null, [[0,, 17, 20]]);
                               }))();
-                              _context103.next = 86;
+                              _context106.next = 86;
                               return {
                                 header: header,
                                 body: body
                               };
 
                             case 86:
-                              _context103.next = 88;
+                              _context106.next = 88;
                               return _awaitAsyncGenerator(bodyConsumed.promise);
 
                             case 88:
                               if (!bytesRemaining) {
-                                _context103.next = 121;
+                                _context106.next = 121;
                                 break;
                               }
 
                               _iteratorNormalCompletion24 = true;
                               _didIteratorError24 = false;
-                              _context103.prev = 91;
+                              _context106.prev = 91;
                               _iterator24 = _asyncIterator(body);
 
                             case 93:
-                              _context103.next = 95;
+                              _context106.next = 95;
                               return _awaitAsyncGenerator(_iterator24.next());
 
                             case 95:
-                              _step24 = _context103.sent;
+                              _step24 = _context106.sent;
                               _iteratorNormalCompletion24 = _step24.done;
-                              _context103.next = 99;
+                              _context106.next = 99;
                               return _awaitAsyncGenerator(_step24.value);
 
                             case 99:
-                              _value24 = _context103.sent;
+                              _value24 = _context106.sent;
 
                               if (_iteratorNormalCompletion24) {
-                                _context103.next = 105;
+                                _context106.next = 105;
                                 break;
                               }
 
@@ -26395,54 +26561,54 @@
 
                             case 102:
                               _iteratorNormalCompletion24 = true;
-                              _context103.next = 93;
+                              _context106.next = 93;
                               break;
 
                             case 105:
-                              _context103.next = 111;
+                              _context106.next = 111;
                               break;
 
                             case 107:
-                              _context103.prev = 107;
-                              _context103.t1 = _context103["catch"](91);
+                              _context106.prev = 107;
+                              _context106.t1 = _context106["catch"](91);
                               _didIteratorError24 = true;
-                              _iteratorError24 = _context103.t1;
+                              _iteratorError24 = _context106.t1;
 
                             case 111:
-                              _context103.prev = 111;
-                              _context103.prev = 112;
+                              _context106.prev = 111;
+                              _context106.prev = 112;
 
                               if (!(!_iteratorNormalCompletion24 && _iterator24["return"] != null)) {
-                                _context103.next = 116;
+                                _context106.next = 116;
                                 break;
                               }
 
-                              _context103.next = 116;
+                              _context106.next = 116;
                               return _awaitAsyncGenerator(_iterator24["return"]());
 
                             case 116:
-                              _context103.prev = 116;
+                              _context106.prev = 116;
 
                               if (!_didIteratorError24) {
-                                _context103.next = 119;
+                                _context106.next = 119;
                                 break;
                               }
 
                               throw _iteratorError24;
 
                             case 119:
-                              return _context103.finish(116);
+                              return _context106.finish(116);
 
                             case 120:
-                              return _context103.finish(111);
+                              return _context106.finish(111);
 
                             case 121:
-                              _context103.next = 123;
+                              _context106.next = 123;
                               return _awaitAsyncGenerator(discardPadding(reader, header.size));
 
                             case 123:
                             case "end":
-                              return _context103.stop();
+                              return _context106.stop();
                           }
                         }
                       }, _loop, null, [[1, 12], [91, 107, 111, 121], [112,, 116, 120]]);
@@ -26450,48 +26616,48 @@
 
                   case 3:
                     if (!true) {
-                      _context104.next = 12;
+                      _context107.next = 12;
                       break;
                     }
 
-                    return _context104.delegateYield(_loop(), "t0", 5);
+                    return _context107.delegateYield(_loop(), "t0", 5);
 
                   case 5:
-                    _ret = _context104.t0;
+                    _ret = _context107.t0;
 
                     if (!(_ret === "continue")) {
-                      _context104.next = 8;
+                      _context107.next = 8;
                       break;
                     }
 
-                    return _context104.abrupt("continue", 3);
+                    return _context107.abrupt("continue", 3);
 
                   case 8:
                     if (!(typeof _ret === "object")) {
-                      _context104.next = 10;
+                      _context107.next = 10;
                       break;
                     }
 
-                    return _context104.abrupt("return", _ret.v);
+                    return _context107.abrupt("return", _ret.v);
 
                   case 10:
-                    _context104.next = 3;
+                    _context107.next = 3;
                     break;
 
                   case 12:
-                    _context104.prev = 12;
-                    _context104.next = 15;
+                    _context107.prev = 12;
+                    _context107.next = 15;
                     return _awaitAsyncGenerator(reader["return"]());
 
                   case 15:
-                    return _context104.finish(12);
+                    return _context107.finish(12);
 
                   case 16:
                   case "end":
-                    return _context104.stop();
+                    return _context107.stop();
                 }
               }
-            }, _callee102, null, [[1,, 12, 16]]);
+            }, _callee105, null, [[1,, 12, 16]]);
           }))();
         };
       };
@@ -26520,16 +26686,16 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee104() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee107() {
           var options,
               res,
-              _args106 = arguments;
-          return regeneratorRuntime.wrap(function _callee104$(_context106) {
+              _args109 = arguments;
+          return regeneratorRuntime.wrap(function _callee107$(_context109) {
             while (1) {
-              switch (_context106.prev = _context106.next) {
+              switch (_context109.prev = _context109.next) {
                 case 0:
-                  options = _args106.length > 0 && _args106[0] !== undefined ? _args106[0] : {};
-                  _context106.next = 3;
+                  options = _args109.length > 0 && _args109[0] !== undefined ? _args109[0] : {};
+                  _context109.next = 3;
                   return api.post('shutdown', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -26538,16 +26704,16 @@
                   });
 
                 case 3:
-                  res = _context106.sent;
-                  _context106.next = 6;
+                  res = _context109.sent;
+                  _context109.next = 6;
                   return res.text();
 
                 case 6:
                 case "end":
-                  return _context106.stop();
+                  return _context109.stop();
               }
             }
-          }, _callee104);
+          }, _callee107);
         }));
       });
       /***/
@@ -26568,11 +26734,11 @@
 
       /*eslint-disable @mysticatea/prettier */
 
-      var _ref83 = typeof self !== "undefined" ? self : typeof window !== "undefined" ? window :
+      var _ref85 = typeof self !== "undefined" ? self : typeof window !== "undefined" ? window :
       /* otherwise */
       undefined,
-          AbortController = _ref83.AbortController,
-          AbortSignal = _ref83.AbortSignal;
+          AbortController = _ref85.AbortController,
+          AbortSignal = _ref85.AbortSignal;
       /*eslint-enable @mysticatea/prettier */
 
 
@@ -27371,10 +27537,10 @@
     function kh7n(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__67 = __webpack_require__(
+      var _webpack_require__68 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__67.Buffer;
+          Buffer = _webpack_require__68.Buffer;
 
       var CID = __webpack_require__(
       /*! cids */
@@ -27394,21 +27560,21 @@
 
       module.exports = configure(function (api, options) {
         var refs = /*#__PURE__*/function () {
-          var _ref10 = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee105(args) {
+          var _ref10 = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee108(args) {
             var options,
                 res,
-                _args107 = arguments;
-            return regeneratorRuntime.wrap(function _callee105$(_context107) {
+                _args110 = arguments;
+            return regeneratorRuntime.wrap(function _callee108$(_context110) {
               while (1) {
-                switch (_context107.prev = _context107.next) {
+                switch (_context110.prev = _context110.next) {
                   case 0:
-                    options = _args107.length > 1 && _args107[1] !== undefined ? _args107[1] : {};
+                    options = _args110.length > 1 && _args110[1] !== undefined ? _args110[1] : {};
 
                     if (!Array.isArray(args)) {
                       args = [args];
                     }
 
-                    _context107.next = 4;
+                    _context110.next = 4;
                     return _awaitAsyncGenerator(api.post('refs', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -27422,15 +27588,15 @@
                     }));
 
                   case 4:
-                    res = _context107.sent;
-                    return _context107.delegateYield(_asyncGeneratorDelegate(_asyncIterator(res.ndjson()), _awaitAsyncGenerator), "t0", 6);
+                    res = _context110.sent;
+                    return _context110.delegateYield(_asyncGeneratorDelegate(_asyncIterator(res.ndjson()), _awaitAsyncGenerator), "t0", 6);
 
                   case 6:
                   case "end":
-                    return _context107.stop();
+                    return _context110.stop();
                 }
               }
-            }, _callee105);
+            }, _callee108);
           }));
 
           return function refs(_x20) {
@@ -27458,10 +27624,10 @@
     function kv0P(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__68 = __webpack_require__(
+      var _webpack_require__69 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__68.Buffer;
+          Buffer = _webpack_require__69.Buffer;
 
       var ip = __webpack_require__(
       /*! ./ip */
@@ -27737,10 +27903,10 @@
       /*! err-code */
       "tqrP");
 
-      var _webpack_require__69 = __webpack_require__(
+      var _webpack_require__70 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__69.Buffer;
+          Buffer = _webpack_require__70.Buffer;
 
       var browserStreamToIt = __webpack_require__(
       /*! browser-readablestream-to-it */
@@ -27762,45 +27928,45 @@
       /*! it-map */
       "XW02");
 
-      var _webpack_require__70 = __webpack_require__(
+      var _webpack_require__71 = __webpack_require__(
       /*! ./utils */
       "q7FP"),
-          isBytes = _webpack_require__70.isBytes,
-          isBlob = _webpack_require__70.isBlob;
+          isBytes = _webpack_require__71.isBytes,
+          isBlob = _webpack_require__71.isBlob;
 
       function toAsyncIterable(_x21) {
         return _toAsyncIterable.apply(this, arguments);
       }
 
       function _toAsyncIterable() {
-        _toAsyncIterable = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee106(input) {
+        _toAsyncIterable = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee109(input) {
           var peekable, _yield$_awaitAsyncGen8, value, done;
 
-          return regeneratorRuntime.wrap(function _callee106$(_context108) {
+          return regeneratorRuntime.wrap(function _callee109$(_context111) {
             while (1) {
-              switch (_context108.prev = _context108.next) {
+              switch (_context111.prev = _context111.next) {
                 case 0:
                   if (!(isBytes(input) || typeof input === 'string' || input instanceof String)) {
-                    _context108.next = 4;
+                    _context111.next = 4;
                     break;
                   }
 
-                  _context108.next = 3;
+                  _context111.next = 3;
                   return toBuffer(input);
 
                 case 3:
-                  return _context108.abrupt("return");
+                  return _context111.abrupt("return");
 
                 case 4:
                   if (!isBlob(input)) {
-                    _context108.next = 7;
+                    _context111.next = 7;
                     break;
                   }
 
-                  return _context108.delegateYield(_asyncGeneratorDelegate(_asyncIterator(blobToIt(input)), _awaitAsyncGenerator), "t0", 6);
+                  return _context111.delegateYield(_asyncGeneratorDelegate(_asyncIterator(blobToIt(input)), _awaitAsyncGenerator), "t0", 6);
 
                 case 6:
-                  return _context108.abrupt("return");
+                  return _context111.abrupt("return");
 
                 case 7:
                   // Browser stream
@@ -27810,71 +27976,71 @@
 
 
                   if (!(input[Symbol.iterator] || input[Symbol.asyncIterator])) {
-                    _context108.next = 30;
+                    _context111.next = 30;
                     break;
                   }
 
                   peekable = itPeekable(input);
-                  _context108.next = 12;
+                  _context111.next = 12;
                   return _awaitAsyncGenerator(peekable.peek());
 
                 case 12:
-                  _yield$_awaitAsyncGen8 = _context108.sent;
+                  _yield$_awaitAsyncGen8 = _context111.sent;
                   value = _yield$_awaitAsyncGen8.value;
                   done = _yield$_awaitAsyncGen8.done;
 
                   if (!done) {
-                    _context108.next = 18;
+                    _context111.next = 18;
                     break;
                   }
 
-                  return _context108.delegateYield(_asyncGeneratorDelegate(_asyncIterator(peekable), _awaitAsyncGenerator), "t1", 17);
+                  return _context111.delegateYield(_asyncGeneratorDelegate(_asyncIterator(peekable), _awaitAsyncGenerator), "t1", 17);
 
                 case 17:
-                  return _context108.abrupt("return");
+                  return _context111.abrupt("return");
 
                 case 18:
                   peekable.push(value); // (Async)Iterable<Number>
 
                   if (!Number.isInteger(value)) {
-                    _context108.next = 27;
+                    _context111.next = 27;
                     break;
                   }
 
-                  _context108.t2 = toBuffer;
-                  _context108.next = 23;
+                  _context111.t2 = toBuffer;
+                  _context111.next = 23;
                   return _awaitAsyncGenerator(all(peekable));
 
                 case 23:
-                  _context108.t3 = _context108.sent;
-                  _context108.next = 26;
-                  return (0, _context108.t2)(_context108.t3);
+                  _context111.t3 = _context111.sent;
+                  _context111.next = 26;
+                  return (0, _context111.t2)(_context111.t3);
 
                 case 26:
-                  return _context108.abrupt("return");
+                  return _context111.abrupt("return");
 
                 case 27:
                   if (!(isBytes(value) || typeof value === 'string' || value instanceof String)) {
-                    _context108.next = 30;
+                    _context111.next = 30;
                     break;
                   }
 
-                  return _context108.delegateYield(_asyncGeneratorDelegate(_asyncIterator(map(peekable, function (chunk) {
+                  return _context111.delegateYield(_asyncGeneratorDelegate(_asyncIterator(map(peekable, function (chunk) {
                     return toBuffer(chunk);
                   })), _awaitAsyncGenerator), "t4", 29);
 
                 case 29:
-                  return _context108.abrupt("return");
+                  return _context111.abrupt("return");
 
                 case 30:
                   throw errCode(new Error("Unexpected input: ".concat(input)), 'ERR_UNEXPECTED_INPUT');
 
                 case 31:
                 case "end":
-                  return _context108.stop();
+                  return _context111.stop();
               }
             }
-          }, _callee106);
+          }, _callee109);
         }));
         return _toAsyncIterable.apply(this, arguments);
       }
@@ -27900,10 +28066,10 @@
       "use strict";
       /* eslint-env browser */
 
-      var _webpack_require__71 = __webpack_require__(
+      var _webpack_require__72 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__71.Buffer;
+          Buffer = _webpack_require__72.Buffer;
 
       var CID = __webpack_require__(
       /*! cids */
@@ -28147,32 +28313,32 @@
 
 
       var toDAGLink = /*#__PURE__*/function () {
-        var _ref84 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee107(node) {
+        var _ref86 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee110(node) {
           var options,
               nodeCid,
-              _args109 = arguments;
-          return regeneratorRuntime.wrap(function _callee107$(_context109) {
+              _args112 = arguments;
+          return regeneratorRuntime.wrap(function _callee110$(_context112) {
             while (1) {
-              switch (_context109.prev = _context109.next) {
+              switch (_context112.prev = _context112.next) {
                 case 0:
-                  options = _args109.length > 1 && _args109[1] !== undefined ? _args109[1] : {};
-                  _context109.next = 3;
+                  options = _args112.length > 1 && _args112[1] !== undefined ? _args112[1] : {};
+                  _context112.next = 3;
                   return genCid.cid(node.serialize(), options);
 
                 case 3:
-                  nodeCid = _context109.sent;
-                  return _context109.abrupt("return", new DAGLink(options.name || '', node.size, nodeCid));
+                  nodeCid = _context112.sent;
+                  return _context112.abrupt("return", new DAGLink(options.name || '', node.size, nodeCid));
 
                 case 5:
                 case "end":
-                  return _context109.stop();
+                  return _context112.stop();
               }
             }
-          }, _callee107);
+          }, _callee110);
         }));
 
-        return function toDAGLink(_x106) {
-          return _ref84.apply(this, arguments);
+        return function toDAGLink(_x112) {
+          return _ref86.apply(this, arguments);
         };
       }();
 
@@ -28196,10 +28362,10 @@
       /*! protocol-buffers-schema */
       "CN9R");
 
-      var _webpack_require__72 = __webpack_require__(
+      var _webpack_require__73 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__72.Buffer;
+          Buffer = _webpack_require__73.Buffer;
 
       var compile = __webpack_require__(
       /*! ./compile */
@@ -28266,16 +28432,16 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref85 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee108(cid) {
+          var _ref87 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee111(cid) {
             var options,
                 res,
-                _args110 = arguments;
-            return regeneratorRuntime.wrap(function _callee108$(_context110) {
+                _args113 = arguments;
+            return regeneratorRuntime.wrap(function _callee111$(_context113) {
               while (1) {
-                switch (_context110.prev = _context110.next) {
+                switch (_context113.prev = _context113.next) {
                   case 0:
-                    options = _args110.length > 1 && _args110[1] !== undefined ? _args110[1] : {};
-                    _context110.next = 3;
+                    options = _args113.length > 1 && _args113[1] !== undefined ? _args113[1] : {};
+                    _context113.next = 3;
                     return api.post('bitswap/unwant', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -28286,19 +28452,19 @@
                     });
 
                   case 3:
-                    res = _context110.sent;
-                    return _context110.abrupt("return", res.json());
+                    res = _context113.sent;
+                    return _context113.abrupt("return", res.json());
 
                   case 5:
                   case "end":
-                    return _context110.stop();
+                    return _context113.stop();
                 }
               }
-            }, _callee108);
+            }, _callee111);
           }));
 
-          return function (_x107) {
-            return _ref85.apply(this, arguments);
+          return function (_x113) {
+            return _ref87.apply(this, arguments);
           };
         }();
       });
@@ -28362,33 +28528,33 @@
        */
 
       var last = /*#__PURE__*/function () {
-        var _ref86 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee109(source) {
+        var _ref88 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee112(source) {
           var res, _iteratorNormalCompletion25, _didIteratorError25, _iteratorError25, _iterator25, _step25, _value25, entry;
 
-          return regeneratorRuntime.wrap(function _callee109$(_context111) {
+          return regeneratorRuntime.wrap(function _callee112$(_context114) {
             while (1) {
-              switch (_context111.prev = _context111.next) {
+              switch (_context114.prev = _context114.next) {
                 case 0:
                   _iteratorNormalCompletion25 = true;
                   _didIteratorError25 = false;
-                  _context111.prev = 2;
+                  _context114.prev = 2;
                   _iterator25 = _asyncIterator(source);
 
                 case 4:
-                  _context111.next = 6;
+                  _context114.next = 6;
                   return _iterator25.next();
 
                 case 6:
-                  _step25 = _context111.sent;
+                  _step25 = _context114.sent;
                   _iteratorNormalCompletion25 = _step25.done;
-                  _context111.next = 10;
+                  _context114.next = 10;
                   return _step25.value;
 
                 case 10:
-                  _value25 = _context111.sent;
+                  _value25 = _context114.sent;
 
                   if (_iteratorNormalCompletion25) {
-                    _context111.next = 17;
+                    _context114.next = 17;
                     break;
                   }
 
@@ -28397,60 +28563,60 @@
 
                 case 14:
                   _iteratorNormalCompletion25 = true;
-                  _context111.next = 4;
+                  _context114.next = 4;
                   break;
 
                 case 17:
-                  _context111.next = 23;
+                  _context114.next = 23;
                   break;
 
                 case 19:
-                  _context111.prev = 19;
-                  _context111.t0 = _context111["catch"](2);
+                  _context114.prev = 19;
+                  _context114.t0 = _context114["catch"](2);
                   _didIteratorError25 = true;
-                  _iteratorError25 = _context111.t0;
+                  _iteratorError25 = _context114.t0;
 
                 case 23:
-                  _context111.prev = 23;
-                  _context111.prev = 24;
+                  _context114.prev = 23;
+                  _context114.prev = 24;
 
                   if (!(!_iteratorNormalCompletion25 && _iterator25["return"] != null)) {
-                    _context111.next = 28;
+                    _context114.next = 28;
                     break;
                   }
 
-                  _context111.next = 28;
+                  _context114.next = 28;
                   return _iterator25["return"]();
 
                 case 28:
-                  _context111.prev = 28;
+                  _context114.prev = 28;
 
                   if (!_didIteratorError25) {
-                    _context111.next = 31;
+                    _context114.next = 31;
                     break;
                   }
 
                   throw _iteratorError25;
 
                 case 31:
-                  return _context111.finish(28);
+                  return _context114.finish(28);
 
                 case 32:
-                  return _context111.finish(23);
+                  return _context114.finish(23);
 
                 case 33:
-                  return _context111.abrupt("return", res);
+                  return _context114.abrupt("return", res);
 
                 case 34:
                 case "end":
-                  return _context111.stop();
+                  return _context114.stop();
               }
             }
-          }, _callee109, null, [[2, 19, 23, 33], [24,, 28, 32]]);
+          }, _callee112, null, [[2, 19, 23, 33], [24,, 28, 32]]);
         }));
 
-        return function last(_x108) {
-          return _ref86.apply(this, arguments);
+        return function last(_x114) {
+          return _ref88.apply(this, arguments);
         };
       }();
 
@@ -28480,19 +28646,19 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref87 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee110(path) {
+          var _ref89 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee113(path) {
             var options,
                 res,
                 _yield$res$json10,
                 Path,
-                _args112 = arguments;
+                _args115 = arguments;
 
-            return regeneratorRuntime.wrap(function _callee110$(_context112) {
+            return regeneratorRuntime.wrap(function _callee113$(_context115) {
               while (1) {
-                switch (_context112.prev = _context112.next) {
+                switch (_context115.prev = _context115.next) {
                   case 0:
-                    options = _args112.length > 1 && _args112[1] !== undefined ? _args112[1] : {};
-                    _context112.next = 3;
+                    options = _args115.length > 1 && _args115[1] !== undefined ? _args115[1] : {};
+                    _context115.next = 3;
                     return api.post('resolve', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -28503,25 +28669,25 @@
                     });
 
                   case 3:
-                    res = _context112.sent;
-                    _context112.next = 6;
+                    res = _context115.sent;
+                    _context115.next = 6;
                     return res.json();
 
                   case 6:
-                    _yield$res$json10 = _context112.sent;
+                    _yield$res$json10 = _context115.sent;
                     Path = _yield$res$json10.Path;
-                    return _context112.abrupt("return", Path);
+                    return _context115.abrupt("return", Path);
 
                   case 9:
                   case "end":
-                    return _context112.stop();
+                    return _context115.stop();
                 }
               }
-            }, _callee110);
+            }, _callee113);
           }));
 
-          return function (_x109) {
-            return _ref87.apply(this, arguments);
+          return function (_x115) {
+            return _ref89.apply(this, arguments);
           };
         }();
       });
@@ -28553,17 +28719,17 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee111() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee114() {
           var options,
               res,
               data,
-              _args113 = arguments;
-          return regeneratorRuntime.wrap(function _callee111$(_context113) {
+              _args116 = arguments;
+          return regeneratorRuntime.wrap(function _callee114$(_context116) {
             while (1) {
-              switch (_context113.prev = _context113.next) {
+              switch (_context116.prev = _context116.next) {
                 case 0:
-                  options = _args113.length > 0 && _args113[0] !== undefined ? _args113[0] : {};
-                  _context113.next = 3;
+                  options = _args116.length > 0 && _args116[0] !== undefined ? _args116[0] : {};
+                  _context116.next = 3;
                   return api.post('key/list', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -28572,22 +28738,22 @@
                   });
 
                 case 3:
-                  res = _context113.sent;
-                  _context113.next = 6;
+                  res = _context116.sent;
+                  _context116.next = 6;
                   return res.json();
 
                 case 6:
-                  data = _context113.sent;
-                  return _context113.abrupt("return", (data.Keys || []).map(function (k) {
+                  data = _context116.sent;
+                  return _context116.abrupt("return", (data.Keys || []).map(function (k) {
                     return toCamel(k);
                   }));
 
                 case 8:
                 case "end":
-                  return _context113.stop();
+                  return _context116.stop();
               }
             }
-          }, _callee111);
+          }, _callee114);
         }));
       });
       /***/
@@ -28605,10 +28771,10 @@
     function nDvq(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__73 = __webpack_require__(
+      var _webpack_require__74 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__73.Buffer;
+          Buffer = _webpack_require__74.Buffer;
 
       var defined = __webpack_require__(
       /*! ./utils */
@@ -28779,16 +28945,16 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _chmod = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee112(path, mode) {
+          var _chmod = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee115(path, mode) {
             var options,
                 res,
-                _args114 = arguments;
-            return regeneratorRuntime.wrap(function _callee112$(_context114) {
+                _args117 = arguments;
+            return regeneratorRuntime.wrap(function _callee115$(_context117) {
               while (1) {
-                switch (_context114.prev = _context114.next) {
+                switch (_context117.prev = _context117.next) {
                   case 0:
-                    options = _args114.length > 2 && _args114[2] !== undefined ? _args114[2] : {};
-                    _context114.next = 3;
+                    options = _args117.length > 2 && _args117[2] !== undefined ? _args117[2] : {};
+                    _context117.next = 3;
                     return api.post('files/chmod', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -28800,19 +28966,19 @@
                     });
 
                   case 3:
-                    res = _context114.sent;
-                    _context114.next = 6;
+                    res = _context117.sent;
+                    _context117.next = 6;
                     return res.text();
 
                   case 6:
                   case "end":
-                    return _context114.stop();
+                    return _context117.stop();
                 }
               }
-            }, _callee112);
+            }, _callee115);
           }));
 
-          function chmod(_x110, _x111) {
+          function chmod(_x116, _x117) {
             return _chmod.apply(this, arguments);
           }
 
@@ -28860,10 +29026,10 @@
     function o7bL(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__74 = __webpack_require__(
+      var _webpack_require__75 = __webpack_require__(
       /*! bignumber.js */
       "kB5k"),
-          BigNumber = _webpack_require__74.BigNumber;
+          BigNumber = _webpack_require__75.BigNumber;
 
       var configure = __webpack_require__(
       /*! ../lib/configure */
@@ -28874,17 +29040,17 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee113() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee116() {
           var options,
               res,
               data,
-              _args115 = arguments;
-          return regeneratorRuntime.wrap(function _callee113$(_context115) {
+              _args118 = arguments;
+          return regeneratorRuntime.wrap(function _callee116$(_context118) {
             while (1) {
-              switch (_context115.prev = _context115.next) {
+              switch (_context118.prev = _context118.next) {
                 case 0:
-                  options = _args115.length > 0 && _args115[0] !== undefined ? _args115[0] : {};
-                  _context115.next = 3;
+                  options = _args118.length > 0 && _args118[0] !== undefined ? _args118[0] : {};
+                  _context118.next = 3;
                   return api.post('repo/stat', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -28893,13 +29059,13 @@
                   });
 
                 case 3:
-                  res = _context115.sent;
-                  _context115.next = 6;
+                  res = _context118.sent;
+                  _context118.next = 6;
                   return res.json();
 
                 case 6:
-                  data = _context115.sent;
-                  return _context115.abrupt("return", {
+                  data = _context118.sent;
+                  return _context118.abrupt("return", {
                     numObjects: new BigNumber(data.NumObjects),
                     repoSize: new BigNumber(data.RepoSize),
                     repoPath: data.RepoPath,
@@ -28909,10 +29075,10 @@
 
                 case 8:
                 case "end":
-                  return _context115.stop();
+                  return _context118.stop();
               }
             }
-          }, _callee113);
+          }, _callee116);
         }));
       });
       /***/
@@ -28991,7 +29157,7 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref11 = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee114(path) {
+          var _ref11 = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee117(path) {
             var options,
                 res,
                 _iteratorNormalCompletion26,
@@ -29001,14 +29167,14 @@
                 _step26,
                 _value26,
                 result,
-                _args116 = arguments;
+                _args119 = arguments;
 
-            return regeneratorRuntime.wrap(function _callee114$(_context116) {
+            return regeneratorRuntime.wrap(function _callee117$(_context119) {
               while (1) {
-                switch (_context116.prev = _context116.next) {
+                switch (_context119.prev = _context119.next) {
                   case 0:
-                    options = _args116.length > 1 && _args116[1] !== undefined ? _args116[1] : {};
-                    _context116.next = 3;
+                    options = _args119.length > 1 && _args119[1] !== undefined ? _args119[1] : {};
+                    _context119.next = 3;
                     return _awaitAsyncGenerator(api.post('name/resolve', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -29021,83 +29187,83 @@
                     }));
 
                   case 3:
-                    res = _context116.sent;
+                    res = _context119.sent;
                     _iteratorNormalCompletion26 = true;
                     _didIteratorError26 = false;
-                    _context116.prev = 6;
+                    _context119.prev = 6;
                     _iterator26 = _asyncIterator(res.ndjson());
 
                   case 8:
-                    _context116.next = 10;
+                    _context119.next = 10;
                     return _awaitAsyncGenerator(_iterator26.next());
 
                   case 10:
-                    _step26 = _context116.sent;
+                    _step26 = _context119.sent;
                     _iteratorNormalCompletion26 = _step26.done;
-                    _context116.next = 14;
+                    _context119.next = 14;
                     return _awaitAsyncGenerator(_step26.value);
 
                   case 14:
-                    _value26 = _context116.sent;
+                    _value26 = _context119.sent;
 
                     if (_iteratorNormalCompletion26) {
-                      _context116.next = 22;
+                      _context119.next = 22;
                       break;
                     }
 
                     result = _value26;
-                    _context116.next = 19;
+                    _context119.next = 19;
                     return result.Path;
 
                   case 19:
                     _iteratorNormalCompletion26 = true;
-                    _context116.next = 8;
+                    _context119.next = 8;
                     break;
 
                   case 22:
-                    _context116.next = 28;
+                    _context119.next = 28;
                     break;
 
                   case 24:
-                    _context116.prev = 24;
-                    _context116.t0 = _context116["catch"](6);
+                    _context119.prev = 24;
+                    _context119.t0 = _context119["catch"](6);
                     _didIteratorError26 = true;
-                    _iteratorError26 = _context116.t0;
+                    _iteratorError26 = _context119.t0;
 
                   case 28:
-                    _context116.prev = 28;
-                    _context116.prev = 29;
+                    _context119.prev = 28;
+                    _context119.prev = 29;
 
                     if (!(!_iteratorNormalCompletion26 && _iterator26["return"] != null)) {
-                      _context116.next = 33;
+                      _context119.next = 33;
                       break;
                     }
 
-                    _context116.next = 33;
+                    _context119.next = 33;
                     return _awaitAsyncGenerator(_iterator26["return"]());
 
                   case 33:
-                    _context116.prev = 33;
+                    _context119.prev = 33;
 
                     if (!_didIteratorError26) {
-                      _context116.next = 36;
+                      _context119.next = 36;
                       break;
                     }
 
                     throw _iteratorError26;
 
                   case 36:
-                    return _context116.finish(33);
+                    return _context119.finish(33);
 
                   case 37:
-                    return _context116.finish(28);
+                    return _context119.finish(28);
 
                   case 38:
                   case "end":
-                    return _context116.stop();
+                    return _context119.stop();
                 }
               }
-            }, _callee114, null, [[6, 24, 28, 38], [29,, 33, 37]]);
+            }, _callee117, null, [[6, 24, 28, 38], [29,, 33, 37]]);
           }));
 
           return function (_x22) {
@@ -29129,16 +29295,16 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee115() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee118() {
           var options,
               res,
-              _args117 = arguments;
-          return regeneratorRuntime.wrap(function _callee115$(_context117) {
+              _args120 = arguments;
+          return regeneratorRuntime.wrap(function _callee118$(_context120) {
             while (1) {
-              switch (_context117.prev = _context117.next) {
+              switch (_context120.prev = _context120.next) {
                 case 0:
-                  options = _args117.length > 0 && _args117[0] !== undefined ? _args117[0] : {};
-                  _context117.next = 3;
+                  options = _args120.length > 0 && _args120[0] !== undefined ? _args120[0] : {};
+                  _context120.next = 3;
                   return api.post('commands', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -29147,15 +29313,15 @@
                   });
 
                 case 3:
-                  res = _context117.sent;
-                  return _context117.abrupt("return", res.json());
+                  res = _context120.sent;
+                  return _context120.abrupt("return", res.json());
 
                 case 5:
                 case "end":
-                  return _context117.stop();
+                  return _context120.stop();
               }
             }
-          }, _callee115);
+          }, _callee118);
         }));
       });
       /***/
@@ -29187,22 +29353,22 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ref91 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee116(addr) {
+          var _ref93 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee119(addr) {
             var options,
                 res,
-                _args118 = arguments;
-            return regeneratorRuntime.wrap(function _callee116$(_context118) {
+                _args121 = arguments;
+            return regeneratorRuntime.wrap(function _callee119$(_context121) {
               while (1) {
-                switch (_context118.prev = _context118.next) {
+                switch (_context121.prev = _context121.next) {
                   case 0:
-                    options = _args118.length > 1 && _args118[1] !== undefined ? _args118[1] : {};
+                    options = _args121.length > 1 && _args121[1] !== undefined ? _args121[1] : {};
 
                     if (addr && typeof addr === 'object' && !Multiaddr.isMultiaddr(addr)) {
                       options = addr;
                       addr = null;
                     }
 
-                    _context118.next = 4;
+                    _context121.next = 4;
                     return api.post('bootstrap/add', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -29213,19 +29379,19 @@
                     });
 
                   case 4:
-                    res = _context118.sent;
-                    return _context118.abrupt("return", res.json());
+                    res = _context121.sent;
+                    return _context121.abrupt("return", res.json());
 
                   case 6:
                   case "end":
-                    return _context118.stop();
+                    return _context121.stop();
                 }
               }
-            }, _callee116);
+            }, _callee119);
           }));
 
-          return function (_x112) {
-            return _ref91.apply(this, arguments);
+          return function (_x118) {
+            return _ref93.apply(this, arguments);
           };
         }();
       });
@@ -29261,18 +29427,18 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee117() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee120() {
           var options,
               res,
               data,
               output,
-              _args119 = arguments;
-          return regeneratorRuntime.wrap(function _callee117$(_context119) {
+              _args122 = arguments;
+          return regeneratorRuntime.wrap(function _callee120$(_context122) {
             while (1) {
-              switch (_context119.prev = _context119.next) {
+              switch (_context122.prev = _context122.next) {
                 case 0:
-                  options = _args119.length > 0 && _args119[0] !== undefined ? _args119[0] : {};
-                  _context119.next = 3;
+                  options = _args122.length > 0 && _args122[0] !== undefined ? _args122[0] : {};
+                  _context122.next = 3;
                   return api.post('id', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -29281,12 +29447,12 @@
                   });
 
                 case 3:
-                  res = _context119.sent;
-                  _context119.next = 6;
+                  res = _context122.sent;
+                  _context122.next = 6;
                   return res.json();
 
                 case 6:
-                  data = _context119.sent;
+                  data = _context122.sent;
                   output = toCamel(data);
 
                   if (output.addresses) {
@@ -29295,14 +29461,14 @@
                     });
                   }
 
-                  return _context119.abrupt("return", output);
+                  return _context122.abrupt("return", output);
 
                 case 10:
                 case "end":
-                  return _context119.stop();
+                  return _context122.stop();
               }
             }
-          }, _callee117);
+          }, _callee120);
         }));
       });
       /***/
@@ -29320,10 +29486,10 @@
     function q7FP(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__75 = __webpack_require__(
+      var _webpack_require__76 = __webpack_require__(
       /*! ipfs-utils/src/globalthis */
       "Ju59"),
-          Blob = _webpack_require__75.Blob;
+          Blob = _webpack_require__76.Blob;
 
       function isBytes(obj) {
         return ArrayBuffer.isView(obj) || obj instanceof ArrayBuffer;
@@ -29367,16 +29533,16 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee118() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee121() {
           var options,
               res,
-              _args120 = arguments;
-          return regeneratorRuntime.wrap(function _callee118$(_context120) {
+              _args123 = arguments;
+          return regeneratorRuntime.wrap(function _callee121$(_context123) {
             while (1) {
-              switch (_context120.prev = _context120.next) {
+              switch (_context123.prev = _context123.next) {
                 case 0:
-                  options = _args120.length > 0 && _args120[0] !== undefined ? _args120[0] : {};
-                  _context120.next = 3;
+                  options = _args123.length > 0 && _args123[0] !== undefined ? _args123[0] : {};
+                  _context123.next = 3;
                   return api.post('repo/version', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -29385,19 +29551,19 @@
                   });
 
                 case 3:
-                  _context120.next = 5;
-                  return _context120.sent.json();
+                  _context123.next = 5;
+                  return _context123.sent.json();
 
                 case 5:
-                  res = _context120.sent;
-                  return _context120.abrupt("return", res.Version);
+                  res = _context123.sent;
+                  return _context123.abrupt("return", res.Version);
 
                 case 7:
                 case "end":
-                  return _context120.stop();
+                  return _context123.stop();
               }
             }
-          }, _callee118);
+          }, _callee121);
         }));
       });
       /***/
@@ -29513,23 +29679,23 @@
           }, {
             key: "convertToBuffer",
             value: function convertToBuffer(reader) {
-              return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee119() {
-                return regeneratorRuntime.wrap(function _callee119$(_context121) {
+              return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee122() {
+                return regeneratorRuntime.wrap(function _callee122$(_context124) {
                   while (1) {
-                    switch (_context121.prev = _context121.next) {
+                    switch (_context124.prev = _context124.next) {
                       case 0:
-                        _context121.next = 2;
+                        _context124.next = 2;
                         return Buffer.from(reader.result);
 
                       case 2:
-                        this.buffer = _context121.sent;
+                        this.buffer = _context124.sent;
 
                       case 3:
                       case "end":
-                        return _context121.stop();
+                        return _context124.stop();
                     }
                   }
-                }, _callee119, this);
+                }, _callee122, this);
               }));
             }
           }, {
@@ -29737,19 +29903,19 @@
        */
 
 
-      exports.tree = /*#__PURE__*/regeneratorRuntime.mark(function _callee120(binaryBlob) {
+      exports.tree = /*#__PURE__*/regeneratorRuntime.mark(function _callee123(binaryBlob) {
         var node, ii;
-        return regeneratorRuntime.wrap(function _callee120$(_context122) {
+        return regeneratorRuntime.wrap(function _callee123$(_context125) {
           while (1) {
-            switch (_context122.prev = _context122.next) {
+            switch (_context125.prev = _context125.next) {
               case 0:
                 node = util.deserialize(binaryBlob); // There is always a `Data` and `Links` property
 
-                _context122.next = 3;
+                _context125.next = 3;
                 return 'Data';
 
               case 3:
-                _context122.next = 5;
+                _context125.next = 5;
                 return 'Links';
 
               case 5:
@@ -29757,36 +29923,36 @@
 
               case 6:
                 if (!(ii < node.Links.length)) {
-                  _context122.next = 18;
+                  _context125.next = 18;
                   break;
                 }
 
-                _context122.next = 9;
+                _context125.next = 9;
                 return "Links/".concat(ii);
 
               case 9:
-                _context122.next = 11;
+                _context125.next = 11;
                 return "Links/".concat(ii, "/Name");
 
               case 11:
-                _context122.next = 13;
+                _context125.next = 13;
                 return "Links/".concat(ii, "/Tsize");
 
               case 13:
-                _context122.next = 15;
+                _context125.next = 15;
                 return "Links/".concat(ii, "/Hash");
 
               case 15:
                 ii++;
-                _context122.next = 6;
+                _context125.next = 6;
                 break;
 
               case 18:
               case "end":
-                return _context122.stop();
+                return _context125.stop();
             }
           }
-        }, _callee120);
+        }, _callee123);
       });
       /***/
     },
@@ -29843,16 +30009,16 @@
       "FeRZ");
 
       module.exports = configure(function (api) {
-        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee121() {
+        return /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee124() {
           var options,
               res,
-              _args123 = arguments;
-          return regeneratorRuntime.wrap(function _callee121$(_context123) {
+              _args126 = arguments;
+          return regeneratorRuntime.wrap(function _callee124$(_context126) {
             while (1) {
-              switch (_context123.prev = _context123.next) {
+              switch (_context126.prev = _context126.next) {
                 case 0:
-                  options = _args123.length > 0 && _args123[0] !== undefined ? _args123[0] : {};
-                  _context123.next = 3;
+                  options = _args126.length > 0 && _args126[0] !== undefined ? _args126[0] : {};
+                  _context126.next = 3;
                   return api.post('diag/net', {
                     timeout: options.timeout,
                     signal: options.signal,
@@ -29861,15 +30027,15 @@
                   });
 
                 case 3:
-                  res = _context123.sent;
-                  return _context123.abrupt("return", res.json());
+                  res = _context126.sent;
+                  return _context126.abrupt("return", res.json());
 
                 case 5:
                 case "end":
-                  return _context123.stop();
+                  return _context126.stop();
               }
             }
-          }, _callee121);
+          }, _callee124);
         }));
       });
       /***/
@@ -29901,16 +30067,16 @@
 
       module.exports = configure(function (api) {
         return /*#__PURE__*/function () {
-          var _ping = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee122(peerId) {
+          var _ping = _wrapAsyncGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee125(peerId) {
             var options,
                 res,
-                _args124 = arguments;
-            return regeneratorRuntime.wrap(function _callee122$(_context124) {
+                _args127 = arguments;
+            return regeneratorRuntime.wrap(function _callee125$(_context127) {
               while (1) {
-                switch (_context124.prev = _context124.next) {
+                switch (_context127.prev = _context127.next) {
                   case 0:
-                    options = _args124.length > 1 && _args124[1] !== undefined ? _args124[1] : {};
-                    _context124.next = 3;
+                    options = _args127.length > 1 && _args127[1] !== undefined ? _args127[1] : {};
+                    _context127.next = 3;
                     return _awaitAsyncGenerator(api.post('ping', {
                       timeout: options.timeout,
                       signal: options.signal,
@@ -29922,15 +30088,15 @@
                     }));
 
                   case 3:
-                    res = _context124.sent;
-                    return _context124.delegateYield(_asyncGeneratorDelegate(_asyncIterator(res.ndjson()), _awaitAsyncGenerator), "t0", 5);
+                    res = _context127.sent;
+                    return _context127.delegateYield(_asyncGeneratorDelegate(_asyncIterator(res.ndjson()), _awaitAsyncGenerator), "t0", 5);
 
                   case 5:
                   case "end":
-                    return _context124.stop();
+                    return _context127.stop();
                 }
               }
-            }, _callee122);
+            }, _callee125);
           }));
 
           function ping(_x23) {
@@ -29955,10 +30121,10 @@
     function rvZ0(module, exports, __webpack_require__) {
       "use strict";
 
-      var _webpack_require__76 = __webpack_require__(
+      var _webpack_require__77 = __webpack_require__(
       /*! buffer */
       "tjlA"),
-          Buffer = _webpack_require__76.Buffer;
+          Buffer = _webpack_require__77.Buffer;
 
       var CID = __webpack_require__(
       /*! cids */
@@ -30034,172 +30200,6 @@
         className: 'Block',
         symbolName: '@ipld/js-ipld-block/block'
       });
-      /***/
-    },
-
-    /***/
-    "rw1i":
-    /*!******************************************************************************************!*\
-      !*** ./node_modules/ipfs-http-client/node_modules/multihashing-async/src/sha.browser.js ***!
-      \******************************************************************************************/
-
-    /*! no static exports found */
-
-    /***/
-    function rw1i(module, exports, __webpack_require__) {
-      "use strict";
-      /* eslint-disable require-await */
-
-      var _webpack_require__77 = __webpack_require__(
-      /*! buffer */
-      "tjlA"),
-          Buffer = _webpack_require__77.Buffer;
-
-      var multihash = __webpack_require__(
-      /*! multihashes */
-      "yP9g");
-
-      var crypto = self.crypto || self.msCrypto;
-
-      var digest = /*#__PURE__*/function () {
-        var _ref95 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee123(data, alg) {
-          var d;
-          return regeneratorRuntime.wrap(function _callee123$(_context125) {
-            while (1) {
-              switch (_context125.prev = _context125.next) {
-                case 0:
-                  if (!(typeof self === 'undefined' || !self.crypto && !self.msCrypto)) {
-                    _context125.next = 2;
-                    break;
-                  }
-
-                  throw new Error('Please use a browser with webcrypto support and ensure the code has been delivered securely via HTTPS/TLS and run within a Secure Context');
-
-                case 2:
-                  _context125.t0 = alg;
-                  _context125.next = _context125.t0 === 'sha1' ? 5 : _context125.t0 === 'sha2-256' ? 10 : _context125.t0 === 'sha2-512' ? 15 : _context125.t0 === 'dbl-sha2-256' ? 20 : 28;
-                  break;
-
-                case 5:
-                  _context125.t1 = Buffer;
-                  _context125.next = 8;
-                  return crypto.subtle.digest({
-                    name: 'SHA-1'
-                  }, data);
-
-                case 8:
-                  _context125.t2 = _context125.sent;
-                  return _context125.abrupt("return", _context125.t1.from.call(_context125.t1, _context125.t2));
-
-                case 10:
-                  _context125.t3 = Buffer;
-                  _context125.next = 13;
-                  return crypto.subtle.digest({
-                    name: 'SHA-256'
-                  }, data);
-
-                case 13:
-                  _context125.t4 = _context125.sent;
-                  return _context125.abrupt("return", _context125.t3.from.call(_context125.t3, _context125.t4));
-
-                case 15:
-                  _context125.t5 = Buffer;
-                  _context125.next = 18;
-                  return crypto.subtle.digest({
-                    name: 'SHA-512'
-                  }, data);
-
-                case 18:
-                  _context125.t6 = _context125.sent;
-                  return _context125.abrupt("return", _context125.t5.from.call(_context125.t5, _context125.t6));
-
-                case 20:
-                  _context125.next = 22;
-                  return crypto.subtle.digest({
-                    name: 'SHA-256'
-                  }, data);
-
-                case 22:
-                  d = _context125.sent;
-                  _context125.t7 = Buffer;
-                  _context125.next = 26;
-                  return crypto.subtle.digest({
-                    name: 'SHA-256'
-                  }, d);
-
-                case 26:
-                  _context125.t8 = _context125.sent;
-                  return _context125.abrupt("return", _context125.t7.from.call(_context125.t7, _context125.t8));
-
-                case 28:
-                  throw new Error("".concat(alg, " is not a supported algorithm"));
-
-                case 29:
-                case "end":
-                  return _context125.stop();
-              }
-            }
-          }, _callee123);
-        }));
-
-        return function digest(_x113, _x114) {
-          return _ref95.apply(this, arguments);
-        };
-      }();
-
-      module.exports = {
-        factory: function factory(alg) {
-          return /*#__PURE__*/function () {
-            var _ref96 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee124(data) {
-              return regeneratorRuntime.wrap(function _callee124$(_context126) {
-                while (1) {
-                  switch (_context126.prev = _context126.next) {
-                    case 0:
-                      return _context126.abrupt("return", digest(data, alg));
-
-                    case 1:
-                    case "end":
-                      return _context126.stop();
-                  }
-                }
-              }, _callee124);
-            }));
-
-            return function (_x115) {
-              return _ref96.apply(this, arguments);
-            };
-          }();
-        },
-        digest: digest,
-        multihashing: function () {
-          var _multihashing = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee125(buf, alg, length) {
-            var h;
-            return regeneratorRuntime.wrap(function _callee125$(_context127) {
-              while (1) {
-                switch (_context127.prev = _context127.next) {
-                  case 0:
-                    _context127.next = 2;
-                    return digest(buf, alg, length);
-
-                  case 2:
-                    h = _context127.sent;
-                    return _context127.abrupt("return", multihash.encode(h, alg, length));
-
-                  case 4:
-                  case "end":
-                    return _context127.stop();
-                }
-              }
-            }, _callee125);
-          }));
-
-          function multihashing(_x116, _x117, _x118) {
-            return _multihashing.apply(this, arguments);
-          }
-
-          return multihashing;
-        }()
-      };
       /***/
     },
 
@@ -32615,7 +32615,7 @@
 
       var multihashing = __webpack_require__(
       /*! multihashing-async */
-      "MJDW");
+      "d9A7");
 
       var CID = __webpack_require__(
       /*! cids */
