@@ -37,6 +37,9 @@
   },
   "deprecated": false,
   "description": "Ionic Web View Engine Plugin",
+  "dependencies": {
+    "semantic-release": ">=17.2.3"
+  }
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.0",
     "@semantic-release/exec": "^3.3.0",
